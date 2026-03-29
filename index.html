@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C-Band Satellite TV</title>
+<style>
+@font-face {
+    font-family: 'DSEG14';
+    src: url('data:font/woff2;base64,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') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: #111;
+    font-family: 'Courier New', Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 10px;
+    color: #aaa;
+    overflow-x: hidden;
+    user-select: none;
+}
+
+#title {
+    font-size: 13px;
+    letter-spacing: 6px;
+    color: #444;
+    margin: 8px 0;
+    text-align: center;
+}
+
+/* === TV === */
+#tv { margin-bottom: 8px; }
+
+#tv-bezel {
+    background: linear-gradient(145deg, #3d2b1a, #5c3d20, #4a3222, #3d2b1a);
+    padding: 18px 22px 10px;
+    border-radius: 18px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.08);
+    position: relative;
+}
+
+#screen-wrap {
+    position: relative;
+    width: 640px;
+    height: 480px;
+    max-width: 80vw;
+    background: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: inset 0 0 60px rgba(0,0,0,0.9);
+}
+#screen-wrap.warming-up {
+    animation: crt-warmup 1.5s ease-out;
+}
+@keyframes crt-warmup {
+    0%   { filter: brightness(0); }
+    20%  { filter: brightness(0.05) saturate(0); }
+    40%  { filter: brightness(0.2) saturate(0.3); }
+    70%  { filter: brightness(0.6) saturate(0.7); }
+    100% { filter: brightness(1) saturate(1); }
+}
+
+@media (max-width: 700px) {
+    #screen-wrap { width: 90vw; height: calc(90vw * 0.75); }
+}
+
+#static-canvas { width: 100%; height: 100%; display: block; }
+
+#yt-wrap {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 1;
+    display: none;
+    overflow: hidden;
+    background: #000;
+}
+#yt-wrap iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: 0 !important;
+    display: block;
+}
+#yt-wrap.vc-scrambled {
+    filter: url(#vc-displace) saturate(4) contrast(2.5) brightness(0.35);
+    animation: vc-color 60s infinite ease-in-out;
+}
+@keyframes vc-color {
+    0%   { filter: url(#vc-displace) saturate(4) hue-rotate(90deg) contrast(2.5) brightness(0.35); }
+    25%  { filter: url(#vc-displace) saturate(5) hue-rotate(200deg) contrast(2.8) brightness(0.25); }
+    50%  { filter: url(#vc-displace) saturate(3) hue-rotate(320deg) contrast(2) brightness(0.4); }
+    75%  { filter: url(#vc-displace) saturate(6) hue-rotate(50deg) contrast(3) brightness(0.2); }
+    100% { filter: url(#vc-displace) saturate(4) hue-rotate(90deg) contrast(2.5) brightness(0.35); }
+}
+
+#channel-card {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    padding-top: 40%;
+    z-index: 1;
+    background: #000 !important;
+    font-family: 'Courier New', Courier, monospace;
+    color: #e0e0e0 !important;
+    animation: barker-scroll 20s ease-in-out infinite;
+}
+@keyframes barker-scroll {
+    0%   { padding-top: 90%; }
+    30%  { padding-top: 35%; }
+    70%  { padding-top: 35%; }
+    100% { padding-top: 90%; }
+}
+
+#ch-network, #ch-logo, #ch-program, #ch-extra {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    color: #e0e0e0 !important;
+    text-shadow: 0 0 5px rgba(255,255,255,0.5);
+    filter: blur(0.5px);
+    margin-bottom: 8px;
+}
+
+.feed-warning {
+    color: #ff4444;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 20px;
+    animation: blink 1s infinite;
+}
+
+.timecode {
+    font-family: monospace;
+    font-size: 24px;
+    color: #fff;
+    background: rgba(0,0,0,0.6);
+    padding: 4px 14px;
+    margin-top: 10px;
+    display: inline-block;
+    letter-spacing: 3px;
+}
+
+.ticker {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    background: #cc0000;
+    color: white;
+    padding: 6px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ticker-scroll {
+    display: inline-block;
+    animation: scroll-ticker 25s linear infinite;
+}
+
+@keyframes scroll-ticker { from { transform: translateX(80%); } to { transform: translateX(-120%); } }
+@keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+#scramble-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.scramble-text {
+    font-size: 26px;
+    font-weight: bold;
+    color: rgba(255,255,255,0.8);
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
+    letter-spacing: 4px;
+}
+
+.scramble-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 8px;
+    letter-spacing: 2px;
+}
+
+#moving-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.moving-text { color: rgba(255,255,255,0.6); font-size: 20px; letter-spacing: 5px; }
+.moving-pos { color: rgba(255,255,255,0.4); font-size: 15px; margin-top: 8px; font-family: monospace; }
+
+#scanlines {
+    display: none;
+}
+
+#vignette {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.5) 100%);
+    pointer-events: none;
+    z-index: 4;
+}
+
+#osd {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: #e0e0e0;
+    font-size: 18px;
+    padding: 12px 56px;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    z-index: 5;
+    display: none;
+    white-space: pre-line;
+    text-align: center;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    text-shadow: 0 0 5px rgba(255,255,255,0.5);
+    font-weight: bold;
+    filter: blur(0.5px);
+}
+
+#tv-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6px;
+    gap: 12px;
+}
+
+#tv-badge {
+    color: #7a6a4a;
+    font-size: 13px;
+    letter-spacing: 8px;
+    font-weight: bold;
+}
+
+#power-btn {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    border: 2px solid #5a4a2a;
+    background: linear-gradient(180deg, #3a2a1a, #2a1a0a);
+    color: #555;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
+    transition: all 0.2s;
+    padding: 0;
+    line-height: 24px;
+}
+#power-btn:hover { border-color: #7a6a3a; color: #888; }
+#power-btn.on {
+    color: #0f0;
+    border-color: #0a0;
+    box-shadow: 0 0 8px rgba(0,255,0,0.3), 0 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 0 0 6px rgba(0,255,0,0.5);
+}
+
+/* === RECEIVER === */
+#receiver {
+    background: linear-gradient(180deg, #2c2c2c, #1e1e1e, #222);
+    border: 1px solid #444;
+    border-radius: 6px;
+    width: 684px;
+    max-width: calc(80vw + 44px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04);
+    padding: 10px 14px;
+}
+
+@media (max-width: 700px) {
+    #receiver { width: calc(90vw + 44px); max-width: 98vw; }
+}
+
+#rx-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; padding: 0 2px; flex-wrap: wrap; gap: 4px; }
+#rx-brand { font-size: 12px; letter-spacing: 3px; color: #888; font-weight: bold; }
+#rx-model { font-size: 10px; color: #555; letter-spacing: 1px; }
+
+#rx-display {
+    background: #081408;
+    border: 2px solid #333;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.9);
+}
+
+.led-row { display: flex; align-items: center; gap: 6px; margin-bottom: 3px; height: 20px; flex-wrap: wrap; }
+.led-row:last-child { margin-bottom: 0; }
+.led-label { color: #1e4a1e; font-size: 9px; letter-spacing: 1px; }
+.led-value { color: #00cc00; font-size: 13px; text-shadow: 0 0 8px rgba(0,204,0,0.35); letter-spacing: 1px; font-family: 'DSEG14', monospace; }
+.led-big { font-size: 24px; text-shadow: 0 0 10px rgba(0,204,0,0.5); }
+
+
+.led-blink { animation: led-pulse 0.8s infinite; }
+@keyframes led-pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+/* Controls */
+#rx-controls { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 8px; flex-wrap: wrap; }
+.ctrl-group { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.ctrl-label { font-size: 8px; letter-spacing: 2px; color: #666; }
+.ctrl-buttons { display: flex; gap: 3px; }
+
+.rx-btn {
+    background: linear-gradient(180deg, #555, #363636, #2a2a2a);
+    color: #ccc;
+    border: 1px solid #555;
+    border-radius: 3px;
+    padding: 5px 13px;
+    font-family: monospace;
+    font-size: 14px;
+    cursor: pointer;
+    min-width: 34px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+    transition: all 0.08s;
+}
+.rx-btn:hover { background: linear-gradient(180deg, #666, #444, #363636); color: #fff; }
+.rx-btn:active {
+    background: linear-gradient(180deg, #222, #333, #3a3a3a);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.4), inset 0 2px 4px rgba(0,0,0,0.3);
+    transform: translateY(1px);
+}
+.rx-btn.wide { padding: 5px 18px; letter-spacing: 2px; font-size: 11px; }
+.rx-btn.active { background: #1a4a1a; color: #0f0; border-color: #0a0; box-shadow: 0 0 8px rgba(0,255,0,0.2); }
+
+/* Indicators */
+#indicators { display: flex; gap: 12px; margin-left: auto; align-items: center; padding-top: 6px; }
+.ind { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.ind span { font-size: 7px; letter-spacing: 1px; color: #555; }
+.ind-led {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: #1a1a1a; border: 1px solid #333;
+    transition: all 0.3s;
+}
+.ind-led.on-green { background: #00ee00; box-shadow: 0 0 8px rgba(0,238,0,0.5); border-color: #00aa00; }
+.ind-led.on-red { background: #ee3333; box-shadow: 0 0 8px rgba(238,51,51,0.5); border-color: #bb0000; }
+.ind-led.on-amber { background: #eeaa00; box-shadow: 0 0 8px rgba(238,170,0,0.5); border-color: #bb8800; }
+
+/* Arc Display */
+#arc-display { margin-top: 4px; padding-top: 6px; padding-bottom: 12px; border-top: 1px solid #2a2a2a; }
+.arc-label { font-size: 8px; letter-spacing: 3px; color: #444; text-align: center; margin-bottom: 4px; }
+#arc-bar {
+    position: relative;
+    height: 26px;
+    background: #0a0a0a;
+    border: 1px solid #222;
+    border-radius: 13px;
+    margin: 0 8px;
+}
+.arc-sat {
+    position: absolute; top: 50%; transform: translate(-50%, -50%);
+    width: 3px; height: 14px; background: #2a4a2a; border-radius: 1px; z-index: 1; cursor: pointer;
+}
+.arc-sat-label {
+    position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+    font-size: 7px; color: transparent; white-space: nowrap; letter-spacing: 1px;
+    transition: color 0.2s;
+}
+.arc-sat.active { background: #00bb00; box-shadow: 0 0 6px rgba(0,187,0,0.4); }
+.arc-sat.active .arc-sat-label { color: #00ee00; font-weight: bold; }
+.arc-sat:hover .arc-sat-label { color: #44aa44; }
+#arc-dish {
+    position: absolute; top: 50%; transform: translate(-50%, -50%);
+    width: 10px; height: 22px; background: #009900; border: 2px solid #00ee00;
+    border-radius: 5px; z-index: 2; box-shadow: 0 0 10px rgba(0,238,0,0.3);
+    transition: left 0.06s linear;
+}
+.arc-scale { display: flex; justify-content: space-between; margin: 3px 8px 0; font-size: 8px; color: #333; }
+
+#help { margin-top: 10px; font-size: 10px; color: #383838; letter-spacing: 1px; text-align: center; }
+</style>
+</head>
+<body>
+<div id="title">C - B A N D &nbsp;&nbsp; S A T E L L I T E &nbsp;&nbsp; T E L E V I S I O N</div>
+
+<div id="tv">
+    <div id="tv-bezel">
+        <div id="screen-wrap">
+            <svg style="position:absolute;width:0;height:0">
+                <filter id="vc-displace">
+                    <feTurbulence type="turbulence" baseFrequency="0.001 0.015" numOctaves="2" seed="2" result="turb">
+                        <animate attributeName="baseFrequency" values="0.001 0.015;0.002 0.025;0.0005 0.01;0.0015 0.03;0.001 0.015" dur="90s" repeatCount="indefinite"/>
+                        <animate attributeName="seed" values="2;5;8;3;2" dur="60s" repeatCount="indefinite"/>
+                    </feTurbulence>
+                    <feDisplacementMap in="SourceGraphic" in2="turb" scale="140" xChannelSelector="R" yChannelSelector="G"/>
+                </filter>
+            </svg>
+            <canvas id="static-canvas" width="640" height="480"></canvas>
+            <div id="yt-wrap"><div id="yt-player"></div></div>
+            <div id="channel-card">
+                <div id="ch-network"></div>
+                <div id="ch-logo"></div>
+                <div id="ch-program"></div>
+                <div id="ch-extra"></div>
+            </div>
+            <div id="scramble-overlay" style="display:none"></div>
+            <div id="moving-overlay" style="display:none"></div>
+            <div id="scanlines"></div>
+            <div id="vignette"></div>
+            <div id="osd"></div>
+        </div>
+        <div id="tv-bottom">
+            <div id="tv-badge">Z E N I T H</div>
+            <button id="power-btn" onclick="powerToggle()" title="Power">&#x23FB;</button>
+        </div>
+    </div>
+</div>
+
+<div id="receiver">
+    <div id="rx-top">
+        <span id="rx-brand">GENERAL INSTRUMENT</span>
+        <span id="rx-model">2450R &middot; VIDEOCIPHER II+ RS</span>
+    </div>
+    <div id="rx-display">
+        <div id="led-panel">
+            <div class="led-row" style="justify-content:center;gap:4px">
+                <span class="led-label">FREQ</span>
+                <span id="d-freq" class="led-value"></span>
+                <span class="led-label" style="margin-left:12px">AUD</span>
+                <span id="d-aud" class="led-value"></span>
+                <span class="led-label" style="margin-left:12px">AZ</span>
+                <span id="d-az" class="led-value"></span>
+                <span class="led-label" style="margin-left:4px">EL</span>
+                <span id="d-el" class="led-value"></span>
+            </div>
+            <div class="led-row" style="justify-content:center;gap:4px">
+                <span class="led-label">SIG</span>
+                <span id="d-signal-pct" class="led-value" style="min-width:30px"></span>
+                <span id="d-signal-bars" class="led-value" style="letter-spacing:2px"></span>
+            </div>
+            <div style="display:flex;justify-content:center;gap:30px;margin-top:8px;padding-top:6px;border-top:1px solid #1a3a1a">
+                <div style="text-align:center">
+                    <div class="led-label">SAT</div>
+                    <div id="d-sat" class="led-value led-big"></div>
+                </div>
+                <div style="text-align:center">
+                    <div class="led-label">TP</div>
+                    <div id="d-tp" class="led-value led-big"></div>
+                </div>
+                <div style="text-align:center">
+                    <div class="led-label">POL</div>
+                    <div id="d-pol" class="led-value led-big"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="rx-controls">
+        <div class="ctrl-group">
+            <div class="ctrl-label">SATELLITE</div>
+            <div class="ctrl-buttons">
+                <button class="rx-btn" id="btn-sat-dn" title="Previous satellite (Left arrow)">&#9664;</button>
+                <button class="rx-btn" id="btn-sat-up" title="Next satellite (Right arrow)">&#9654;</button>
+            </div>
+        </div>
+        <div class="ctrl-group">
+            <div class="ctrl-label">TRANSPONDER</div>
+            <div class="ctrl-buttons">
+                <button class="rx-btn" id="btn-tp-dn" title="Previous transponder (Up arrow)">&#9650;</button>
+                <button class="rx-btn" id="btn-tp-up" title="Next transponder (Down arrow)">&#9660;</button>
+            </div>
+        </div>
+        <div class="ctrl-group">
+            <div class="ctrl-label">MODE</div>
+            <div class="ctrl-buttons">
+                <button class="rx-btn wide" id="btn-scan" title="Auto scan (S)">SCAN</button>
+            </div>
+        </div>
+        <div id="indicators">
+            <div class="ind"><div class="ind-led" id="ind-lock"></div><span>LOCK</span></div>
+            <div class="ind"><div class="ind-led" id="ind-vc"></div><span>VC II</span></div>
+            <div class="ind"><div class="ind-led" id="ind-stereo"></div><span>STEREO</span></div>
+        </div>
+    </div>
+    <div id="arc-display">
+        <div class="arc-label">S A T E L L I T E &nbsp; A R C</div>
+        <div id="arc-bar"></div>
+        <div class="arc-scale"><span>65&#176;W</span><span>85&#176;W</span><span>105&#176;W</span><span>125&#176;W</span><span>140&#176;W</span></div>
+    </div>
+</div>
+
+<div id="help">&larr;&rarr; SAT &nbsp; &uarr;&darr; TP &nbsp; S SCAN &nbsp; N SKIP &nbsp; +/- VOL &nbsp; M +1m &nbsp; H +1h &nbsp; D DEBUG</div>
+<div id="debug" style="margin-top:8px;font-size:10px;color:#333;text-align:center;font-family:monospace;letter-spacing:0.5px">
+    <span id="dbg-elapsed"></span> &nbsp; <a id="dbg-clip" href="#" target="_blank" style="color:#555"></a>
+</div>
+
+<script>
+// ================================================================
+//  SATELLITE & CHANNEL DATABASE — circa 1994-1996
+// ================================================================
+
+// Source: OnSat Magazine, January 24, 1994
+const satellites = [
+    {
+        name: 'Spacenet 2', short: 'S2', pos: 69.0,
+        transponders: [
+            { num:1,  freq:3720, pol:'H', name:null },
+            { num:2,  freq:3740, pol:'V', name:'GEMS TV', color:'#240828', accent:'#ff44cc', textColor:'#fff', program:'SPANISH PROGRAMMING', type:'entertainment', audio:'6.80', stereo:true, tagline:'Now NBC Universo', videos:[{id:'cRYjMch8edY',duration:2480}] },
+            { num:3,  freq:3760, pol:'H', name:'C-SPAN / NASA Worldnet', color:'#141428', accent:'#6666aa', textColor:'#ddd', program:'DEUTSCHE WELLE', type:'educational', audio:'6.20', stereo:false, videos:[{id:'TkjtnteqL64',duration:10296}] },
+            { num:4,  freq:3780, pol:'V', name:'Sur Canal de Canales', color:'#240828', accent:'#ff44cc', textColor:'#fff', program:'SPANISH PROGRAMMING', type:'entertainment', audio:'6.80', stereo:false, videos:[{id:'S4TJdkiD3RE',duration:3538,start:2000}] },
+            { num:5,  freq:3800, pol:'H', name:null },
+            { num:6,  freq:3820, pol:'V', name:null },
+            { num:7,  freq:3840, pol:'H', name:'Main Street TV', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'LOCAL PROGRAMMING', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'oemoqEuJdFE',duration:14574,start:1000}] },
+            { num:8,  freq:3860, pol:'V', name:null },
+            { num:9,  freq:3880, pol:'H', name:'NASA TV', color:'#000022', accent:'#4488cc', textColor:'#fff', program:'WORLDNET', type:'educational', audio:'6.80', stereo:false, tagline:'NASA Television', videos:[{id:'4yWOK1Ib4dI',duration:8233,start:2000},{id:'TUBKSq0WYoA',duration:712}] },
+            { num:10, freq:3900, pol:'V', name:'Eco / Galavision', color:'#240828', accent:'#ff44cc', textColor:'#fff', program:'NOTICIAS', type:'entertainment', audio:'6.80', stereo:true, videos:[{id:'cRYjMch8edY',duration:2480,start:800}] },
+            { num:11, freq:3920, pol:'H', name:'Canal de Noticias', color:'#240828', accent:'#cc44cc', textColor:'#fff', program:'SPANISH NEWS', type:'news', audio:'6.80', stereo:false, videos:[{id:'cRYjMch8edY',duration:2480,start:1500}] },
+            { num:12, freq:3940, pol:'V', name:null },
+            { num:13, freq:3960, pol:'H', name:null },
+            { num:14, freq:3980, pol:'V', name:null },
+            { num:15, freq:4000, pol:'H', name:null },
+            { num:16, freq:4020, pol:'V', name:null },
+            { num:17, freq:4040, pol:'H', name:'Telemundo Alt', color:'#240828', accent:'#ff44cc', textColor:'#fff', program:'TELEMUNDO', type:'entertainment', audio:'6.80', stereo:true, videos:[{id:'S4TJdkiD3RE',duration:3538}] },
+            { num:18, freq:4060, pol:'V', name:null },
+            { num:19, freq:4080, pol:'H', name:null },
+            { num:20, freq:4100, pol:'V', name:'AFRTS', scrambled:true, color:'#0a0a1a', accent:'#4466cc', textColor:'#fff', program:'ARMED FORCES NETWORK', type:'network', audio:'6.80', stereo:false },
+            { num:21, freq:4120, pol:'H', name:'Cornerstone TV', color:'#141428', accent:'#8888cc', textColor:'#fff', program:'WPCB PITTSBURGH', type:'religious', audio:'6.20', stereo:false, videos:[{id:'ko0rldI_880',duration:10667,start:3000}] },
+            { num:22, freq:4140, pol:'V', name:null },
+            { num:23, freq:4160, pol:'H', name:null },
+            { num:24, freq:4180, pol:'V', name:null },
+        ]
+    },
+    {
+        name: 'Satcom F2R', short: 'F2', pos: 72.0,
+        transponders: [
+            { num:1,  freq:3720, pol:'H', name:'Arab Network', color:'#0a0a1a', accent:'#44aacc', textColor:'#fff', program:'ARABIC PROGRAMMING', type:'entertainment', audio:'6.80', stereo:false, tagline:'M-Thu 5PM-6AM ET', videos:[{id:'aQpaB9jmNCE',duration:3539}] },
+            { num:2,  freq:3740, pol:'V', name:'WRAL Raleigh CBS', color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'CBS NEWS', type:'network', audio:'6.80', stereo:true, tagline:'PT24', videos:[{id:'cfgi_H10lMM',duration:3816,start:600}] },
+            { num:3,  freq:3760, pol:'H', name:'Outdoor Channel', color:'#0a1a0a', accent:'#44aa44', textColor:'#fff', program:'OUTDOOR ADVENTURES', type:'entertainment', audio:'6.80', stereo:true, videos:[{id:'SbGpCOa3Om8',duration:3626},{id:'4pAiM83kyP4',duration:1155}] },
+            { num:4,  freq:3780, pol:'V', name:'WABC New York', color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'ABC 7 NEW YORK', type:'network', audio:'6.80', stereo:true, tagline:'PT24', videos:[{id:'ELnq8VFYITs',duration:441}] },
+            { num:5,  freq:3800, pol:'H', name:'NASA TV', color:'#000022', accent:'#4488cc', textColor:'#fff', program:'WORLDNET', type:'educational', audio:'6.80', stereo:false, videos:[{id:'4yWOK1Ib4dI',duration:8233,start:6000}] },
+            { num:6,  freq:3820, pol:'V', name:null },
+            { num:7,  freq:3840, pol:'H', name:'American Infochannel', color:'#141414', accent:'#ccaa44', textColor:'#fff', program:'INFOMERCIALS', type:'shopping', audio:'6.80', stereo:false, videos:[{id:'oemoqEuJdFE',duration:14574}] },
+            { num:8,  freq:3860, pol:'V', name:null },
+            { num:9,  freq:3880, pol:'H', name:null },
+            { num:10, freq:3900, pol:'V', name:null },
+            { num:11, freq:3920, pol:'H', name:'Home Shopping Club', color:'#161608', accent:'#cccc44', textColor:'#fff', program:'HOME SHOPPING', type:'shopping', audio:'6.80', stereo:false, videos:[{id:'oemoqEuJdFE',duration:14574,start:5000}] },
+            { num:12, freq:3940, pol:'V', name:'WXIA Atlanta NBC', color:'#0a0a28', accent:'#ffaa00', textColor:'#fff', program:'NBC ATLANTA', type:'network', audio:'6.80', stereo:true, tagline:'PT24', videos:[{id:'ELnq8VFYITs',duration:441}] },
+            { num:13, freq:3960, pol:'H', name:'NASA TV', color:'#000022', accent:'#4488cc', textColor:'#fff', program:'MISSION CONTROL', type:'educational', audio:'6.80', stereo:false, videos:[{id:'4yWOK1Ib4dI',duration:8233,start:4000}] },
+            { num:14, freq:3980, pol:'V', name:null },
+            { num:15, freq:4000, pol:'H', name:'Showcase America', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'B-MOVIES', type:'entertainment', audio:'6.80', stereo:false, videos:[{id:'oemoqEuJdFE',duration:14574,start:8000}] },
+            { num:16, freq:4020, pol:'V', name:'KBL Sports Pittsburgh', color:'#0a1a0a', accent:'#44cc44', textColor:'#fff', program:'PITTSBURGH SPORTS', type:'sports', audio:'6.80', stereo:true, videos:[{id:'reAxRzormg0',duration:9585,start:2000}] },
+            { num:17, freq:4040, pol:'H', name:'SportsChannel NY Plus', color:'#0a1a0a', accent:'#44cc44', textColor:'#fff', program:'NY SPORTS', type:'sports', audio:'6.80', stereo:true, videos:[{id:'dvqE0862LGA',duration:14170}] },
+            { num:18, freq:4060, pol:'V', name:'SportsChannel Philly', color:'#0a1a0a', accent:'#44cc44', textColor:'#fff', program:'PHILADELPHIA SPORTS', type:'sports', audio:'6.80', stereo:true, videos:[{id:'reAxRzormg0',duration:9585}] },
+            { num:19, freq:4080, pol:'H', name:null },
+            { num:20, freq:4100, pol:'V', name:null },
+            { num:21, freq:4120, pol:'H', name:'New England Cable News', color:'#0a0a1a', accent:'#cc4444', textColor:'#fff', program:'NECN NEWSCAST', type:'news', audio:'6.80', stereo:true, videos:[{id:'ELnq8VFYITs',duration:441}] },
+            { num:22, freq:4140, pol:'V', name:'SportsChannel New York', color:'#0a1a0a', accent:'#44cc44', textColor:'#fff', program:'ISLANDERS HOCKEY', type:'sports', audio:'6.80', stereo:true, videos:[{id:'Bs5T_SzgZ8k',duration:10816}] },
+            { num:23, freq:4160, pol:'H', name:'SportsChannel New England', color:'#0a1a0a', accent:'#44cc44', textColor:'#fff', program:'BRUINS HOCKEY', type:'sports', audio:'6.80', stereo:true, videos:[{id:'Bs5T_SzgZ8k',duration:10816,start:4000}] },
+            { num:24, freq:4180, pol:'V', name:null },
+        ]
+    },
+    {
+        name: 'Galaxy 2', short: 'G2', pos: 74.0,
+        transponders: [
+            { num:1,  freq:3720, pol:'H', name:'Hughes TV Network', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'HUGHES TELEVISION', videos:[{id:'0tlwcZfJTQg',duration:10}] },
+            { num:2,  freq:3740, pol:'V', name:null },
+            { num:3,  freq:3760, pol:'H', name:null },
+            { num:4,  freq:3780, pol:'V', name:'Hughes TV Network', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'HUGHES TELEVISION', videos:[{id:'0tlwcZfJTQg',duration:10}] },
+            { num:5,  freq:3800, pol:'H', name:'Virginia State Ed Network', color:'#0a0a1a', accent:'#6688cc', textColor:'#fff', program:'TELECOURSES', type:'educational', audio:'6.20', stereo:false, videos:[{id:'W4RSwwMymj0',duration:3338,start:2000}] },
+            { num:6,  freq:3820, pol:'V', name:null },
+            { num:7,  freq:3840, pol:'H', name:'Antenne 2 French', color:'#0a0a28', accent:'#2244cc', textColor:'#fff', program:'JOURNAL T\u00c9L\u00c9VIS\u00c9', type:'entertainment', audio:'6.80', stereo:false, tagline:'France 2', videos:[{id:'NfP7qBPrsFc',duration:129}] },
+            { num:8,  freq:3860, pol:'V', name:null },
+            { num:9,  freq:3880, pol:'H', name:'CNN Feeds', color:'#180808', accent:'#cc0000', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'CNN \u2014 BACKHAUL', videos:[{id:'aPfpZZsWs70',duration:6776,start:3000}] },
+            { num:10, freq:3900, pol:'V', name:'Hughes TV Network', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'HUGHES TELEVISION', videos:[{id:'0tlwcZfJTQg',duration:10}] },
+            { num:11, freq:3920, pol:'H', name:null },
+            { num:12, freq:3940, pol:'V', name:null },
+            { num:13, freq:3960, pol:'H', name:null },
+            { num:14, freq:3980, pol:'V', name:'Hughes TV Network', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'HUGHES TELEVISION', videos:[{id:'0tlwcZfJTQg',duration:10}] },
+            { num:15, freq:4000, pol:'H', name:'WTN London', color:'#0a0a1a', accent:'#aaa', textColor:'#fff', program:'WORLD TELEVISION NEWS', type:'news', audio:'6.20', stereo:false, tagline:'London Bureau', videos:[{id:'FPUwrDBpUXg',duration:295}] },
+            { num:16, freq:4020, pol:'V', name:null },
+            { num:17, freq:4040, pol:'H', name:'Hughes TV Network', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'HUGHES TELEVISION', videos:[{id:'0tlwcZfJTQg',duration:10}] },
+            { num:18, freq:4060, pol:'V', name:null },
+            { num:19, freq:4080, pol:'H', name:null },
+            { num:20, freq:4100, pol:'V', name:null },
+            { num:21, freq:4120, pol:'H', name:null },
+            { num:22, freq:4140, pol:'V', name:'Hughes TV Network', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'HUGHES TELEVISION', videos:[{id:'0tlwcZfJTQg',duration:10}] },
+            { num:23, freq:4160, pol:'H', name:null },
+            { num:24, freq:4180, pol:'V', name:'Hughes TV Network', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'HUGHES TELEVISION', videos:[{id:'0tlwcZfJTQg',duration:10}] },
+        ]
+    },
+    {
+        name: 'Telstar 302', short: 'T2', pos: 85.0,
+        transponders: [
+            { num:1,  freq:3720, pol:'H', name:null },
+            { num:2,  freq:3740, pol:'V', name:'Sports Feed', color:'#0a1a0a', accent:'#44cc44', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:true, tagline:'OCCASIONAL SPORTS', videos:[{id:'SbPHqhlhyG4',duration:257}] },
+            { num:3,  freq:3760, pol:'H', name:'Sports Feed 2', color:'#0a1a0a', accent:'#44cc44', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:true, tagline:'OCCASIONAL SPORTS', videos:[{id:'SbPHqhlhyG4',duration:257}] },
+            { num:4,  freq:3780, pol:'V', name:'ABC Feeds', color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'ABC \u2014 LEITCH UPLINK', videos:[{id:'SbPHqhlhyG4',duration:257}] },
+            { num:5,  freq:3800, pol:'H', name:'HBO 2 East', scrambled:true, color:'#160828', accent:'#9b59b6', textColor:'#fff', program:'GRUMPY OLD MEN (1993)', type:'premium', audio:'6.80', stereo:true, videos:[{id:'E9DafN5Isbk',duration:21}] },
+            { num:6,  freq:3820, pol:'V', name:'Test \u2014 Bars & Tone', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'1KHZ TONE', type:'test', audio:'6.20', stereo:false, videos:[{id:'EMJhxWN3QvA',duration:600}] },
+            { num:7,  freq:3840, pol:'H', name:'Test \u2014 Color Bars', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'TEST PATTERN', type:'test', audio:'6.20', stereo:false, videos:[{id:'l4bDVq-nP-0',duration:3601}] },
+            { num:8,  freq:3860, pol:'V', name:'ABC East Feed', color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'ABC \u2014 NETWORK FEED', videos:[{id:'BnGBal9UKfQ',duration:2454}] },
+            { num:9,  freq:3880, pol:'H', name:'HBO 3 East', scrambled:true, color:'#160828', accent:'#9b59b6', textColor:'#fff', program:'TOMBSTONE (1993)', type:'premium', audio:'6.80', stereo:true },
+            { num:10, freq:3900, pol:'V', name:'ABC East Feed', color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'WORLD NEWS TONIGHT', type:'network', audio:'6.80', stereo:true, videos:[{id:'w6qH2jBfyVo',duration:1417},{id:'EBuvOLjsF00',duration:1738},{id:'EerSHhjR0g0',duration:1717}] },
+            { num:11, freq:3920, pol:'H', name:'ABC Feeds', color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'ABC \u2014 OCCASIONAL VIDEO', videos:[{id:'BnGBal9UKfQ',duration:2454,start:0}] },
+            { num:12, freq:3940, pol:'V', name:null },
+            { num:13, freq:3960, pol:'H', name:null },
+            { num:14, freq:3980, pol:'V', name:'HBO 2 West', scrambled:true, color:'#160828', accent:'#9b59b6', textColor:'#fff', program:'THE FUGITIVE (1993)', type:'premium', audio:'6.80', stereo:true },
+            { num:15, freq:4000, pol:'H', name:'AgSat', color:'#0a1a0a', accent:'#44aa44', textColor:'#fff', program:'AGRICULTURE TODAY', type:'educational', audio:'6.20', stereo:false, tagline:'M-F 10-11AM ET', videos:[{id:'55DP2kimCIY',duration:1588}] },
+            { num:16, freq:4020, pol:'V', name:'Starnet', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'LATE NIGHT MOVIES', type:'entertainment', audio:'6.80', stereo:false, videos:[{id:'oemoqEuJdFE',duration:14574,start:11000}] },
+            { num:17, freq:4040, pol:'H', name:'Test \u2014 Audio ID', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'STEREO CHECK', type:'test', audio:'6.20', stereo:true, videos:[{id:'_MIlqc9GTY4',duration:165},{id:'gxUg_03k5LE',duration:49}] },
+            { num:18, freq:4060, pol:'V', name:'Test \u2014 SMPTE', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'TEST PATTERN', type:'test', audio:'6.20', stereo:false, videos:[{id:'j91V1nktnH8',duration:4801}] },
+            { num:19, freq:4080, pol:'H', name:'ABC Feeds', color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'ABC \u2014 OCCASIONAL VIDEO', videos:[{id:'BnGBal9UKfQ',duration:2454,start:500}] },
+            { num:20, freq:4100, pol:'V', name:'La Cadena Del Milagro', color:'#141428', accent:'#8888cc', textColor:'#fff', program:'MINISTERIO INTERNACIONAL', type:'religious', audio:'6.20', stereo:false, videos:[{id:'pGVCOLaXioY',duration:509},{id:'FL0fNCKfzH8',duration:2600}] },
+            { num:21, freq:4120, pol:'H', name:'Cinemax 2 East', scrambled:true, color:'#081624', accent:'#3498db', textColor:'#fff', program:'TOMBSTONE (1993)', type:'premium', audio:'6.80', stereo:true },
+            { num:22, freq:4140, pol:'V', name:'NC Open Network', color:'#0a0a1a', accent:'#6688cc', textColor:'#fff', program:'TELECOURSES', type:'educational', audio:'6.20', stereo:false, tagline:'Tue/Thu 8-10 ET', videos:[{id:'W4RSwwMymj0',duration:3338,start:1000}] },
+            { num:23, freq:4160, pol:'H', name:'Test \u2014 Station', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'WGN SIGN OFF', type:'test', audio:'6.20', stereo:false, videos:[{id:'P__67fbdZVg',duration:6151}] },
+            { num:24, freq:4180, pol:'V', name:null },
+        ]
+    },
+    {
+        name: 'Spacenet 3', short: 'S3', pos: 87.0,
+        transponders: [
+            { num:1,  freq:3720, pol:'H', name:'Cable Listings', color:'#0a0a0a', accent:'#44dddd', textColor:'#0ff', program:'CHANNEL GUIDE', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'XOizHA_IvuY',duration:963,start:300}] },
+            { num:2,  freq:3740, pol:'V', name:'KUON Lincoln PBS', color:'#141408', accent:'#44aa44', textColor:'#fff', program:'NEBRASKA PUBLIC TV', type:'educational', audio:'6.80', stereo:true, tagline:'Public Broadcasting Service', videoId:'W4RSwwMymj0', videoStart:60, videos:[{id:'W4RSwwMymj0',duration:3338,start:1000}] },
+            { num:3,  freq:3760, pol:'H', name:'WSBK Boston', color:'#141414', accent:'#aaa', textColor:'#fff', program:'CHEERS', type:'entertainment', audio:'6.80', stereo:true, tagline:'UPN 38 Boston', videos:[{id:'E1mUiedXMPc',duration:5517,maxDur:150}] },
+            { num:4,  freq:3780, pol:'V', name:'Community Bulletin Board', color:'#0a0a0a', accent:'#44aa44', textColor:'#0f0', program:'LOCAL COMMUNITY CALENDAR', type:'entertainment', audio:'6.20', stereo:false, tagline:'Public Access', videos:[{id:'AqobbIAJdOE',duration:210},{id:'Da7_AcM5pzk',duration:181},{id:'XOizHA_IvuY',duration:963}] },
+            { num:5,  freq:3800, pol:'H', name:'KTVT Dallas', color:'#141414', accent:'#cc8844', textColor:'#fff', program:'DALLAS', type:'entertainment', audio:'6.80', stereo:true, tagline:'CBS 11 Dallas', videos:[{id:'SWzn1qrrJsM',duration:3692}] },
+                                    { num:6,  freq:3820, pol:'V', name:'Community Access', color:'#0a0a0a', accent:'#44aa44', textColor:'#0f0', program:'LOCAL EVENTS', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'XOizHA_IvuY',duration:963},{id:'60aZrE9XItU',duration:90},{id:'u9nOP4hKwJc',duration:177}] },
+            { num:7,  freq:3840, pol:'H', name:'Classified Ads', color:'#0a0a0a', accent:'#ccaa44', textColor:'#ff0', program:'BUY SELL TRADE', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'XOizHA_IvuY',duration:460,start:500}] },
+            { num:8,  freq:3860, pol:'V', name:'Casino Game Channel', color:'#0a0a0a', accent:'#ccaa44', textColor:'#ff0', program:'VIDEO KENO', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'MgPeIQJAAoM',duration:459}] },
+            { num:9,  freq:3880, pol:'H', name:'WPIX New York', color:'#0a0a1a', accent:'#4488cc', textColor:'#fff', program:'THE HONEYMOONERS', type:'entertainment', audio:'6.80', stereo:true, tagline:'WB 11 New York', videos:[{id:'08WE4ca1e-M',duration:1157,maxDur:150}] },
+            { num:10,  freq:3900, pol:'V', name:'Satellite Test', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'TEST TRANSMISSION', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'JOFpnE09nnI',duration:794}] },
+            { num:11, freq:3920, pol:'H', name:'CNN International', color:'#180808', accent:'#cc2222', textColor:'#fff', program:'WORLD REPORT', type:'news', audio:'6.80', stereo:true, tagline:'Occasional Video', videos:[{id:'Gg_XJ4xHCIQ',duration:294},{id:'aPfpZZsWs70',duration:6776,start:2000}] },
+                        { num:12,  freq:3940, pol:'V', name:'Lottery Channel', color:'#0a0a0a', accent:'#ccaa44', textColor:'#ff0', program:'LIVE DRAWINGS', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'gLBMCW1onls',duration:1141},{id:'a6cum2X9YqM',duration:139}] },
+            { num:13,  freq:3960, pol:'H', name:'Satellite Feed', color:'#0a0a0a', accent:'#666', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'OCCASIONAL VIDEO', videos:[{id:'JOFpnE09nnI',duration:794}] },
+                        { num:14,  freq:3980, pol:'V', name:'Financial News Wire', color:'#0a0a0a', accent:'#44dddd', textColor:'#0ff', program:'MARKET DATA', type:'news', audio:'6.20', stereo:false, videos:[{id:'tEbZswUEnsU',duration:640},{id:'FPUwrDBpUXg',duration:295}] },
+            { num:15, freq:4000, pol:'H', name:'KTLA Los Angeles', color:'#141414', accent:'#cc8800', textColor:'#fff', program:'MARRIED... WITH CHILDREN', type:'entertainment', audio:'6.80', stereo:true, tagline:'The WB Los Angeles', videos:[{id:'nSIlomMNLa0',duration:864,maxDur:150}] },
+            { num:16,  freq:4020, pol:'V', name:'Infomercial Feed', color:'#141414', accent:'#ccaa44', textColor:'#fff', program:'AMAZING NEW PRODUCT', type:'shopping', audio:'6.80', stereo:false, videos:[{id:'B13TnJgMvtY',duration:1773},{id:'sU5xtAu7B6U',duration:982},{id:'j8WMXyXBGpM',duration:563}] },
+            { num:17, freq:4040, pol:'H', name:null },
+                        { num:18,  freq:4060, pol:'V', name:null },
+            { num:19, freq:4080, pol:'H', name:'SportSouth', color:'#081408', accent:'#44aa44', textColor:'#fff', program:'ATLANTA BRAVES BASEBALL', type:'sports', audio:'6.80', stereo:true, videos:[{id:'cSAZ1um7f-8',duration:6923},{id:'LieeNJh869A',duration:1974}] },
+            { num:20,  freq:4100, pol:'V', name:'CBC Test', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'TEST TRANSMISSION', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'JOFpnE09nnI',duration:794}] },
+            { num:21, freq:4120, pol:'H', name:null },
+            { num:22,  freq:4140, pol:'V', name:'Local Forecast', color:'#0a0a0a', accent:'#44aaff', textColor:'#fff', program:'TRAVEL CITIES', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'3lcehyFGeyI',duration:196},{id:'E4q0fDY-F-E',duration:84},{id:'T7CuNZ4lgVI',duration:315}] },
+            { num:23, freq:4160, pol:'H', name:'Home Team Sports', color:'#0a1a0a', accent:'#44cc44', textColor:'#fff', program:'WASHINGTON CAPITALS HOCKEY', type:'sports', audio:'6.80', stereo:true, tagline:'Washington DC', videos:[{id:'1HBgJojaOGQ',duration:1932,maxDur:150}] },
+            { num:24, freq:4180, pol:'V', name:'RTP Internacional', color:'#0a0a28', accent:'#4466cc', textColor:'#fff', program:'TELES\u00c1O', type:'entertainment', audio:'6.80', stereo:false, tagline:'Portugal', videos:[{id:'1HBgJojaOGQ',duration:1932,maxDur:150}] },
+        ]
+    },
+    {
+        name: 'Galaxy 7', short: 'G7', pos: 91.0,
+        transponders: [
+            { num:1,  freq:3720, pol:'H', name:'Cable Bulletin', color:'#0a0a0a', accent:'#44aa44', textColor:'#0f0', program:'COMMUNITY CALENDAR', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'60aZrE9XItU',duration:90},{id:'u9nOP4hKwJc',duration:177}] },
+            { num:2,  freq:3740, pol:'V', name:'CBS West', scrambled:true, color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'60 MINUTES', type:'network', audio:'6.80', stereo:true, videos:[{id:'SaF__mZECrM',duration:2077}] },
+            { num:3,  freq:3760, pol:'H', name:'Community Board', color:'#0a0a0a', accent:'#44aa44', textColor:'#0f0', program:'LOCAL INFORMATION', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'u9nOP4hKwJc',duration:177},{id:'60aZrE9XItU',duration:90}] },
+            { num:4,  freq:3780, pol:'V', name:'Weather Data', color:'#0a0a0a', accent:'#44aaff', textColor:'#fff', program:'CURRENT CONDITIONS', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'T7CuNZ4lgVI',duration:315},{id:'3lcehyFGeyI',duration:196}] },
+            { num:5,  freq:3800, pol:'H', name:null },
+            { num:6,  freq:3820, pol:'V', name:'Cable Program Guide', color:'#000808', accent:'#44dddd', textColor:'#0ff', program:'CHANNEL LISTINGS', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'7Hx9HaiCIAk',duration:3092}] },
+            { num:7,  freq:3840, pol:'H', name:'Test — Audio ID', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'LEFT RIGHT TEST', type:'test', audio:'6.20', stereo:true, videos:[{id:'YCOabuKbJvo',duration:1801}] },
+            { num:8,  freq:3860, pol:'V', name:null },
+                                    { num:9,  freq:3880, pol:'H', name:'Test — Sign Off', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'STATION SIGN OFF', type:'test', audio:'6.20', stereo:false, videos:[{id:'Cnchea6LHN0',duration:87},{id:'P__67fbdZVg',duration:6151,start:2000}] },
+            { num:10,  freq:3900, pol:'V', name:'Government Access', color:'#0a0a1a', accent:'#6666aa', textColor:'#ddd', program:'CITY COUNCIL PROCEEDINGS', type:'educational', audio:'6.20', stereo:false, videos:[{id:'Fq-MaceZU20',duration:4750}] },
+                        { num:11,  freq:3920, pol:'H', name:null },
+                        { num:12,  freq:3940, pol:'V', name:null },
+            { num:13, freq:3960, pol:'H', name:'RAI Italy', color:'#0a0a28', accent:'#2244cc', textColor:'#fff', program:'TG1 NOTIZIARIO', type:'entertainment', audio:'6.80', stereo:false, tagline:'Radiotelevisione Italiana', videos:[{id:'ift1jPqGicY',duration:380},{id:'3ZxFhLpKH3c',duration:2035}] },
+            { num:14, freq:3980, pol:'V', name:'FamilyNet', color:'#141428', accent:'#8888cc', textColor:'#fff', program:'WORSHIP SERVICE', type:'religious', audio:'6.20', stereo:false, videos:[{id:'ko0rldI_880',duration:10667,start:300}] },
+            { num:15, freq:4000, pol:'H', name:'NBC Feeds', color:'#0a0a28', accent:'#ffaa00', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'NBC / BRIGHTSTAR \u2014 BACKHAUL', videos:[{id:'akNrTrblM3s',duration:3612,maxDur:150}] },
+            { num:16,  freq:4020, pol:'V', name:null },
+            { num:17, freq:4040, pol:'H', name:'Shop at Home', color:'#161608', accent:'#cccc44', textColor:'#fff', program:'JEWELRY CLEARANCE', type:'shopping', audio:'6.80', stereo:false, tagline:'CALL 1-800-743-2155', videos:[{id:'50mhYBMHBfk',duration:8892,start:4000}] },
+            { num:18, freq:4060, pol:'V', name:'CBS News Feeds', color:'#0a0a1a', accent:'#aaa', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'CBS NEWS \u2014 FIELD REPORT', videos:[{id:'1tfJAJGR_iM',duration:2565,maxDur:150}] },
+            { num:19, freq:4080, pol:'H', name:'CBS East', scrambled:true, color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'LATE SHOW WITH DAVID LETTERMAN', type:'network', audio:'6.80', stereo:true, videos:[{id:'SaF__mZECrM',duration:2077,start:500}] },
+            { num:20,  freq:4100, pol:'V', name:'Satellite Feed', color:'#0a0a0a', accent:'#666', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'OCCASIONAL VIDEO', videos:[{id:'JOFpnE09nnI',duration:794}] },
+            { num:21, freq:4120, pol:'H', name:null },
+            { num:22, freq:4140, pol:'V', name:'Playboy TV', scrambled:true, color:'#141414', accent:'#888', textColor:'#fff', program:'ADULT PROGRAMMING', type:'premium', audio:'6.80', stereo:false, videos:[{id:'ptNr2lYWXhk',duration:677},{id:'MXv7OuWVbko',duration:2986},{id:'uEatcxShbFs',duration:180}] },
+            { num:23,  freq:4160, pol:'H', name:null },
+                        { num:24,  freq:4180, pol:'V', name:null },
+        ]
+    },
+    {
+        name: 'Galaxy 3', short: 'G3', pos: 93.5,
+        transponders: [
+            { num:1,  freq:3720, pol:'H', name:null },
+            { num:2,  freq:3740, pol:'V', name:'Empire Sports Network', color:'#0a1a0a', accent:'#44cc44', textColor:'#fff', program:'BUFFALO SPORTS', type:'sports', audio:'6.80', stereo:true, videos:[{id:'sJVtK-Yrtwk',duration:144}] },
+            { num:3,  freq:3760, pol:'H', name:null },
+            { num:4,  freq:3780, pol:'V', name:null },
+            { num:5,  freq:3800, pol:'H', name:'RTP Portuguese News', color:'#0a0a28', accent:'#4466cc', textColor:'#fff', program:'NOTICIAS', type:'entertainment', audio:'6.80', stereo:false, tagline:'11AM-4PM ET', videos:[{id:'pGVCOLaXioY',duration:509,start:100}] },
+            { num:6,  freq:3820, pol:'V', name:null },
+            { num:7,  freq:3840, pol:'H', name:'TV Asia', color:'#0a0a1a', accent:'#ccaa44', textColor:'#fff', program:'BOLLYWOOD NEWS', type:'entertainment', audio:'6.80', stereo:false, videos:[{id:'cRYjMch8edY',duration:2480,start:500}] },
+            { num:8,  freq:3860, pol:'V', name:null },
+            { num:9,  freq:3880, pol:'H', name:'Satellite Market USA', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'CLASSIFIED ADS', type:'shopping', audio:'6.20', stereo:false, videos:[{id:'XOizHA_IvuY',duration:462,start:0}] },
+            { num:10, freq:3900, pol:'V', name:null },
+            { num:11, freq:3920, pol:'H', name:'Keystone Inspiration', color:'#141428', accent:'#8888cc', textColor:'#fff', program:'MINISTRY HOUR', type:'religious', audio:'6.20', stereo:false, videos:[{id:'ko0rldI_880',duration:10667,start:6000}] },
+            { num:12, freq:3940, pol:'V', name:'University Network', color:'#141428', accent:'#8888cc', textColor:'#fff', program:'DR. GENE SCOTT', type:'religious', audio:'6.20', stereo:false, tagline:'University Network', videos:[{id:'NSLgSOmVg7g',duration:2312}] },
+            { num:13, freq:3960, pol:'H', name:'Video Catalog Channel', color:'#141414', accent:'#ccaa44', textColor:'#fff', program:'INFOMERCIALS', type:'shopping', audio:'6.80', stereo:false, videos:[{id:'oemoqEuJdFE',duration:14574,start:3000}] },
+            { num:14, freq:3980, pol:'V', name:'Caribbean Satellite Net', color:'#0a1a1a', accent:'#44ccaa', textColor:'#fff', program:'CARIBBEAN PROGRAMMING', type:'entertainment', audio:'6.80', stereo:false, videos:[{id:'cRYjMch8edY',duration:2480,start:1200}] },
+            { num:15, freq:4000, pol:'H', name:'Video Catalog Channel', color:'#141414', accent:'#ccaa44', textColor:'#fff', program:'INFOMERCIALS', type:'shopping', audio:'6.80', stereo:false, videos:[{id:'oemoqEuJdFE',duration:14574,start:7000}] },
+            { num:16, freq:4020, pol:'V', name:null },
+            { num:17, freq:4040, pol:'H', name:'Shop at Home', color:'#161608', accent:'#cccc44', textColor:'#fff', program:'JEWELRY CLEARANCE', type:'shopping', audio:'6.80', stereo:false, videos:[{id:'oemoqEuJdFE',duration:14574,start:2000}] },
+            { num:18, freq:4060, pol:'V', name:'ABC West', color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'ABC WEST FEED', type:'network', audio:'6.80', stereo:true, videos:[{id:'EBuvOLjsF00',duration:1738,start:500}] },
+            { num:19, freq:4080, pol:'H', name:'VIA TV Shopping', color:'#161608', accent:'#cccc44', textColor:'#fff', program:'HOME SHOPPING', type:'shopping', audio:'6.80', stereo:false, videos:[{id:'oemoqEuJdFE',duration:14574,start:4000}] },
+            { num:20, freq:4100, pol:'V', name:'ABC Feeds', color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'ABC \u2014 OCCASIONAL VIDEO', videos:[{id:'BnGBal9UKfQ',duration:2454,start:1000}] },
+            { num:21, freq:4120, pol:'H', name:'American Collectibles', color:'#141414', accent:'#ccaa44', textColor:'#fff', program:'COLLECTIBLES AUCTION', type:'shopping', audio:'6.80', stereo:false, videos:[{id:'oemoqEuJdFE',duration:14574,start:6000}] },
+            { num:22, freq:4140, pol:'V', name:'Future Mart', color:'#141414', accent:'#ccaa44', textColor:'#fff', program:'HOME SHOPPING', type:'shopping', audio:'6.80', stereo:false, videos:[{id:'oemoqEuJdFE',duration:14574,start:9000}] },
+            { num:23, freq:4160, pol:'H', name:'Access America', color:'#141414', accent:'#ccaa44', textColor:'#fff', program:'INFOMERCIALS', type:'shopping', audio:'6.80', stereo:false, videos:[{id:'oemoqEuJdFE',duration:14574,start:3000}] },
+            { num:24, freq:4180, pol:'V', name:'Skyvision', color:'#141414', accent:'#ccaa44', textColor:'#fff', program:'INFOMERCIALS', type:'shopping', audio:'6.80', stereo:false, videos:[{id:'oemoqEuJdFE',duration:14574,start:7000}] },
+        ]
+    },
+    {
+        name: 'Telstar 301', short: 'T1', pos: 96.0,
+        transponders: [
+            { num:1,  freq:3720, pol:'H', name:'Hughes TV Network', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'HUGHES TELEVISION', videos:[{id:'0tlwcZfJTQg',duration:10}] },
+            { num:2,  freq:3740, pol:'V', name:null },
+            { num:3,  freq:3760, pol:'H', name:'Warner Bros. TV Dist.', color:'#0a0a28', accent:'#4466cc', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'WB DISTRIBUTION FEED', videos:[{id:'ELnq8VFYITs',duration:441}] },
+            { num:4,  freq:3780, pol:'V', name:'ABC LA-NY Feed', color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'ABC \u2014 COAST TO COAST', videos:[{id:'BnGBal9UKfQ',duration:2454,start:500}] },
+            { num:5,  freq:3800, pol:'H', name:null },
+            { num:6,  freq:3820, pol:'V', name:null },
+            { num:7,  freq:3840, pol:'H', name:'ABC Feeds', color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'ABC \u2014 OCCASIONAL VIDEO', videos:[{id:'BnGBal9UKfQ',duration:2454,start:1500}] },
+            { num:8,  freq:3860, pol:'V', name:'Test \u2014 CBC Bars', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'440HZ TONE', type:'test', audio:'6.20', stereo:false, videos:[{id:'j91V1nktnH8',duration:4801,start:1000}] },
+            { num:9,  freq:3880, pol:'H', name:'Sea World Television', color:'#081624', accent:'#44aacc', textColor:'#fff', program:'MARINE LIFE SHOWCASE', type:'entertainment', audio:'6.80', stereo:false, videos:[{id:'PP16r2M8oCE',duration:2368}] },
+            { num:10, freq:3900, pol:'V', name:null },
+            { num:11, freq:3920, pol:'H', name:'ABC Feeds', color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'ABC \u2014 NETWORK FEEDS', videos:[{id:'BnGBal9UKfQ',duration:2454,start:1500}] },
+            { num:12, freq:3940, pol:'V', name:null },
+            { num:13, freq:3960, pol:'H', name:'SNS / INN Hughes', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'SATELLITE NEWS SERVICE', videos:[{id:'0tlwcZfJTQg',duration:10}] },
+            { num:14, freq:3980, pol:'V', name:'Test \u2014 HBO Uplink', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'TRANSMISSION TEST', type:'test', audio:'6.20', stereo:false, videos:[{id:'EMJhxWN3QvA',duration:600}] },
+            { num:15, freq:4000, pol:'H', name:'CBS Feeds / Skyvision', color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'CBS \u2014 NETWORK FEED', videos:[{id:'kE5_4vBscRs',duration:1738},{id:'LAazz7mIrEE',duration:1697}] },
+            { num:16, freq:4020, pol:'V', name:null },
+            { num:17, freq:4040, pol:'H', name:null },
+            { num:18, freq:4060, pol:'V', name:'Video Fashions', color:'#141414', accent:'#cc88aa', textColor:'#fff', program:'FASHION SHOWCASE', type:'entertainment', audio:'6.80', stereo:false, tagline:'Thursday at Noon ET', videos:[{id:'1Hvmk9vk5UQ',duration:13338}] },
+            { num:19, freq:4080, pol:'H', name:'Ag Day / PhoneVoter', color:'#0a1a0a', accent:'#44aa44', textColor:'#fff', program:'AGRICULTURE NEWS', type:'educational', audio:'6.20', stereo:false, tagline:'Farm Broadcasting', videos:[{id:'55DP2kimCIY',duration:1588}] },
+            { num:20, freq:4100, pol:'V', name:'Test \u2014 Bars & Tone', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'1KHZ TONE', type:'test', audio:'6.20', stereo:false, videos:[{id:'YCOabuKbJvo',duration:1801}] },
+            { num:21, freq:4120, pol:'H', name:'Best Picture Show', color:'#0a0a0a', accent:'#ccaa44', textColor:'#fff', program:'LATE NIGHT MOVIE', type:'entertainment', audio:'6.80', stereo:false, tagline:'Mon 8:30PM, M-Sat 12AM ET', videos:[{id:'oemoqEuJdFE',duration:14574,start:12000}] },
+            { num:22, freq:4140, pol:'V', name:'Test \u2014 Sound Check', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'AUDIO TEST', type:'test', audio:'6.20', stereo:true, videos:[{id:'_MIlqc9GTY4',duration:165}] },
+            { num:23, freq:4160, pol:'H', name:null },
+            { num:24, freq:4180, pol:'V', name:'Hughes TV Network', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'HUGHES TELEVISION', videos:[{id:'0tlwcZfJTQg',duration:10}] },
+        ]
+    },
+    {
+        name: 'Galaxy 4', short: 'G4', pos: 99.0,
+        transponders: [
+            { num:1,  freq:3720, pol:'H', name:null },
+            { num:2,  freq:3740, pol:'V', name:null },
+            { num:3,  freq:3760, pol:'H', name:null },
+            { num:4,  freq:3780, pol:'V', name:null },
+            { num:5,  freq:3800, pol:'H', name:null },
+            { num:6,  freq:3820, pol:'V', name:'National Christian Net', color:'#141428', accent:'#8888cc', textColor:'#fff', program:'CHRISTIAN PROGRAMMING', type:'religious', audio:'6.20', stereo:false, videos:[{id:'ko0rldI_880',duration:10667,start:8000}] },
+            { num:7,  freq:3840, pol:'H', name:'CBS Feeds', color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'CBS \u2014 OCCASIONAL VIDEO', videos:[{id:'kE5_4vBscRs',duration:1738},{id:'LAazz7mIrEE',duration:1697}] },
+            { num:8,  freq:3860, pol:'V', name:'Telemundo', color:'#240828', accent:'#ff44cc', textColor:'#fff', program:'TELEMUNDO', type:'entertainment', audio:'6.80', stereo:true, videos:[{id:'S4TJdkiD3RE',duration:3538,start:1000}] },
+            { num:9,  freq:3880, pol:'H', name:null },
+            { num:10, freq:3900, pol:'V', name:'WV State Telecourses', color:'#0a0a1a', accent:'#6688cc', textColor:'#fff', program:'TELECOURSES', type:'educational', audio:'6.20', stereo:false, videos:[{id:'W4RSwwMymj0',duration:3338,start:500}] },
+            { num:11, freq:3920, pol:'H', name:null },
+            { num:12, freq:3940, pol:'V', name:null },
+            { num:13, freq:3960, pol:'H', name:null },
+            { num:14, freq:3980, pol:'V', name:null },
+            { num:15, freq:4000, pol:'H', name:'World Harvest TV', color:'#141428', accent:'#8888cc', textColor:'#fff', program:'LESTER SUMRALL MINISTRIES', type:'religious', audio:'6.20', stereo:false, videos:[{id:'HI3kTGBNqZU',duration:3536},{id:'kOCNglp2jw8',duration:3536}] },
+            { num:16, freq:4020, pol:'V', name:'CBS West', color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'CBS WEST FEED', type:'network', audio:'6.80', stereo:true, videos:[{id:'kE5_4vBscRs',duration:1738}] },
+            { num:17, freq:4040, pol:'H', name:'CBS East', scrambled:true, color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'CBS EVENING NEWS', type:'network', audio:'6.80', stereo:true, videos:[{id:'cfgi_H10lMM',duration:3816}] },
+            { num:18, freq:4060, pol:'V', name:'CBS Feeds', color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'CBS \u2014 OCCASIONAL VIDEO', videos:[{id:'kE5_4vBscRs',duration:1738},{id:'LAazz7mIrEE',duration:1697}] },
+            { num:19, freq:4080, pol:'H', name:'CBS East', scrambled:true, color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'CBS LATE NIGHT', type:'network', audio:'6.80', stereo:true },
+            { num:20, freq:4100, pol:'V', name:'CBS East Feed', color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'CBS NETWORK', type:'network', audio:'6.80', stereo:true, videos:[{id:'kE5_4vBscRs',duration:1738},{id:'LAazz7mIrEE',duration:1697}] },
+            { num:21, freq:4120, pol:'H', name:'CBS Feeds', color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'KEYSTONE / CBS', videos:[{id:'kE5_4vBscRs',duration:1738},{id:'LAazz7mIrEE',duration:1697}] },
+            { num:22, freq:4140, pol:'V', name:null },
+            { num:23, freq:4160, pol:'H', name:null },
+            { num:24, freq:4180, pol:'V', name:'CBS News Feeds', color:'#0a0a1a', accent:'#aaa', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'CBS NEWS \u2014 FEEDS', videos:[{id:'LAazz7mIrEE',duration:1697}] },
+        ]
+    },
+    {
+        name: 'Spacenet 4', short: 'S4', pos: 101.0,
+        transponders: [
+            { num:1,  freq:3720, pol:'H', name:null },
+            { num:2,  freq:3740, pol:'V', name:null },
+            { num:3,  freq:3760, pol:'H', name:null },
+            { num:4,  freq:3780, pol:'V', name:'PBS Feeds', color:'#141408', accent:'#44aa44', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'PBS \u2014 OCCASIONAL VIDEO', videos:[{id:'W4RSwwMymj0',duration:3338,start:300}] },
+            { num:5,  freq:3800, pol:'H', name:null },
+            { num:6,  freq:3820, pol:'V', name:'PBS-B Feed', color:'#141408', accent:'#44aa44', textColor:'#fff', program:'PUBLIC BROADCASTING', type:'educational', audio:'6.80', stereo:true, tagline:'PBS Network Feed B', videos:[{id:'W4RSwwMymj0',duration:3338,start:1500}] },
+            { num:7,  freq:3840, pol:'H', name:null },
+            { num:8,  freq:3860, pol:'V', name:'PBS-A Feed', color:'#141408', accent:'#44aa44', textColor:'#fff', program:'PUBLIC BROADCASTING', type:'educational', audio:'6.80', stereo:true, tagline:'PBS Network Feed A', videos:[{id:'W4RSwwMymj0',duration:3338}] },
+            { num:9,  freq:3880, pol:'H', name:'3ABN', color:'#141428', accent:'#8888cc', textColor:'#fff', program:'THREE ANGELS BROADCASTING', type:'religious', audio:'6.20', stereo:false, videos:[{id:'pbBvEp4xScc',duration:3453}] },
+            { num:10, freq:3900, pol:'V', name:'PBS-C Feed', color:'#141408', accent:'#44aa44', textColor:'#fff', program:'PUBLIC BROADCASTING', type:'educational', audio:'6.80', stereo:true, tagline:'PBS Network Feed C', videos:[{id:'W4RSwwMymj0',duration:3338,start:2500}] },
+            { num:11, freq:3920, pol:'H', name:null },
+            { num:12, freq:3940, pol:'V', name:'PBS-D Feed', color:'#141408', accent:'#44aa44', textColor:'#fff', program:'PUBLIC BROADCASTING', type:'educational', audio:'6.80', stereo:true, tagline:'PBS Network Feed D', videos:[{id:'6vbFGn1QhVs',duration:13663}] },
+            { num:13, freq:3960, pol:'H', name:null },
+            { num:14, freq:3980, pol:'V', name:null },
+            { num:15, freq:4000, pol:'H', name:null },
+            { num:16, freq:4020, pol:'V', name:null },
+            { num:17, freq:4040, pol:'H', name:null },
+            { num:18, freq:4060, pol:'V', name:null },
+            { num:19, freq:4080, pol:'H', name:null },
+            { num:20, freq:4100, pol:'V', name:null },
+            { num:21, freq:4120, pol:'H', name:null },
+            { num:22, freq:4140, pol:'V', name:null },
+            { num:23, freq:4160, pol:'H', name:null },
+            { num:24, freq:4180, pol:'V', name:null },
+        ]
+    },
+    {
+        name: 'Anik E2', short: 'E2', pos: 107.3,
+        transponders: [
+            { num:1,  freq:3720, pol:'H', name:'Weather Network', color:'#081624', accent:'#44aaff', textColor:'#fff', program:'CURRENT CONDITIONS', type:'entertainment', audio:'6.20', stereo:false, tagline:'M\u00e9t\u00e9oM\u00e9dia', videos:[{id:'G6mbXHyBY3s',duration:1465},{id:'u8Z0B968GRc',duration:1094}] },
+            { num:2,  freq:3740, pol:'V', name:'TSN', scrambled:true, color:'#080818', accent:'#4488ff', textColor:'#fff', program:'SPORTSDESK', type:'sports', audio:'6.80', stereo:true, tagline:'The Sports Network' },
+            { num:3,  freq:3760, pol:'H', name:'CBC Feeds', color:'#240808', accent:'#cc2222', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'CBC \u2014 OCCASIONAL VIDEO', videos:[{id:'NgPMeDgDJOs',duration:398}] },
+            { num:4,  freq:3780, pol:'V', name:'The Movie Network', scrambled:true, color:'#0a0a28', accent:'#6644cc', textColor:'#fff', program:'SCHINDLER\u2019S LIST (1993)', type:'premium', audio:'6.80', stereo:true },
+            { num:5,  freq:3800, pol:'H', name:'CBC Feeds', color:'#240808', accent:'#cc2222', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'CBC \u2014 REMOTE STANDBY', videos:[{id:'cVzNZyLjGWk',duration:337}] },
+            { num:6,  freq:3820, pol:'V', name:'MuchMusic', color:'#160828', accent:'#ff44ff', textColor:'#fff', program:'ELECTRIC CIRCUS', type:'music', audio:'6.80', stereo:true, tagline:"Canada\u2019s Music Station", videos:[{id:'LJAJOmQsJb0',duration:4306}] },
+            { num:7,  freq:3840, pol:'H', name:'CBC / BBC News', color:'#240808', accent:'#cc4444', textColor:'#fff', program:'BBC WORLD SERVICE', type:'news', audio:'6.80', stereo:false, tagline:'M-F 4:54 & 8:25AM ET', videos:[{id:'cVzNZyLjGWk',duration:337},{id:'P4g3h9U4PoQ',duration:35}] },
+            { num:8,  freq:3860, pol:'V', name:'CHCH Hamilton', scrambled:true, color:'#141414', accent:'#888', textColor:'#fff', program:'LOCAL NEWS', type:'network', audio:'6.80', stereo:false },
+            { num:9,  freq:3880, pol:'H', name:'WDIV Detroit NBC', scrambled:true, color:'#0a0a28', accent:'#ffaa00', textColor:'#fff', program:'NBC 4 DETROIT', type:'network', audio:'6.80', stereo:true },
+            { num:10, freq:3900, pol:'V', name:'WXYZ Detroit ABC', scrambled:true, color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'ABC 7 DETROIT', type:'network', audio:'6.80', stereo:true },
+            { num:11, freq:3920, pol:'H', name:'CBC North West', color:'#240808', accent:'#cc2222', textColor:'#fff', program:'HOCKEY NIGHT IN CANADA', type:'network', audio:'6.80', stereo:true, tagline:'Canadian Broadcasting Corporation', videos:[{id:'cVzNZyLjGWk',duration:337},{id:'qvfvnz_cAfU',duration:73}] },
+            { num:12, freq:3940, pol:'V', name:'Global TV', color:'#081408', accent:'#22aa22', textColor:'#fff', program:'ENTERTAINMENT TONIGHT CANADA', type:'network', audio:'6.80', stereo:true, videos:[{id:'xnvvvrH5l8w',duration:633},{id:'rmZAWNFWO_U',duration:769}] },
+            { num:13, freq:3960, pol:'H', name:'Superchannel', scrambled:true, color:'#0a0a28', accent:'#cc8800', textColor:'#fff', program:'THE FUGITIVE (1993)', type:'premium', audio:'6.80', stereo:true },
+            { num:14, freq:3980, pol:'V', name:'CFTM Montr\u00e9al', color:'#0a0a28', accent:'#2244cc', textColor:'#fff', program:'TCTV', type:'network', audio:'6.80', stereo:true, tagline:'T\u00e9l\u00e9vision Quatre-Saisons', videos:[{id:'rmZAWNFWO_U',duration:769}] },
+            { num:15, freq:4000, pol:'H', name:'CBFT Montr\u00e9al SRC', color:'#080828', accent:'#2244cc', textColor:'#fff', program:'LE T\u00c9L\u00c9JOURNAL', type:'network', audio:'6.80', stereo:true, tagline:'Soci\u00e9t\u00e9 Radio-Canada', videos:[{id:'rmZAWNFWO_U',duration:769}] },
+            { num:16, freq:4020, pol:'V', name:'CBC Newsworld', scrambled:true, color:'#240808', accent:'#cc4444', textColor:'#fff', program:'THE NATIONAL', type:'news', audio:'6.80', stereo:true },
+            { num:17, freq:4040, pol:'H', name:'CBC / VISNews', color:'#180808', accent:'#aa2222', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'CBC \u2014 VISNEWS FEED', videos:[{id:'NgPMeDgDJOs',duration:398}] },
+            { num:18, freq:4060, pol:'V', name:'CITV Edmonton', scrambled:true, color:'#141414', accent:'#888', textColor:'#fff', program:'LOCAL NEWS', type:'network', audio:'6.80', stereo:false },
+            { num:19, freq:4080, pol:'H', name:'CBC North East', color:'#240808', accent:'#cc2222', textColor:'#fff', program:'CBC NORTH', type:'network', audio:'6.80', stereo:true, tagline:'Canadian Broadcasting Corporation', videos:[{id:'cVzNZyLjGWk',duration:337}] },
+            { num:20, freq:4100, pol:'V', name:null },
+        ]
+    },
+    {
+        name: 'Galaxy 5', short: 'G5', pos: 125.0,
+        transponders: [
+            { num:1,  freq:3720, pol:'H', name:'Disney Channel East', scrambled:true, color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'ADVENTURES IN WONDERLAND', type:'premium', audio:'6.80', stereo:true, videos:[{id:'X3HcL4-2QGE',duration:888},{id:'wniDCiLSgyk',duration:530}] },
+            { num:2,  freq:3740, pol:'V', name:'Playboy / Satellite City', scrambled:true, color:'#141414', accent:'#888', textColor:'#fff', program:'ADULT PROGRAMMING', type:'premium', audio:'6.80', stereo:false, videos:[{id:'jB26fv_fWcs',duration:1295},{id:'0-SiH2gdgMQ',duration:675},{id:'b8lW5Gau990',duration:293}] },
+            { num:3,  freq:3760, pol:'H', name:'TBN', color:'#141428', accent:'#8888cc', textColor:'#fff', program:'PRAISE THE LORD', type:'religious', audio:'6.20', stereo:false, tagline:'Trinity Broadcasting Network', videos:[{id:'ko0rldI_880',duration:10667},{id:'3tabgMitNVk',duration:84}] },
+            { num:4,  freq:3780, pol:'V', name:'Sci-Fi Channel', color:'#080818', accent:'#4488aa', textColor:'#fff', program:'QUANTUM LEAP', type:'entertainment', audio:'6.80', stereo:true, tagline:'The Sci-Fi Channel', videos:[{id:'GW5DsNBT0yY',duration:1704}] },
+            { num:5,  freq:3800, pol:'H', name:'CNN', color:'#280808', accent:'#cc0000', textColor:'#fff', program:'LARRY KING LIVE', type:'news', audio:'6.80', stereo:true, tagline:'Cable News Network', ticker:'WHITEWATER HEARINGS CONTINUE \u2022 NAFTA TAKES EFFECT JAN 1 \u2022 LORENA BOBBITT TRIAL \u2022 TONYA HARDING INVESTIGATION \u2022 DOW AT 3,978', videos:[{id:'mEMjtQlXyLM',duration:5975,start:120},{id:'aPfpZZsWs70',duration:6776},{id:'rdmXB-OYnS4',duration:2651},{id:'WyDBh2NdeuU',duration:5537},{id:'M9OZb85mT8M',duration:22151},{id:'5X-AqZkgI0g',duration:7353},] },
+            { num:6,  freq:3820, pol:'V', name:'TBS', color:'#080818', accent:'#2266bb', textColor:'#fff', program:'THE ANDY GRIFFITH SHOW', type:'entertainment', audio:'6.80', stereo:false, tagline:'The Superstation', videos:[{id:'AuXYcBz6mBM',duration:1601,start:30},{id:'iZSXWlUdYts',duration:3689},{id:'RXNVdyDGaU8',duration:814},{id:'MaAN6TylSZg',duration:861},{id:'A1sJYxJH_rw',duration:3365},{id:'cTiDVkemqc4',duration:5050}] },
+            { num:7,  freq:3840, pol:'H', name:'WGN', color:'#141414', accent:'#aaa', textColor:'#fff', program:'BOZO SUPER SUNDAY', type:'entertainment', audio:'6.80', stereo:true, tagline:'Chicago Superstation', videos:[{id:'QHucRHAHyFk',duration:1154}] },
+            { num:8,  freq:3860, pol:'V', name:'HBO West', scrambled:true, color:'#160828', accent:'#9b59b6', textColor:'#fff', program:'PHILADELPHIA (1993)', type:'premium', audio:'6.80', stereo:true, videos:[{id:'k_xRP3B2YzQ',duration:32},{id:'NtzUlSZTSeA',duration:37}] },
+            { num:9,  freq:3880, pol:'H', name:'ESPN', color:'#280808', accent:'#cc2222', textColor:'#fff', program:'SPORTSCENTER', type:'sports', audio:'6.80', stereo:true, videos:[{id:'mQ8hp41jFbg',duration:1797},{id:'d3E4_wpdBLo',duration:1899},{id:'ncJCX3QK9zw',duration:4916},{id:'hY_BwJcrK4g',duration:4201},{id:'vhxBT-kycyI',duration:1696},{id:'qZrLsUqQCHg',duration:6408}] },
+            { num:10, freq:3900, pol:'V', name:'MOR Music TV', color:'#0a0a1a', accent:'#6688cc', textColor:'#fff', program:'EASY LISTENING', type:'music', audio:'6.80', stereo:true, videos:[{id:'08WE4ca1e-M',duration:1157,maxDur:150}] },
+            { num:11, freq:3920, pol:'H', name:'Family Channel East', color:'#081624', accent:'#44aacc', textColor:'#fff', program:'THE 700 CLUB', type:'entertainment', audio:'6.80', stereo:false, tagline:'The Family Channel', videos:[{id:'RRPgfv-g7T4',duration:381}] },
+            { num:12, freq:3940, pol:'V', name:'Discovery Channel West', color:'#081624', accent:'#1a8cff', textColor:'#fff', program:'BEYOND 2000', type:'entertainment', audio:'6.80', stereo:true, tagline:'Explore Your World', videos:[{id:'Rnyas0Ib_o8',duration:1960},{id:'OhUwwr1sbwQ',duration:1804}] },
+            { num:13, freq:3960, pol:'H', name:'CNBC', color:'#001616', accent:'#00bbbb', textColor:'#fff', program:'MARKET WRAP', type:'news', audio:'6.80', stereo:true, tagline:'First in Business Worldwide', ticker:'DOW 3,978 +12.50 \u2022 S&P 466 +1.80 \u2022 NASDAQ 803 +4.20 \u2022 T-BONDS 6.35% \u2022 GOLD $383.40', videos:[{id:'Zf_0GhbyiFU',duration:256},{id:'ydCXiPlXUQY',duration:3475}] },
+            { num:14, freq:3980, pol:'V', name:'ESPN2', color:'#280808', accent:'#cc4422', textColor:'#fff', program:'MAX OUT', type:'sports', audio:'6.80', stereo:true, tagline:'The Deuce', videos:[{id:'IcI12OV-4Lg',duration:9250}] },
+            { num:15, freq:4000, pol:'H', name:'HBO East', scrambled:true, color:'#160828', accent:'#9b59b6', textColor:'#fff', program:'THE PELICAN BRIEF (1993)', type:'premium', audio:'6.80', stereo:true, videos:[{id:'k_xRP3B2YzQ',duration:32},{id:'B1snFyV-1Yc',duration:170}] },
+            { num:16, freq:4020, pol:'V', name:'Cinemax West', scrambled:true, color:'#081624', accent:'#3498db', textColor:'#fff', program:'DEMOLITION MAN (1993)', type:'premium', audio:'6.80', stereo:true, videos:[{id:'GxyxPWX1LcY',duration:36},{id:'MQgRg53Xk-o',duration:170}] },
+            { num:17, freq:4040, pol:'H', name:'TNT', color:'#141414', accent:'#cc8800', textColor:'#fff', program:'WCW SATURDAY NIGHT', type:'entertainment', audio:'6.80', stereo:true, tagline:'We Know Drama', videos:[{id:'pPl_LuCAXOQ',duration:5519,start:60},{id:'flFgfPBr8Gs',duration:3093},{id:'rsy3xQeAu7E',duration:3296}] },
+            { num:18, freq:4060, pol:'V', name:'TNN', color:'#161608', accent:'#cc8844', textColor:'#fff', program:'NASHVILLE NOW', type:'music', audio:'6.80', stereo:true, tagline:'The Nashville Network', videos:[{id:'BIaDdgpsF-M',duration:860},{id:'MNjdSI0XkmQ',duration:7952}] },
+            { num:19, freq:4080, pol:'H', name:'USA East', color:'#080828', accent:'#2244cc', textColor:'#fff', program:'SILK STALKINGS', type:'entertainment', audio:'6.80', stereo:true, tagline:'USA Network', videos:[{id:'JLvVDfokf_8',duration:1337,start:60},{id:'5fcOoVnUHws',duration:5041},{id:'YisSdQMPs1w',duration:1670},{id:'DbmRa5T5ebs',duration:722}] },
+            { num:20, freq:4100, pol:'V', name:'BET', color:'#160816', accent:'#cc44cc', textColor:'#fff', program:'RAP CITY: THE BASEMENT', type:'entertainment', audio:'6.80', stereo:true, tagline:'Black Entertainment Television', videos:[{id:'F6xkQCgkxd0',duration:4631}] },
+            { num:21, freq:4120, pol:'H', name:'Mind Extension University', color:'#080828', accent:'#6688cc', textColor:'#fff', program:'PERSONAL COMPUTING', type:'educational', audio:'6.20', stereo:false, tagline:'Knowledge TV', videos:[{id:'KYUdE5mOZuU',duration:6994}] },
+            { num:22, freq:4140, pol:'V', name:'CNN Headline News', color:'#280808', accent:'#ee2222', textColor:'#fff', program:'HEADLINE NEWS', type:'news', audio:'6.80', stereo:true, ticker:'NORTHRIDGE EARTHQUAKE KILLS 57 \u2022 NANCY KERRIGAN ATTACK \u2022 BRADY BILL SIGNED INTO LAW \u2022 SPACE SHUTTLE DISCOVERY LAUNCHES', videos:[{id:'aPfpZZsWs70',duration:6776,start:300},{id:'hzUFpF5o0RU',duration:118},{id:'9N_FlLK69o4',duration:200},{id:'ZtBiX4s3yq4',duration:1247}] },
+            { num:23, freq:4160, pol:'H', name:'A&E', color:'#141414', accent:'#aaa', textColor:'#fff', program:'BIOGRAPHY: ELVIS PRESLEY', type:'entertainment', audio:'6.80', stereo:true, tagline:'Arts & Entertainment', videos:[{id:'9gqdqtv14mE',duration:2811},{id:'P4w5CwCAq20',duration:707},{id:'frQEgjJRgRg',duration:2644}] },
+                        { num:24,  freq:4180, pol:'V', name:'NASA TV', color:'#000022', accent:'#4488cc', textColor:'#fff', program:'MISSION CONTROL — HOUSTON', type:'educational', audio:'6.80', stereo:false, tagline:'STS-64 SAFER Spacewalk', videos:[{id:'4yWOK1Ib4dI',duration:8233},{id:'TUBKSq0WYoA',duration:712}]  },
+        ]
+    },
+    {
+        name: 'Satcom C3', short: 'C3', pos: 131.0,
+        transponders: [
+            { num:1,  freq:3720, pol:'H', name:'Family Channel West', color:'#081624', accent:'#44aacc', textColor:'#fff', program:'YOUNG RIDERS', type:'entertainment', audio:'6.80', stereo:true, tagline:'The Family Channel', videos:[{id:'RRPgfv-g7T4',duration:381}] },
+            { num:2,  freq:3740, pol:'V', name:'TLC', color:'#160824', accent:'#cc44ff', textColor:'#fff', program:'HOMETIME', type:'educational', audio:'6.80', stereo:true, tagline:'The Learning Channel', videos:[{id:'08WE4ca1e-M',duration:1157,maxDur:150}] },
+            { num:3,  freq:3760, pol:'H', name:'Viewers Choice PPV', color:'#0a0a0a', accent:'#ccaa44', textColor:'#fff', program:'ORDER NOW — CALL YOUR CABLE OPERATOR', type:'shopping', audio:'6.80', stereo:true, videos:[{id:'jQjqtEZESzM',duration:1165},{id:'At9FlUCn0uo',duration:107},{id:'Qj2ihfq7y8c',duration:379}] },
+            { num:4,  freq:3780, pol:'V', name:'Lifetime West', color:'#240816', accent:'#cc4488', textColor:'#fff', program:'INTIMATE PORTRAIT', type:'entertainment', audio:'6.80', stereo:true, tagline:'Television for Women', videos:[{id:'pe96PDJK6W0',duration:754},{id:'6QtI6TwNDnw',duration:149}] },
+            { num:5,  freq:3800, pol:'H', name:'Faith & Values / VISN', color:'#141428', accent:'#8888cc', textColor:'#fff', program:'INTERFAITH DIALOGUE', type:'religious', audio:'6.20', stereo:false, videos:[{id:'ko0rldI_880',duration:10667,start:5000}] },
+            { num:6,  freq:3820, pol:'V', name:'Court TV', color:'#161608', accent:'#aaaa44', textColor:'#fff', program:'TRIAL STORY', type:'news', audio:'6.80', stereo:false, tagline:'The Court Television Network', videos:[{id:'5huCjfZ6d3U',duration:2714},{id:'bkrxarLhX7A',duration:2590},{id:'LWhx93b-Uow',duration:17181}] },
+            { num:7,  freq:3840, pol:'H', name:'C-SPAN', color:'#141428', accent:'#6666aa', textColor:'#ddd', program:'U.S. HOUSE OF REPRESENTATIVES', type:'educational', audio:'6.20', stereo:false, videos:[{id:'TkjtnteqL64',duration:10296,start:3000}] },
+            { num:8,  freq:3860, pol:'V', name:'QVC Fashion Channel', color:'#080828', accent:'#4466cc', textColor:'#fff', program:'FASHION SHOWCASE', type:'shopping', audio:'6.80', stereo:false, tagline:'CALL 1-800-345-1515', videos:[{id:'50mhYBMHBfk',duration:8892,start:300},{id:'sC2uMxL0Wqc',duration:2714},{id:'9o671jl-HKk',duration:11588}] },
+            { num:9,  freq:3880, pol:'H', name:'Digital Cable Radio', color:'#0a0a0a', accent:'#44dddd', textColor:'#0ff', program:'MUSIC SERVICE', type:'music', audio:'6.20', stereo:true, videos:[{id:'HgD7TMtF1xk',duration:2836}] },
+            { num:10, freq:3900, pol:'V', name:'Home Shopping Club', color:'#161608', accent:'#cccc44', textColor:'#fff', program:'ELECTRONICS TODAY', type:'shopping', audio:'6.80', stereo:false, tagline:'CALL 1-800-284-3100', videos:[{id:'ttpuvSoop6g',duration:4087,start:60}] },
+                        { num:11,  freq:3920, pol:'H', name:'Prime Network', color:'#0a1a0a', accent:'#44aa44', textColor:'#fff', program:'REGIONAL SPORTS', type:'sports', audio:'6.80', stereo:true , videos:[{id:'reAxRzormg0',duration:9585,start:5000}] },
+                        { num:12,  freq:3940, pol:'V', name:'Future: History Channel', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'COMING SOON', type:'entertainment', audio:'6.20', stereo:false, tagline:'Launching 1995' , videos:[{id:'6vbFGn1QhVs',duration:13663,start:5000}] },
+            { num:13, freq:3960, pol:'H', name:'The Weather Channel', color:'#081624', accent:'#44aaff', textColor:'#fff', program:'LOCAL ON THE 8s', type:'entertainment', audio:'6.80', stereo:false, tagline:'Your Weather Authority', videos:[{id:'bYXGYf3uTrw',duration:789},{id:'RC5z6rUswdA',duration:11754},{id:'pmwkSQ4zx7k',duration:2076},{id:'geV2p_Zkt_M',duration:644},{id:'5Y32e42dMgM',duration:7249}] },
+            { num:14, freq:3980, pol:'V', name:'NESN', color:'#0a1a0a', accent:'#44aa44', textColor:'#fff', program:'BOSTON RED SOX BASEBALL', type:'sports', audio:'6.80', stereo:true, tagline:'New England Sports Network', videos:[{id:'E_Lv8GusTnE',duration:6322},{id:'ZASOgPZoxvc',duration:663}] },
+            { num:15, freq:4000, pol:'H', name:'Showtime East', scrambled:true, color:'#240808', accent:'#cc2244', textColor:'#fff', program:'THE FIRM (1993)', type:'premium', audio:'6.80', stereo:true, videos:[{id:'IlEGvqTJnQk',duration:432},{id:'i0EWWaMqJWk',duration:1940}] },
+            { num:16, freq:4020, pol:'V', name:'MTV West', color:'#141414', accent:'#ffdd00', textColor:'#fff', program:'BEAVIS AND BUTT-HEAD', type:'music', audio:'6.80', stereo:true, tagline:'Music Television', videos:[{id:'u24qFvvR1V0',duration:2803},{id:'oN9CeZWkbUw',duration:993},{id:'wqS4Jqn5rmg',duration:1454},{id:'jIBN4FKM3SQ',duration:1916},{id:'bZttp_KSYHo',duration:5623}] },
+            { num:17, freq:4040, pol:'H', name:'The Movie Channel East', scrambled:true, color:'#080828', accent:'#4444cc', textColor:'#fff', program:'CLIFFHANGER (1993)', type:'premium', audio:'6.80', stereo:true, videos:[{id:'2Byle7-67qo',duration:327},{id:'UspwBKRzhyk',duration:65},{id:'KqmwcwGRFVI',duration:438}] },
+            { num:18, freq:4060, pol:'V', name:'Nickelodeon West', color:'#161608', accent:'#ff8800', textColor:'#fff', program:'RUGRATS', type:'kids', audio:'6.80', stereo:true, tagline:"Kids\u2019 Network", videos:[{id:'dO7Iw5vh1s4',duration:3716,start:60},{id:'IFa-P8RLlrI',duration:2961},{id:'zMx9IUv_Zl0',duration:2645},{id:'n1A1mktLCF0',duration:573},{id:'hlye_ByLyLc',duration:1465}] },
+            { num:19, freq:4080, pol:'H', name:'Flix', scrambled:true, color:'#0a0a1a', accent:'#6688aa', textColor:'#fff', program:'THE BREAKFAST CLUB (1985)', type:'premium', audio:'6.80', stereo:true, videos:[{id:'KEIwo4P9EWY',duration:151},{id:'8GnXfo-H8nU',duration:684}] },
+            { num:20, freq:4100, pol:'V', name:null },
+            { num:21, freq:4120, pol:'H', name:'Comedy Central East', color:'#141414', accent:'#ffaa00', textColor:'#fff', program:'MYSTERY SCIENCE THEATER 3000', type:'entertainment', audio:'6.80', stereo:true, tagline:'Ha!', videos:[{id:'4PJRzYiPmCw',duration:1163,start:30},{id:'ZqOgANyx3UA',duration:1986},{id:'8OMwzUZQywc',duration:533},{id:'MIjlvo5-cCs',duration:475}] },
+            { num:22, freq:4140, pol:'V', name:'SportsChannel America', color:'#0a1a0a', accent:'#44cc44', textColor:'#fff', program:'SPORTS TONIGHT', type:'sports', audio:'6.80', stereo:true, videos:[{id:'1HBgJojaOGQ',duration:1932,maxDur:150}] },
+            { num:23, freq:4160, pol:'H', name:'E! Entertainment', color:'#141414', accent:'#ddd', textColor:'#111', program:'TALK SOUP WITH GREG KINNEAR', type:'entertainment', audio:'6.80', stereo:true, videos:[{id:'_IccRt_-vuw',duration:1323},{id:'qTdE-LgUEyw',duration:1322},{id:'rU3PECuIheI',duration:1319}] },
+            { num:24, freq:4180, pol:'V', name:null },
+        ]
+    },
+    {
+        name: 'Galaxy 1', short: 'G1', pos: 133.0,
+        transponders: [
+            { num:1,  freq:3720, pol:'H', name:'Comedy Central West', color:'#141414', accent:'#ffaa00', textColor:'#fff', program:'POLITICALLY INCORRECT', type:'entertainment', audio:'6.80', stereo:true, tagline:'Ha!', videos:[{id:'4PJRzYiPmCw',duration:560,start:600},{id:'ZqOgANyx3UA',duration:1986}] },
+            { num:2,  freq:3740, pol:'V', name:'Action PPV', color:'#0a0a0a', accent:'#cc8844', textColor:'#fff', program:'ORDER NOW — 1-800-885-4000', type:'shopping', audio:'6.80', stereo:true, videos:[{id:'eOP0CmrNT2A',duration:1491},{id:'fdhtsuGBuAI',duration:141}] },
+            { num:3,  freq:3760, pol:'H', name:'Encore', scrambled:true, color:'#180808', accent:'#cc4444', textColor:'#fff', program:'BUTCH CASSIDY AND THE SUNDANCE KID (1969)', type:'premium', audio:'6.80', stereo:true, videos:[{id:'B1snFyV-1Yc',duration:170}] },
+            { num:4,  freq:3780, pol:'V', name:'TV Food Network', color:'#161608', accent:'#ccaa44', textColor:'#fff', program:'EMERIL LIVE', type:'entertainment', audio:'6.80', stereo:true, tagline:'Food Network', videos:[{id:'08WE4ca1e-M',duration:1157,maxDur:150}] },
+            { num:5,  freq:3800, pol:'H', name:'All News Channel', color:'#0a0a1a', accent:'#aaa', textColor:'#fff', program:'NEWS UPDATE', type:'news', audio:'6.80', stereo:false, videos:[{id:'1tfJAJGR_iM',duration:2565,maxDur:150}] },
+            { num:6,  freq:3820, pol:'V', name:'Univision', color:'#240828', accent:'#ff44cc', textColor:'#fff', program:'S\u00c1BADO GIGANTE', type:'entertainment', audio:'6.80', stereo:true, tagline:'La Cadena Hispana', videos:[{id:'GmPQHy2xJYA',duration:2551},{id:'cRYjMch8edY',duration:2480},{id:'y86YT4KQzg8',duration:227}] },
+            { num:7,  freq:3840, pol:'H', name:'Turner Classic Movies', color:'#0a0a0a', accent:'#999', textColor:'#fff', program:'CASABLANCA (1942)', type:'entertainment', audio:'6.80', stereo:false, tagline:'Coming April 14, 1994', videos:[{id:'6jgZfxvlUek',duration:108},{id:'o1PE8ATRkHU',duration:46}] },
+            { num:8,  freq:3860, pol:'V', name:'Cartoon Network', color:'#080808', accent:'#44dddd', textColor:'#fff', program:'SPACE GHOST COAST TO COAST', type:'kids', audio:'6.80', stereo:true, tagline:'The Best Place for Cartoons', videos:[{id:'ES7ctnbjNuA',duration:9900,start:120},{id:'KCVTgeFu03o',duration:315},{id:'-EUNOnxY6IY',duration:647},{id:'WpAQmKyxXs4',duration:587}] },
+            { num:9,  freq:3880, pol:'H', name:'ESPN2 / ESPN Alt', color:'#280808', accent:'#cc4422', textColor:'#fff', program:'ALTERNATE FEED', type:'sports', audio:'6.80', stereo:true, videos:[{id:'IcI12OV-4Lg',duration:9250,start:3000}] },
+            { num:10, freq:3900, pol:'V', name:'Flix', scrambled:true, color:'#0a0a1a', accent:'#6688aa', textColor:'#fff', program:'STAND BY ME (1986)', type:'premium', audio:'6.80', stereo:true },
+            { num:11, freq:3920, pol:'H', name:'EWTN', color:'#141428', accent:'#8888cc', textColor:'#fff', program:'MOTHER ANGELICA LIVE', type:'religious', audio:'6.20', stereo:false, tagline:'Eternal Word Television Network', videos:[{id:'8bTcPCyaoBw',duration:3242},{id:'X277uoboX5c',duration:3036},{id:'fqmo-KEOx2c',duration:3427}] },
+            { num:12, freq:3940, pol:'V', name:'ValueVision', color:'#161608', accent:'#cccc44', textColor:'#fff', program:'GEMSTONE GALLERY', type:'shopping', audio:'6.80', stereo:false, tagline:'CALL 1-800-365-0999', videos:[{id:'50mhYBMHBfk',duration:8892,start:2000}] },
+            { num:13, freq:3960, pol:'H', name:null },
+                        { num:14,  freq:3980, pol:'V', name:'Test — Color Bars', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'TEST PATTERN', type:'test', audio:'6.20', stereo:false, videos:[{id:'EMJhxWN3QvA',duration:600}] },
+            { num:15,  freq:4000, pol:'H', name:'Infomercial Channel', color:'#141414', accent:'#ccaa44', textColor:'#fff', program:'PASTA MAKER', type:'shopping', audio:'6.80', stereo:false, videos:[{id:'B13TnJgMvtY',duration:1773},{id:'1HCRjCnIDM4',duration:1718}] },
+            { num:16, freq:4020, pol:'V', name:'Showtime 2', scrambled:true, color:'#240808', accent:'#cc2244', textColor:'#fff', program:'IN THE LINE OF FIRE (1993)', type:'premium', audio:'6.80', stereo:true, videos:[{id:'IlEGvqTJnQk',duration:432,start:200},{id:'i0EWWaMqJWk',duration:1940,start:500}] },
+            { num:17, freq:4040, pol:'H', name:'Inspirational Network', color:'#141428', accent:'#8888cc', textColor:'#fff', program:'WORSHIP HOUR', type:'religious', audio:'6.20', stereo:false, videos:[{id:'ko0rldI_880',duration:10667,start:2000}] },
+                        { num:18,  freq:4060, pol:'V', name:'Satellite Bulletin', color:'#0a0a0a', accent:'#44aa44', textColor:'#0f0', program:'COMMUNITY INFORMATION', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'QitkfJgCWsU',duration:2090}]  },
+            { num:19, freq:4080, pol:'H', name:'Cinemax East', scrambled:true, color:'#081624', accent:'#3498db', textColor:'#fff', program:'DEMOLITION MAN (1993)', type:'premium', audio:'6.80', stereo:true, videos:[{id:'GxyxPWX1LcY',duration:36},{id:'MQgRg53Xk-o',duration:170}] },
+            { num:20, freq:4100, pol:'V', name:'Galavision', color:'#240828', accent:'#ff44cc', textColor:'#fff', program:'PRIMER IMPACTO', type:'entertainment', audio:'6.80', stereo:true, videos:[{id:'GmPQHy2xJYA',duration:2551,start:500},{id:'S4TJdkiD3RE',duration:3538}] },
+            { num:21, freq:4120, pol:'H', name:'USA West', color:'#080828', accent:'#2244cc', textColor:'#fff', program:'WINGS', type:'entertainment', audio:'6.80', stereo:true, tagline:'USA Network', videos:[{id:'5fcOoVnUHws',duration:3000,start:2000},{id:'YisSdQMPs1w',duration:1669}] },
+            { num:22, freq:4140, pol:'V', name:'Nostalgia TV', color:'#0a0a0a', accent:'#999', textColor:'#fff', program:'THE ED SULLIVAN SHOW', type:'entertainment', audio:'6.80', stereo:false, videos:[{id:'08WE4ca1e-M',duration:1157,maxDur:150}] },
+            { num:23, freq:4160, pol:'H', name:'HBO East', scrambled:true, color:'#160828', accent:'#9b59b6', textColor:'#fff', program:'MRS. DOUBTFIRE (1993)', type:'premium', audio:'6.80', stereo:true, videos:[{id:'B1snFyV-1Yc',duration:170}] },
+            { num:24, freq:4180, pol:'V', name:'Disney Channel West', scrambled:true, color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'GARGOYLES', type:'premium', audio:'6.80', stereo:true, videos:[{id:'X3HcL4-2QGE',duration:888,start:200},{id:'wniDCiLSgyk',duration:530}] },
+        ]
+    },
+    {
+        name: 'Satcom C4', short: 'C4', pos: 135.0,
+        transponders: [
+            { num:1,  freq:3720, pol:'H', name:'AMC', color:'#180808', accent:'#cc4444', textColor:'#fff', program:'REAR WINDOW (1954)', type:'entertainment', audio:'6.80', stereo:true, tagline:'American Movie Classics', videos:[{id:'MCxmwieh43Y',duration:967},{id:'j5jn7fu_zos',duration:830},{id:'DmZG5CVbYfs',duration:627}] },
+            { num:2,  freq:3740, pol:'V', name:'Request 2 PPV', color:'#0a0a0a', accent:'#cc8844', textColor:'#fff', program:'REQUEST TV — CALL TO ORDER', type:'shopping', audio:'6.80', stereo:true, videos:[{id:'GN9r-WC7K00',duration:744},{id:'x-rl_EEnaW4',duration:397},{id:'0CRA4W6LyRY',duration:1884}] },
+            { num:3,  freq:3760, pol:'H', name:'Nickelodeon East', color:'#161608', accent:'#ff8800', textColor:'#fff', program:'RUGRATS', type:'kids', audio:'6.80', stereo:true, tagline:'Nick', videos:[{id:'dO7Iw5vh1s4',duration:3716,start:120},{id:'IFa-P8RLlrI',duration:2961},{id:'hlye_ByLyLc',duration:1465}] },
+            { num:4,  freq:3780, pol:'V', name:'Lifetime East', color:'#240816', accent:'#cc4488', textColor:'#fff', program:'UNSOLVED MYSTERIES', type:'entertainment', audio:'6.80', stereo:true, tagline:'Television for Women', videos:[{id:'pe96PDJK6W0',duration:754},{id:'6QtI6TwNDnw',duration:149}] },
+            { num:5,  freq:3800, pol:'H', name:'Deutsche Welle', color:'#0a0a28', accent:'#4466cc', textColor:'#fff', program:'JOURNAL', type:'entertainment', audio:'6.80', stereo:false, tagline:'German Television', videos:[{id:'0hPlD5gyBNk',duration:383},{id:'4-_Tp-sOvPE',duration:51}] },
+            { num:6,  freq:3820, pol:'V', name:'MSG', color:'#0a1a0a', accent:'#44aa44', textColor:'#fff', program:'NEW YORK KNICKS BASKETBALL', type:'sports', audio:'6.80', stereo:true, tagline:'Madison Square Garden Network', videos:[{id:'uEuZOYdsJkM',duration:7515},{id:'hLfS2OBsiag',duration:83}] },
+            { num:7,  freq:3840, pol:'H', name:'Bravo', color:'#0a0a1a', accent:'#cc4444', textColor:'#fff', program:'INSIDE THE ACTORS STUDIO', type:'entertainment', audio:'6.80', stereo:true, videos:[{id:'MCxmwieh43Y',duration:967},{id:'DmZG5CVbYfs',duration:627}] },
+            { num:8,  freq:3860, pol:'V', name:'Prevue Channel', color:'#0a0a0a', accent:'#44dddd', textColor:'#fff', program:'TONIGHT ON CABLE', type:'entertainment', audio:'6.80', stereo:false, tagline:'Your Guide to Cable TV', videos:[{id:'FK1lHWRFWB8',duration:4746},{id:'g-g2TMx9gO8',duration:331}] },
+            { num:9,  freq:3880, pol:'H', name:'QVC', color:'#080828', accent:'#4466cc', textColor:'#fff', program:'DIAMONIQUE JEWELRY HOUR', type:'shopping', audio:'6.80', stereo:false, tagline:'CALL 1-800-345-1515', videos:[{id:'50mhYBMHBfk',duration:8892,start:600},{id:'sC2uMxL0Wqc',duration:2714}] },
+            { num:10, freq:3900, pol:'V', name:'HSN', color:'#161608', accent:'#cccc44', textColor:'#fff', program:'HOME SHOPPING NETWORK', type:'shopping', audio:'6.80', stereo:false, tagline:'CALL 1-800-284-3100', videos:[{id:'ttpuvSoop6g',duration:4087,start:120}] },
+            { num:11, freq:3920, pol:'H', name:'The Box', color:'#141414', accent:'#ff4444', textColor:'#fff', program:'MUSIC TELEVISION JUKEBOX', type:'music', audio:'6.80', stereo:true, tagline:'Music Television You Control', videos:[{id:'nJrjIPotMw8',duration:587},{id:'_W4OVeCiFp0',duration:1204}] },
+                        { num:12,  freq:3940, pol:'V', name:'Nustar Promos', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'CABLE PROMOTIONAL CHANNEL', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'FK1lHWRFWB8',duration:4746,start:1000}]  },
+            { num:13, freq:3960, pol:'H', name:'Travel Channel', color:'#082416', accent:'#44ccaa', textColor:'#fff', program:'AMAZING VACATIONS', type:'entertainment', audio:'6.80', stereo:true, videos:[{id:'3oa9tWccRJw',duration:2901}] },
+            { num:14, freq:3980, pol:'V', name:'Cable Health Club', color:'#141408', accent:'#44aa44', textColor:'#fff', program:'FITNESS TODAY', type:'entertainment', audio:'6.80', stereo:false, videos:[{id:'sU5xtAu7B6U',duration:982}] },
+            { num:15, freq:4000, pol:'H', name:'WWOR EMI Service', color:'#141414', accent:'#aaa', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'WWOR \u2014 SECAUCUS NJ', videos:[{id:'1HBgJojaOGQ',duration:1932,maxDur:150}] },
+            { num:16, freq:4020, pol:'V', name:'Request TV 1', color:'#0a0a0a', accent:'#cc8844', textColor:'#fff', program:'REQUEST TV — CALL TO ORDER', type:'shopping', audio:'6.80', stereo:true, videos:[{id:'GN9r-WC7K00',duration:744,start:200},{id:'x-rl_EEnaW4',duration:397},{id:'VL2j5stvVhU',duration:1079}] },
+            { num:17, freq:4040, pol:'H', name:'MTV East', color:'#141414', accent:'#ffdd00', textColor:'#fff', program:'BEAVIS AND BUTT-HEAD', type:'music', audio:'6.80', stereo:true, tagline:'Music Television', videos:[{id:'bZttp_KSYHo',duration:5623},{id:'wqS4Jqn5rmg',duration:1454},{id:'oN9CeZWkbUw',duration:993},{id:'u24qFvvR1V0',duration:2803}] },
+            { num:18, freq:4060, pol:'V', name:'Hot Choice PPV', color:'#0a0a0a', accent:'#cc4444', textColor:'#fff', program:'HOT CHOICE — ORDER NOW', type:'shopping', audio:'6.80', stereo:true, videos:[{id:'eOP0CmrNT2A',duration:1491,start:600},{id:'Qj2ihfq7y8c',duration:379}] },
+            { num:19, freq:4080, pol:'H', name:'C-SPAN 2', color:'#141428', accent:'#6666aa', textColor:'#ddd', program:'U.S. SENATE PROCEEDINGS', type:'educational', audio:'6.20', stereo:false, videos:[{id:'LbPF6ptGLnI',duration:25907,start:5000}] },
+            { num:20, freq:4100, pol:'V', name:'Showtime West', scrambled:true, color:'#240808', accent:'#cc2244', textColor:'#fff', program:'THE FUGITIVE (1993)', type:'premium', audio:'6.80', stereo:true, videos:[{id:'IlEGvqTJnQk',duration:432,start:100},{id:'i0EWWaMqJWk',duration:1940}] },
+            { num:21, freq:4120, pol:'H', name:'Discovery Channel East', color:'#081624', accent:'#1a8cff', textColor:'#fff', program:'NEXT STEP', type:'entertainment', audio:'6.80', stereo:true, tagline:'Explore Your World', videos:[{id:'Rnyas0Ib_o8',duration:1960},{id:'OhUwwr1sbwQ',duration:1804}] },
+            { num:22, freq:4140, pol:'V', name:'The Movie Channel West', scrambled:true, color:'#080828', accent:'#4444cc', textColor:'#fff', program:'BLADE RUNNER (1982)', type:'premium', audio:'6.80', stereo:true, videos:[{id:'2Byle7-67qo',duration:327},{id:'KqmwcwGRFVI',duration:438}] },
+            { num:23, freq:4160, pol:'H', name:'VH1', color:'#160828', accent:'#aa44cc', textColor:'#fff', program:'TOP 20 COUNTDOWN', type:'music', audio:'6.80', stereo:true, tagline:'Music First', videos:[{id:'bZttp_KSYHo',duration:5623,start:120},{id:'3Ce18ZqOUwI',duration:786}] },
+            { num:24, freq:4180, pol:'V', name:'CMT', color:'#161608', accent:'#ccaa44', textColor:'#fff', program:'CMT COUNTRY COUNTDOWN', type:'music', audio:'6.80', stereo:true, tagline:'Country Music Television', videos:[{id:'MNjdSI0XkmQ',duration:7952},{id:'TwCkZ4inwFw',duration:7264}] },
+        ]
+    },
+    {
+        name: 'Satcom C1', short: 'C1', pos: 137.0,
+        transponders: [
+            { num:1,  freq:3720, pol:'H', name:null },
+            { num:2,  freq:3740, pol:'V', name:'KUSA Denver ABC', color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'WORLD NEWS TONIGHT', type:'network', audio:'6.80', stereo:true, tagline:'Denver 5', videos:[{id:'1HBgJojaOGQ',duration:1932,maxDur:150}] },
+            { num:3,  freq:3760, pol:'H', name:'KRMA Denver PBS', color:'#141408', accent:'#44aa44', textColor:'#fff', program:'ROCKY MOUNTAIN PBS', type:'educational', audio:'6.80', stereo:true, videos:[{id:'W4RSwwMymj0',duration:3338}] },
+            { num:4,  freq:3780, pol:'V', name:'Lottery Results', color:'#0a0a0a', accent:'#ccaa44', textColor:'#ff0', program:'WINNING NUMBERS', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'gLBMCW1onls',duration:1141},{id:'a6cum2X9YqM',duration:139}] },
+            { num:5,  freq:3800, pol:'H', name:null },
+            { num:6,  freq:3820, pol:'V', name:'KMGH Denver CBS', color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'CBS 7 DENVER', type:'network', audio:'6.80', stereo:true, videos:[{id:'1tfJAJGR_iM',duration:2565,maxDur:150}] },
+            { num:7,  freq:3840, pol:'H', name:null },
+            { num:8,  freq:3860, pol:'V', name:'NBC East', color:'#0a0a28', accent:'#ffaa00', textColor:'#fff', program:'TONIGHT SHOW WITH JAY LENO', type:'network', audio:'6.80', stereo:true, tagline:'NBC Network Feed', videos:[{id:'akNrTrblM3s',duration:3612,maxDur:150}] },
+            { num:9,  freq:3880, pol:'H', name:null },
+            { num:10, freq:3900, pol:'V', name:null },
+            { num:11,  freq:3920, pol:'H', name:null },
+            { num:12, freq:3940, pol:'V', name:null },
+            { num:13, freq:3960, pol:'H', name:'SportsChannel Chicago', color:'#0a1a0a', accent:'#44cc44', textColor:'#fff', program:'CHICAGO BLACKHAWKS HOCKEY', type:'sports', audio:'6.80', stereo:true, videos:[{id:'1HBgJojaOGQ',duration:1932,maxDur:150}] },
+            { num:14, freq:3980, pol:'V', name:'KCNC Denver NBC', color:'#0a0a28', accent:'#ffaa00', textColor:'#fff', program:'NBC 4 DENVER', type:'network', audio:'6.80', stereo:true, videos:[{id:'akNrTrblM3s',duration:3612,maxDur:150}] },
+            { num:15,  freq:4000, pol:'H', name:null },
+            { num:16, freq:4020, pol:'V', name:null },
+            { num:17, freq:4040, pol:'H', name:null },
+            { num:18, freq:4060, pol:'V', name:null },
+            { num:19, freq:4080, pol:'H', name:'FoxNet', color:'#080828', accent:'#4488ff', textColor:'#fff', program:'THE SIMPSONS', type:'network', audio:'6.80', stereo:true, tagline:'Fox Broadcasting Company', videos:[{id:'p9crm0fEdts',duration:1121,start:30}] },
+            { num:20, freq:4100, pol:'V', name:'International Channel', color:'#0a0a28', accent:'#44aacc', textColor:'#fff', program:'WORLD CINEMA', type:'entertainment', audio:'6.80', stereo:false, videos:[{id:'3ZxFhLpKH3c',duration:2035}] },
+            { num:21, freq:4120, pol:'H', name:null },
+            { num:22, freq:4140, pol:'V', name:null },
+            { num:23, freq:4160, pol:'H', name:'KWGN Denver', color:'#141414', accent:'#aaa', textColor:'#fff', program:'STAR TREK: THE NEXT GENERATION', type:'entertainment', audio:'6.80', stereo:true, tagline:'WB 2 Denver', videos:[{id:'WF6u-nukq5s',duration:1197},{id:'JAR7HyXL1Hk',duration:1198}] },
+            { num:24, freq:4180, pol:'V', name:'Sunshine Network', color:'#161608', accent:'#ccaa44', textColor:'#fff', program:'FLORIDA SPORTS TONIGHT', type:'sports', audio:'6.80', stereo:true, tagline:'Florida Regional Sports', videos:[{id:'1HBgJojaOGQ',duration:1932,maxDur:150}] },
+        ]
+    },
+];
+
+
+
+// ================================================================
+//  STATE
+// ================================================================
+
+const S = {
+    satIdx: 11,         // Galaxy 5
+    tpIdx: 4,           // CNN (TP05)
+    dishPos: 125.0,
+    targetPos: 125.0,
+    dishMoving: false,
+    signal: 92,
+    targetSignal: 92,
+    mode: 'locked',     // locked | retuning | acquiring | moving | no_signal
+    scanning: false,
+    osdExpiry: 0,
+    frame: 0,
+};
+
+// Track which channel is rendered to avoid per-frame DOM thrash
+let renderedKey = '';
+
+// ================================================================
+//  DOM REFS
+// ================================================================
+
+const canvas  = document.getElementById('static-canvas');
+const ctx     = canvas.getContext('2d');
+const cardEl  = document.getElementById('channel-card');
+const scrEl   = document.getElementById('scramble-overlay');
+const movEl   = document.getElementById('moving-overlay');
+const osdEl   = document.getElementById('osd');
+
+const ytWrap = document.getElementById('yt-wrap');
+
+// ================================================================
+//  YOUTUBE PLAYER
+// ================================================================
+
+let ytPlayer = null;
+let ytReady = false;
+let ytCurrentId = '';
+
+// Load YouTube IFrame API
+const ytTag = document.createElement('script');
+ytTag.src = 'https://www.youtube.com/iframe_api';
+document.head.appendChild(ytTag);
+
+window.onYouTubeIframeAPIReady = function() {
+    ytPlayer = new YT.Player('yt-player', {
+        width: 640, height: 480,
+        playerVars: {
+            autoplay: 1, controls: 0, modestbranding: 1, rel: 0,
+            showinfo: 0, fs: 0, iv_load_policy: 3, disablekb: 1,
+            playsinline: 1, cc_load_policy: 0, mute: 1,
+        },
+        events: {
+            onReady: () => {
+                ytReady = true;
+                ytWrap.style.display = 'block';
+                ytWrap.style.opacity = '0';
+                ytWrap.style.pointerEvents = 'none';
+            },
+            onStateChange: (e) => {
+                // Video ended — clear ID after cooldown to prevent strobe
+                if (e.data === 0) {
+                    setTimeout(() => { ytCurrentId = ''; }, 2000);
+                }
+            },
+        }
+    });
+};
+
+// ================================================================
+//  VIDEO POOL — fallback C-band surfing clips for unmatched channels
+// ================================================================
+
+const videoPool = [];
+
+// Time origin — persisted so channels don't restart on reload
+const now = Date.now() / 1000;
+const savedOrigin = parseFloat(localStorage.getItem('cband-origin') || '0');
+const loadTime = savedOrigin || now;
+if (!savedOrigin) localStorage.setItem('cband-origin', String(loadTime));
+let timeOffset = parseFloat(localStorage.getItem('cband-timeoffset') || '0');
+
+// ================================================================
+//  COMMERCIAL BREAK SYSTEM
+//  Each entry is one individual ad: {id, start, end}
+//  Breaks are auto-inserted between content clips
+// ================================================================
+
+const BREAK_DURATION = 120; // 2 minutes of commercials between content
+
+const commercials = [
+    // "Half Hour of 1994 TV Commercials" — 1HBgJojaOGQ
+    { id:'1HBgJojaOGQ', start:0, end:31 },
+    { id:'1HBgJojaOGQ', start:31, end:62 },
+    { id:'1HBgJojaOGQ', start:62, end:93 },
+    { id:'1HBgJojaOGQ', start:93, end:124 },
+    { id:'1HBgJojaOGQ', start:200, end:231 },
+    { id:'1HBgJojaOGQ', start:300, end:331 },
+    { id:'1HBgJojaOGQ', start:450, end:481 },
+    { id:'1HBgJojaOGQ', start:600, end:631 },
+    { id:'1HBgJojaOGQ', start:800, end:831 },
+    { id:'1HBgJojaOGQ', start:1000, end:1031 },
+    { id:'1HBgJojaOGQ', start:1200, end:1231 },
+    { id:'1HBgJojaOGQ', start:1500, end:1531 },
+    { id:'1HBgJojaOGQ', start:1700, end:1731 },
+    // "Nostalgia Induced TV Commercials from 1994" — 08WE4ca1e-M
+    { id:'08WE4ca1e-M', start:0, end:31 },
+    { id:'08WE4ca1e-M', start:60, end:91 },
+    { id:'08WE4ca1e-M', start:150, end:181 },
+    { id:'08WE4ca1e-M', start:300, end:331 },
+    { id:'08WE4ca1e-M', start:500, end:531 },
+    { id:'08WE4ca1e-M', start:700, end:731 },
+    { id:'08WE4ca1e-M', start:900, end:931 },
+    // "VHS TV Commercials - 1993" — E1mUiedXMPc
+    { id:'E1mUiedXMPc', start:0, end:31 },
+    { id:'E1mUiedXMPc', start:120, end:151 },
+    { id:'E1mUiedXMPc', start:400, end:431 },
+    { id:'E1mUiedXMPc', start:800, end:831 },
+    { id:'E1mUiedXMPc', start:1200, end:1231 },
+    { id:'E1mUiedXMPc', start:1800, end:1831 },
+    { id:'E1mUiedXMPc', start:2400, end:2431 },
+    { id:'E1mUiedXMPc', start:3000, end:3031 },
+    { id:'E1mUiedXMPc', start:3600, end:3631 },
+    { id:'E1mUiedXMPc', start:4200, end:4231 },
+    // "One Hour of NBC Commercials 1993-1994" — akNrTrblM3s
+    { id:'akNrTrblM3s', start:0, end:31 },
+    { id:'akNrTrblM3s', start:200, end:231 },
+    { id:'akNrTrblM3s', start:500, end:531 },
+    { id:'akNrTrblM3s', start:900, end:931 },
+    { id:'akNrTrblM3s', start:1400, end:1431 },
+    { id:'akNrTrblM3s', start:2000, end:2031 },
+    { id:'akNrTrblM3s', start:2600, end:2631 },
+    { id:'akNrTrblM3s', start:3200, end:3231 },
+    // "March 1991 Commercials and News" — 1tfJAJGR_iM
+    { id:'1tfJAJGR_iM', start:0, end:31 },
+    { id:'1tfJAJGR_iM', start:150, end:181 },
+    { id:'1tfJAJGR_iM', start:400, end:431 },
+    { id:'1tfJAJGR_iM', start:800, end:831 },
+    { id:'1tfJAJGR_iM', start:1200, end:1231 },
+    { id:'1tfJAJGR_iM', start:1600, end:1631 },
+    { id:'1tfJAJGR_iM', start:2000, end:2031 },
+    // "1993-1994 Fox Commercials" — nSIlomMNLa0
+    { id:'nSIlomMNLa0', start:0, end:31 },
+    { id:'nSIlomMNLa0', start:100, end:131 },
+    { id:'nSIlomMNLa0', start:250, end:281 },
+    { id:'nSIlomMNLa0', start:450, end:481 },
+    { id:'nSIlomMNLa0', start:650, end:681 },
+    // "A few vintage commercials 1993-1994" — YEUtLAg-vgc
+    { id:'YEUtLAg-vgc', start:0, end:31 },
+    { id:'YEUtLAg-vgc', start:60, end:91 },
+    { id:'YEUtLAg-vgc', start:130, end:161 },
+    { id:'YEUtLAg-vgc', start:190, end:221 },
+];
+
+// Pick a commercial from the pool for a given position within a break
+function getCommercial(posInBreak, seed) {
+    if (commercials.length === 0) return null;
+    const startIdx = seed % commercials.length;
+    let pos = posInBreak;
+    for (let i = 0; i < commercials.length; i++) {
+        const ad = commercials[(startIdx + i) % commercials.length];
+        const adDur = ad.end - ad.start;
+        if (pos < adDur) {
+            return { id: ad.id, start: ad.start + pos };
+        }
+        pos -= adDur;
+    }
+    const ad = commercials[startIdx];
+    return { id: ad.id, start: ad.start };
+}
+
+// Cycles through content clips with commercial breaks between them
+function getChannelVideo(satIdx, tpIdx) {
+    const t = satellites[satIdx].transponders[tpIdx];
+    const elapsed = (Date.now() / 1000) - loadTime + timeOffset;
+
+    // Multi-clip: videos array
+    if (t.videos && t.videos.length > 0) {
+        const vids = t.videos;
+        const useBreaks = !t.scrambled; // no commercial breaks on scrambled channels
+
+        // Cycle: [content1][break][content2][break]... (or just content for scrambled)
+        const totalDur = vids.reduce((sum, v) => sum + (v.duration || 600) + (useBreaks ? BREAK_DURATION : 0), 0);
+        let pos = elapsed % totalDur;
+        for (let i = 0; i < vids.length; i++) {
+            const contentDur = vids[i].duration || 600;
+            if (pos < contentDur) {
+                // Playing content — clamp to avoid overshooting actual video length
+                const seekTo = (vids[i].start || 0) + Math.min(pos, contentDur - 5);
+                return { id: vids[i].id, start: Math.max(0, seekTo) };
+            }
+            pos -= contentDur;
+            if (useBreaks) {
+                if (pos < BREAK_DURATION) {
+                    // Commercial break — each channel gets different ads via seed
+                    return getCommercial(pos, satIdx * 100 + tpIdx * 10 + i);
+                }
+                pos -= BREAK_DURATION;
+            }
+        }
+        return { id: vids[0].id, start: vids[0].start || 0 };
+    }
+
+    // Single clip: videoId field
+    if (t.videoId) {
+        const base = t.videoStart || 0;
+        return { id: t.videoId, start: base + elapsed };
+    }
+
+    // Fallback: pool
+    if (videoPool.length === 0) return null;
+    const seed = satIdx * 31 + tpIdx * 7 + 13;
+    const idx = seed % videoPool.length;
+    const vid = videoPool[idx];
+    const maxStart = Math.max(1, vid.duration - 60);
+    const base = ((seed * 137 + 42) % maxStart);
+    return { id: vid.id, start: base + elapsed };
+}
+
+function ytPlay(videoId, startTime) {
+    if (!ytReady || !videoId) return;
+    if (ytCurrentId === videoId) return;
+    ytCurrentId = videoId;
+    ytPlayer.loadVideoById({ videoId: videoId, startSeconds: startTime || 0 });
+}
+
+function ytStop() {
+    if (!ytReady) return;
+    ytCurrentId = '';
+    try { ytPlayer.stopVideo(); } catch(e) {}
+}
+
+function ytShow() {
+    ytWrap.style.display = 'block'; ytWrap.style.pointerEvents = 'none'; ytWrap.classList.remove('vc-scrambled');
+    stopScrambleAudio();
+    if (ytReady) try { ytPlayer.unMute(); ytPlayer.setVolume(100); } catch(e) {}
+}
+function ytHide() {
+    ytWrap.style.opacity = '0'; ytWrap.classList.remove('vc-scrambled');
+    stopScrambleAudio();
+}
+
+// ================================================================
+//  SCRAMBLED AUDIO — Web Audio API
+// ================================================================
+
+let audioCtx = null;
+let scrAudioBuilt = false;
+let scrAudioOn = false;
+let scrGate = null;
+
+function buildScrambleAudio() {
+    if (scrAudioBuilt) return;
+    try { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch(e) { return; }
+
+    // Buzzy sawtooth base
+    const osc1 = audioCtx.createOscillator();
+    osc1.type = 'sawtooth';
+    osc1.frequency.value = 120;
+
+    const osc2 = audioCtx.createOscillator();
+    osc2.type = 'square';
+    osc2.frequency.value = 187;
+
+    // Mix oscillators — no LFO, just steady drone
+    const mix = audioCtx.createGain();
+    mix.gain.value = 0.1;
+    osc1.connect(mix);
+    osc2.connect(mix);
+
+    // Crackle — white noise through aggressive highpass
+    const bufSize = audioCtx.sampleRate * 2;
+    const noiseBuf = audioCtx.createBuffer(1, bufSize, audioCtx.sampleRate);
+    const noiseData = noiseBuf.getChannelData(0);
+    for (let i = 0; i < bufSize; i++) noiseData[i] = Math.random() * 2 - 1;
+    const noise = audioCtx.createBufferSource();
+    noise.buffer = noiseBuf;
+    noise.loop = true;
+    const noiseHP = audioCtx.createBiquadFilter();
+    noiseHP.type = 'highpass';
+    noiseHP.frequency.value = 3000;
+    noiseHP.Q.value = 0.5;
+    const noiseGain = audioCtx.createGain();
+    noiseGain.gain.value = 0.25;
+    noise.connect(noiseHP);
+    noiseHP.connect(noiseGain);
+
+    // Low rumble noise to muddy the source audio
+    const noise2 = audioCtx.createBufferSource();
+    noise2.buffer = noiseBuf;
+    noise2.loop = true;
+    const noiseLP = audioCtx.createBiquadFilter();
+    noiseLP.type = 'lowpass';
+    noiseLP.frequency.value = 400;
+    noiseLP.Q.value = 1;
+    const noise2Gain = audioCtx.createGain();
+    noise2Gain.gain.value = 0.15;
+    noise2.connect(noiseLP);
+    noiseLP.connect(noise2Gain);
+
+    // Muffling lowpass — makes it sound distant/muted
+    const muffle = audioCtx.createBiquadFilter();
+    muffle.type = 'lowpass';
+    muffle.frequency.value = 2400;
+    muffle.Q.value = 0.7;
+
+    // Combine buzz + crackle + rumble into muffle filter
+    mix.connect(muffle);
+    noiseGain.connect(muffle);
+    noise2Gain.connect(muffle);
+
+    // Master volume
+    const master = audioCtx.createGain();
+    master.gain.value = 0.025;
+    muffle.connect(master);
+
+    // Gate for clean on/off
+    scrGate = audioCtx.createGain();
+    scrGate.gain.value = 0;
+    master.connect(scrGate);
+    scrGate.connect(audioCtx.destination);
+
+    osc1.start(); osc2.start(); noise.start(); noise2.start();
+    scrAudioBuilt = true;
+}
+
+function startScrambleAudio() {
+    if (!scrAudioBuilt) buildScrambleAudio();
+    if (!scrGate || scrAudioOn) return;
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    scrGate.gain.setTargetAtTime(1, audioCtx.currentTime, 0.05);
+    scrAudioOn = true;
+}
+
+function stopScrambleAudio() {
+    if (!scrAudioOn || !scrGate) return;
+    scrGate.gain.setTargetAtTime(0, audioCtx.currentTime, 0.05);
+    scrAudioOn = false;
+}
+
+// Small noise canvas for performant static
+const nCvs = document.createElement('canvas');
+nCvs.width = 160; nCvs.height = 120;
+const nCtx = nCvs.getContext('2d');
+const nImg = nCtx.createImageData(160, 120);
+
+// ================================================================
+//  HELPERS
+// ================================================================
+
+const sat  = () => satellites[S.satIdx];
+const tp   = () => sat().transponders[S.tpIdx];
+const hx2r = h => h ? { r:parseInt(h.slice(1,3),16), g:parseInt(h.slice(3,5),16), b:parseInt(h.slice(5,7),16) } : {r:60,g:60,b:60};
+
+// Dish location: upstate New Hampshire (~43°N, 72°W)
+const DISH_LAT = 43.0;
+const DISH_LON = 72.0;
+
+function dishAzEl(satLonW) {
+    const lat = DISH_LAT * Math.PI / 180;
+    const dlon = (satLonW - DISH_LON) * Math.PI / 180;
+    // Azimuth (from North, clockwise)
+    const az = 180 + Math.atan2(Math.tan(dlon), Math.sin(lat)) * 180 / Math.PI;
+    // Elevation
+    const R = 6.6107; // geostationary orbit radius / earth radius
+    const cosG = Math.cos(lat) * Math.cos(dlon);
+    const el = Math.atan((cosG - 1/R) / Math.sqrt(1 - cosG * cosG)) * 180 / Math.PI;
+    return { az: az, el: el };
+}
+
+function timecode() {
+    const d = new Date();
+    const pad = n => String(n).padStart(2,'0');
+    return `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}:${pad(d.getMilliseconds()/33.3|0)}`;
+}
+
+// ================================================================
+//  CANVAS RENDERING
+// ================================================================
+
+function drawStatic(alpha) {
+    const d = nImg.data;
+    for (let i = 0; i < d.length; i += 4) {
+        const v = Math.random() * 100;
+        d[i] = d[i+1] = d[i+2] = v;
+        d[i+3] = 255;
+    }
+    nCtx.putImageData(nImg, 0, 0);
+    ctx.save();
+    if (alpha !== undefined) ctx.globalAlpha = alpha;
+    ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(nCvs, 0, 0, 640, 480);
+    ctx.restore();
+}
+
+function drawScrambled(t) {
+    const now = performance.now() / 100;
+    const rgb = hx2r(t.accent || t.color);
+
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 0, 640, 480);
+
+    for (let y = 0; y < 480; y += 3) {
+        const shift = Math.sin(y*0.15 + now*2.5)*120 + Math.sin(y*0.05 + now*0.7)*80;
+        const b = 0.15 + Math.sin(y*0.02 + now)*0.25 + Math.random()*0.15;
+        ctx.fillStyle = `rgb(${Math.min(255,rgb.r*b+Math.random()*30)|0},${Math.min(255,rgb.g*b+Math.random()*30)|0},${Math.min(255,rgb.b*b+Math.random()*30)|0})`;
+        ctx.fillRect(shift - 200, y, 840, 3);
+    }
+
+    drawStatic(0.2);
+
+    // Occasional ghost of channel name
+    if (Math.random() < 0.018) {
+        ctx.save();
+        ctx.globalAlpha = 0.2;
+        ctx.fillStyle = '#fff';
+        ctx.font = 'bold 56px monospace';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(t.name, 320, 240);
+        ctx.restore();
+    }
+}
+
+function drawColorBars() {
+    const bars = ['#c0c0c0','#c0c000','#00c0c0','#00c000','#c000c0','#c00000','#0000c0'];
+    const bw = 640/7;
+    bars.forEach((c,i) => { ctx.fillStyle = c; ctx.fillRect(i*bw, 0, bw+1, 336); });
+
+    const mid = ['#0000c0','#131313','#c000c0','#131313','#00c0c0','#131313','#c0c0c0'];
+    mid.forEach((c,i) => { ctx.fillStyle = c; ctx.fillRect(i*bw, 336, bw+1, 38); });
+
+    const bots = ['#00214c','#fff','#32006a','#131313'];
+    const botW = 640/4;
+    bots.forEach((c,i) => { ctx.fillStyle = c; ctx.fillRect(i*botW, 374, botW+1, 106); });
+
+    ctx.fillStyle = '#aaa';
+    ctx.font = '14px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText(`${sat().name.toUpperCase()} \u2014 TP ${tp().num} \u2014 COLOR BARS`, 320, 458);
+}
+
+// ================================================================
+//  CHANNEL CARD (HTML overlay)
+// ================================================================
+
+function showCard(t) {
+    const key = `${S.satIdx}-${S.tpIdx}`;
+    cardEl.style.display = 'flex';
+
+    if (renderedKey === key) return;  // already rendered
+    renderedKey = key;
+
+    cardEl.style.background = '#000';
+
+    const network = document.getElementById('ch-network');
+    const logo = document.getElementById('ch-logo');
+    const prog = document.getElementById('ch-program');
+    const extra = document.getElementById('ch-extra');
+
+    // Barker-style CRT text for all channel cards
+    network.textContent = 'SUBSCRIBE NOW';
+    logo.textContent = t.name;
+    prog.textContent = '';
+    extra.innerHTML = '1-800-555-2SAT';
+
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 0, 640, 480);
+}
+
+function hideCard() {
+    cardEl.style.display = 'none';
+    renderedKey = '';
+    ytHide();
+    ytStop();
+}
+
+// ================================================================
+//  OSD
+// ================================================================
+
+function showOSD(text, ms) {
+    osdEl.textContent = text;
+    osdEl.style.display = 'block';
+    S.osdExpiry = performance.now() + (ms || 3000);
+}
+
+// ================================================================
+//  RECEIVER DISPLAY
+// ================================================================
+
+function updateLED() {
+    const s = sat(), t = tp();
+    document.getElementById('d-sat').textContent   = s.short;
+    const ae = dishAzEl(S.dishPos);
+    document.getElementById('d-az').textContent    = ae.az.toFixed(1);
+    document.getElementById('d-el').textContent    = ae.el.toFixed(1);
+    document.getElementById('d-tp').textContent    = String(t.num).padStart(2,'0');
+    document.getElementById('d-freq').textContent  = String(t.freq);
+    document.getElementById('d-pol').textContent   = t.pol;
+    document.getElementById('d-aud').textContent   = (t.audio || '6.20');
+    // Signal: percent + block bar
+    const sigPct = Math.max(0, S.signal) | 0;
+    document.getElementById('d-signal-pct').textContent = sigPct + '%';
+    const totalBlocks = 20;
+    const filledBlocks = Math.round((sigPct / 100) * totalBlocks);
+    document.getElementById('d-signal-bars').textContent = '\u2588'.repeat(filledBlocks) + '\u2591'.repeat(totalBlocks - filledBlocks);
+
+
+    document.getElementById('ind-lock').className    = 'ind-led' + (S.mode==='locked' ? ' on-green' : '');
+    document.getElementById('ind-vc').className      = 'ind-led' + (t.scrambled && S.mode==='locked' ? ' on-red' : '');
+    document.getElementById('ind-stereo').className  = 'ind-led' + (t.stereo && S.mode==='locked' && !t.scrambled ? ' on-green' : t.stereo && S.mode==='locked' ? ' on-amber' : '');
+}
+
+// ================================================================
+//  SATELLITE ARC
+// ================================================================
+
+function initArc() {
+    const bar = document.getElementById('arc-bar');
+    bar.innerHTML = '<div id="arc-dish"></div>';
+    satellites.forEach((s, i) => {
+        const pct = ((s.pos - 65) / 75) * 100;
+        const m = document.createElement('div');
+        m.className = 'arc-sat' + (i === S.satIdx ? ' active' : '');
+        m.id = 'arc-' + i;
+        m.style.left = pct + '%';
+        m.innerHTML = '<div class="arc-sat-label">' + s.short + '</div>';
+        m.onclick = () => goSat(i);
+        m.style.cursor = 'pointer';
+        bar.appendChild(m);
+    });
+    syncArc();
+}
+
+function syncArc() {
+    document.getElementById('arc-dish').style.left = ((S.dishPos - 65) / 75 * 100) + '%';
+    satellites.forEach((_, i) => {
+        const el = document.getElementById('arc-' + i);
+        if (el) el.className = 'arc-sat' + (i === S.satIdx ? ' active' : '');
+    });
+}
+
+// ================================================================
+//  CONTROLS
+// ================================================================
+
+function saveChannel() {
+    try { localStorage.setItem('cband-channel', JSON.stringify({sat:S.satIdx, tp:S.tpIdx})); } catch(e) {}
+}
+
+function goSat(idx) {
+    if (idx < 0) idx = satellites.length - 1;
+    if (idx >= satellites.length) idx = 0;
+    if (S.scanning) stopScan();
+    fadeAudio();
+
+    S.satIdx = idx;
+    S.tpIdx = 0;
+    S.targetPos = satellites[idx].pos;
+
+    if (Math.abs(S.dishPos - S.targetPos) > 0.2) {
+        S.mode = 'moving';
+        S.dishMoving = true;
+        S.signal = 0;
+        S.targetSignal = 0;
+        hideCard();
+        scrEl.style.display = 'none';
+        // movEl removed
+    } else {
+        tune();
+    }
+
+    syncArc();
+    showOSD(satellites[idx].short + ' \u2014 ' + satellites[idx].name + '\n' + satellites[idx].pos + ' DEG W', 3000);
+    updateLED();
+    saveChannel();
+}
+
+function fadeAudio() {
+    if (ytReady) try { ytPlayer.setVolume(0); } catch(e) {}
+    stopScrambleAudio();
+}
+function restoreAudio() {
+    if (ytReady) try { ytPlayer.setVolume(volume); } catch(e) {}
+}
+
+function goTp(dir) {
+    if (S.mode === 'moving') return;
+    fadeAudio();
+    const tps = sat().transponders;
+    let ni = S.tpIdx + dir;
+    if (ni < 0) ni = tps.length - 1;
+    if (ni >= tps.length) ni = 0;
+
+    S.tpIdx = ni;
+    S.mode = 'retuning';
+    S.signal = 0;
+    hideCard();
+    scrEl.style.display = 'none';
+
+    const t = tp();
+    showOSD('TP ' + String(t.num).padStart(2,'0') + ' ' + t.pol + ' ' + t.freq + '\n' + (t.name || 'NO SIGNAL'), 2500);
+
+    setTimeout(() => { if (S.mode === 'retuning') tune(); }, 300);
+    updateLED();
+    saveChannel();
+}
+
+function tune() {
+    const t = tp();
+    if (!t.name) {
+        S.mode = 'no_signal';
+        S.targetSignal = 0;
+        S.signal = 0;
+        hideCard();
+        scrEl.style.display = 'none';
+    } else {
+        S.mode = 'acquiring';
+        S.targetSignal = 72 + Math.random() * 23;
+    }
+    updateLED();
+}
+
+// Scan
+let scanTimeout = null;
+
+function startScan() {
+    if (S.scanning) { stopScan(); return; }
+    if (S.mode === 'moving') return;
+    S.scanning = true;
+    document.getElementById('btn-scan').classList.add('active');
+    showOSD('SCANNING...', 2000);
+    scanStep();
+}
+
+function stopScan() {
+    S.scanning = false;
+    document.getElementById('btn-scan').classList.remove('active');
+    if (scanTimeout) { clearTimeout(scanTimeout); scanTimeout = null; }
+}
+
+function scanStep() {
+    if (!S.scanning) return;
+    const tps = sat().transponders;
+    let ni = S.tpIdx + 1;
+    if (ni >= tps.length) ni = 0;
+
+    S.tpIdx = ni;
+    const t = tp();
+    showOSD('SCAN: TP ' + String(t.num).padStart(2,'0') + ' ' + t.pol + ' ' + t.freq + '\n' + (t.name || '\u2014'), 1500);
+
+    if (t.name) {
+        S.mode = 'acquiring';
+        S.signal = 0;
+        S.targetSignal = 72 + Math.random() * 23;
+        hideCard();
+        scrEl.style.display = 'none';
+        scanTimeout = setTimeout(() => { if (S.scanning) scanStep(); }, 3500);
+    } else {
+        S.mode = 'no_signal';
+        S.signal = 0;
+        S.targetSignal = 0;
+        hideCard();
+        scrEl.style.display = 'none';
+        scanTimeout = setTimeout(() => { if (S.scanning) scanStep(); }, 500);
+    }
+    updateLED();
+}
+
+// ================================================================
+//  MAIN LOOP
+// ================================================================
+
+function loop(ts) {
+    S.frame++;
+
+    // --- TV off: black screen, skip everything ---
+    if (!tvOn) {
+        requestAnimationFrame(loop);
+        return;
+    }
+
+    // --- Dish motor ---
+    if (S.dishMoving) {
+        const diff = S.targetPos - S.dishPos;
+        const step = Math.sign(diff) * Math.min(Math.abs(diff), 1.0 / 60);
+        S.dishPos += step;
+
+        if (Math.abs(S.dishPos - S.targetPos) < 0.05) {
+            S.dishPos = S.targetPos;
+            S.dishMoving = false;
+            movEl.style.display = 'none';
+            tune();
+        }
+        syncArc();
+    }
+
+    // --- Signal ramp ---
+    if (S.mode === 'acquiring') {
+        S.signal = Math.min(S.signal + 1.8, S.targetSignal);
+        if (S.signal >= S.targetSignal - 0.5) {
+            S.mode = 'locked';
+            S.signal = S.targetSignal;
+            restoreAudio();
+        }
+    }
+    if (S.mode === 'no_signal' || S.mode === 'retuning') {
+        S.signal = Math.max(0, S.signal - 6);
+    }
+
+    // --- Screen render ---
+    const t = tp();
+
+    if (S.mode === 'moving') {
+        drawStatic();
+        ytWrap.style.opacity = '0'; ytStop();
+
+    } else if (S.mode === 'no_signal' || S.mode === 'retuning') {
+        drawStatic();
+        hideCard();
+        scrEl.style.display = 'none';
+
+    } else if (S.mode === 'acquiring') {
+        const p = S.signal / S.targetSignal;
+        // Check if this clear channel has a pooled video
+        const acqVid = (!t.scrambled && t.name && t.type !== 'test') ? getChannelVideo(S.satIdx, S.tpIdx) : null;
+
+        // Check for scrambled channel video
+        const scrVid = (t.scrambled && t.videos) ? getChannelVideo(S.satIdx, S.tpIdx) : null;
+
+        if (t.type === 'test' && !t.videos) {
+            drawColorBars();
+            drawStatic(1 - p);
+        } else if (t.type === 'test' && t.videos) {
+            // Test pattern with real YouTube bars
+            const testVid = getChannelVideo(S.satIdx, S.tpIdx);
+            ytPlay(testVid.id, testVid.start);
+            if (p > 0.55) { ytShow(); ytWrap.style.opacity = Math.min(1, (p - 0.55) * 2.2); }
+            drawStatic(1 - p);
+        } else if (t.scrambled && scrVid) {
+            // Scrambled with real content underneath — CSS filter + audio
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, 640, 480);
+            ytPlay(scrVid.id, scrVid.start);
+            if (ytReady) try { ytPlayer.unMute(); ytPlayer.setVolume(75); } catch(e) {}
+            startScrambleAudio();
+            if (p > 0.5) {
+                ytWrap.style.display = 'block';
+                ytWrap.style.pointerEvents = 'none';
+                ytWrap.classList.add('vc-scrambled');
+                ytWrap.style.opacity = Math.min(1, (p - 0.5) * 2);
+                scrEl.style.display = 'flex';
+                scrEl.style.opacity = Math.min(1, (p - 0.5) * 2);
+            }
+            cardEl.style.display = 'none';
+        } else if (t.scrambled) {
+            drawStatic(1 - p);
+            hideCard();
+        } else if (acqVid) {
+            // YouTube from pool — start loading, fade in from static
+            ytPlay(acqVid.id, acqVid.start);
+            if (p > 0.55) {
+                ytShow();
+                ytWrap.style.opacity = Math.min(1, (p - 0.55) * 2.2);
+                cardEl.style.display = 'none';
+            }
+            drawStatic(1 - p);
+        } else {
+            if (p > 0.55) {
+                showCard(t);
+                cardEl.style.opacity = Math.min(1, (p - 0.55) * 2.2);
+            }
+            drawStatic(1 - p);
+        }
+
+    } else if (S.mode === 'locked') {
+        // Check if this clear channel has a pooled video
+        const lockVid = (!t.scrambled && t.name && t.type !== 'test') ? getChannelVideo(S.satIdx, S.tpIdx) : null;
+        const lockScrVid = (t.scrambled && t.videos) ? getChannelVideo(S.satIdx, S.tpIdx) : null;
+
+        if (t.type === 'test' && !t.videos) {
+            drawColorBars();
+            hideCard();
+            scrEl.style.display = 'none';
+        } else if (t.type === 'test' && t.videos) {
+            const testVid = getChannelVideo(S.satIdx, S.tpIdx);
+            ytPlay(testVid.id, testVid.start);
+            ytShow(); ytWrap.style.opacity = 1;
+            cardEl.style.display = 'none'; scrEl.style.display = 'none';
+        } else if (t.scrambled && lockScrVid) {
+            // Scrambled with real content — YouTube + CSS distortion + audio
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, 640, 480);
+            ytPlay(lockScrVid.id, lockScrVid.start);
+            if (ytReady) try { ytPlayer.unMute(); ytPlayer.setVolume(75); } catch(e) {}
+            startScrambleAudio();
+            ytWrap.style.display = 'block';
+            ytWrap.style.pointerEvents = 'none';
+            ytWrap.classList.add('vc-scrambled');
+            ytWrap.style.opacity = 1;
+            scrEl.style.display = 'flex';
+            scrEl.style.opacity = 1;
+            cardEl.style.display = 'none';
+        } else if (t.scrambled) {
+            drawStatic();
+            hideCard();
+        } else if (lockVid) {
+            // YouTube from pool — full display
+            ytPlay(lockVid.id, lockVid.start);
+            ytShow();
+            ytWrap.style.opacity = 1;
+            cardEl.style.display = 'none';
+            scrEl.style.display = 'none';
+        } else {
+            // Fallback to channel card (when pool is empty)
+            showCard(t);
+            cardEl.style.opacity = 1;
+            scrEl.style.display = 'none';
+            ytHide();
+        }
+        // Gentle signal wobble
+        S.signal = S.targetSignal + Math.sin(ts / 500) * 1.5 + Math.random() * 1;
+    }
+
+    // Live timecode for wild feeds
+    if (S.mode === 'locked' && t.type === 'wild_feed') {
+        const tc = document.getElementById('live-tc');
+        if (tc) tc.textContent = timecode();
+    }
+
+    // OSD timeout
+    if (osdEl.style.display !== 'none' && performance.now() > S.osdExpiry) {
+        osdEl.style.display = 'none';
+    }
+
+    // LED update — every frame during motor movement, every 6 frames otherwise
+    if (S.dishMoving || S.frame % 6 === 0) updateLED();
+
+    // Debug display
+    if (S.frame % 30 === 0) {
+        const el = (Date.now()/1000) - loadTime + timeOffset;
+        const mins = (el/60)|0;
+        const hrs = (mins/60)|0;
+        document.getElementById('dbg-elapsed').textContent = 'T+' + hrs + 'h' + String(mins%60).padStart(2,'0') + 'm';
+        const cv = (!t.scrambled && t.name && t.type !== 'test') ? getChannelVideo(S.satIdx, S.tpIdx) : null;
+        const dbgClip = document.getElementById('dbg-clip');
+        if (cv) {
+            const url = 'https://www.youtube.com/watch?v=' + cv.id + '&t=' + (cv.start|0) + 's';
+            dbgClip.textContent = url.replace('https://www.','');
+            dbgClip.href = url;
+        } else {
+            dbgClip.textContent = '(no clip)';
+            dbgClip.removeAttribute('href');
+        }
+    }
+
+    requestAnimationFrame(loop);
+}
+
+// ================================================================
+//  EVENTS
+// ================================================================
+
+// === TV POWER STATE ===
+let tvOn = false;
+
+function powerToggle() {
+    tvOn = !tvOn;
+    const btn = document.getElementById('power-btn');
+    btn.classList.toggle('on', tvOn);
+
+    if (tvOn) {
+        // Power ON — CRT warm-up then show content
+        const sw = document.getElementById('screen-wrap');
+        sw.classList.remove('warming-up');
+        void sw.offsetWidth; // force reflow
+        sw.classList.add('warming-up');
+        setTimeout(() => sw.classList.remove('warming-up'), 1600);
+
+        if (ytReady) {
+            try { ytPlayer.unMute(); ytPlayer.setVolume(100); } catch(e) {}
+        }
+        S.mode = 'acquiring';
+        S.signal = 0;
+        S.targetSignal = 72 + Math.random() * 23;
+        hideCard();
+        scrEl.style.display = 'none';
+        showOSD(sat().short + ' \u2014 ' + sat().name + '\nTP ' + String(tp().num).padStart(2,'0') + ' \u2014 ' + tp().name, 4000);
+    } else {
+        // Power OFF — mute, black screen
+        if (ytReady) {
+            try { ytPlayer.mute(); } catch(e) {}
+        }
+        stopScrambleAudio();
+        ytWrap.style.opacity = '0';
+        cardEl.style.display = 'none';
+        renderedKey = '';
+        scrEl.style.display = 'none';
+        movEl.style.display = 'none';
+        osdEl.style.display = 'none';
+        ctx.fillStyle = '#000';
+        ctx.fillRect(0, 0, 640, 480);
+    }
+}
+
+document.getElementById('btn-sat-dn').onclick = () => goSat(S.satIdx - 1);
+document.getElementById('btn-sat-up').onclick = () => goSat(S.satIdx + 1);
+document.getElementById('btn-tp-dn').onclick  = () => goTp(1);
+document.getElementById('btn-tp-up').onclick  = () => goTp(-1);
+document.getElementById('btn-scan').onclick   = startScan;
+
+let volume = 100;
+let debugVisible = true;
+
+document.addEventListener('keydown', e => {
+    switch (e.key) {
+        case 'ArrowLeft':  e.preventDefault(); goSat(S.satIdx - 1); break;
+        case 'ArrowRight': e.preventDefault(); goSat(S.satIdx + 1); break;
+        case 'ArrowUp':    e.preventDefault(); goTp(-1); break;
+        case 'ArrowDown':  e.preventDefault(); goTp(1); break;
+        case 's': case 'S': startScan(); break;
+        case 'Escape':     stopScan(); break;
+        case 'm': case 'M': timeOffset += 60; ytCurrentId = ''; localStorage.setItem('cband-timeoffset', String(timeOffset)); break;
+        case 'h': case 'H': timeOffset += 3600; ytCurrentId = ''; localStorage.setItem('cband-timeoffset', String(timeOffset)); break;
+        case 'n': case 'N': // Skip to next clip
+            timeOffset += 600; ytCurrentId = '';
+            localStorage.setItem('cband-timeoffset', String(timeOffset));
+            showOSD('SKIP >>', 1000);
+            break;
+        case '+': case '=': // Volume up
+            volume = Math.min(100, volume + 10);
+            if (ytReady) try { ytPlayer.setVolume(volume); } catch(e2) {}
+            showOSD('VOL ' + volume, 1000);
+            break;
+        case '-': case '_': // Volume down
+            volume = Math.max(0, volume - 10);
+            if (ytReady) try { ytPlayer.setVolume(volume); } catch(e2) {}
+            showOSD('VOL ' + volume, 1000);
+            break;
+        case 'd': case 'D': // Toggle debug
+            debugVisible = !debugVisible;
+            document.getElementById('debug').style.display = debugVisible ? 'block' : 'none';
+            break;
+    }
+});
+
+// ================================================================
+//  INIT
+// ================================================================
+
+// Restore last channel from localStorage
+try {
+    const saved = JSON.parse(localStorage.getItem('cband-channel'));
+    if (saved && saved.sat >= 0 && saved.sat < satellites.length) {
+        S.satIdx = saved.sat;
+        S.tpIdx = Math.min(saved.tp || 0, satellites[saved.sat].transponders.length - 1);
+        S.dishPos = satellites[saved.sat].pos;
+        S.targetPos = S.dishPos;
+    }
+} catch(e) {}
+
+initArc();
+S.signal = 0;
+S.targetSignal = 0;
+S.mode = 'locked';
+updateLED();
+// TV starts OFF — black screen, click power to turn on
+ctx.fillStyle = '#000';
+ctx.fillRect(0, 0, 640, 480);
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>
