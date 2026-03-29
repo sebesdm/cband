@@ -1040,9 +1040,14 @@ window.onYouTubeIframeAPIReady = function() {
                 if (e.data === 0) {
                     setTimeout(() => { ytCurrentId = ''; }, 2000);
                 }
-                // Video playing — reveal; buffering/loading — hide
-                if (e.data === 1) { ytWrap.style.opacity = '1'; }
-                else if (e.data === 3) { ytWrap.style.opacity = '0'; }
+                // Video playing — reveal over static; buffering — show static
+                if (e.data === 1) {
+                    ytWrap.style.transition = 'opacity 0.3s';
+                    ytWrap.style.opacity = '1';
+                } else if (e.data === 3 || e.data === -1) {
+                    ytWrap.style.transition = 'none';
+                    ytWrap.style.opacity = '0';
+                }
             },
         }
     });
@@ -1773,7 +1778,7 @@ function loop(ts) {
         } else if (t.type === 'test' && t.videos) {
             const testVid = getChannelVideo(S.satIdx, S.tpIdx);
             ytPlay(testVid.id, testVid.start);
-            ytShow(); ytWrap.style.opacity = 1;
+            ytShow(); drawStatic();
             cardEl.style.display = 'none'; scrEl.style.display = 'none';
         } else if (t.scrambled && lockScrVid) {
             // Scrambled with real content — YouTube + CSS distortion + audio
@@ -1793,12 +1798,13 @@ function loop(ts) {
             drawStatic();
             hideCard();
         } else if (lockVid) {
-            // YouTube from pool — full display
+            // YouTube from pool — static shows while buffering
             ytPlay(lockVid.id, lockVid.start);
             ytShow();
-            ytWrap.style.opacity = 1;
+            // Don't force opacity — onStateChange controls it
             cardEl.style.display = 'none';
             scrEl.style.display = 'none';
+            drawStatic();
         } else {
             // Fallback to channel card (when pool is empty)
             showCard(t);
