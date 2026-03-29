@@ -1197,10 +1197,12 @@ function getChannelVideo(satIdx, tpIdx) {
         const useBreaks = !t.scrambled; // no commercial breaks on scrambled channels
 
         // Cycle: [content1][break][content2][break]... (or just content for scrambled)
-        const totalDur = vids.reduce((sum, v) => sum + (v.duration || 600) + (useBreaks ? BREAK_DURATION : 0), 0);
+        // Support both duration and end fields: end overrides duration
+        const clipDur = v => v.end ? (v.end - (v.start || 0)) : (v.duration || 600);
+        const totalDur = vids.reduce((sum, v) => sum + clipDur(v) + (useBreaks ? BREAK_DURATION : 0), 0);
         let pos = elapsed % totalDur;
         for (let i = 0; i < vids.length; i++) {
-            const contentDur = vids[i].duration || 600;
+            const contentDur = clipDur(vids[i]);
             if (pos < contentDur) {
                 // Playing content — clamp to avoid overshooting actual video length
                 const seekTo = (vids[i].start || 0) + Math.min(pos, contentDur - 5);
