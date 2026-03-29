@@ -1593,6 +1593,12 @@ function tune() {
         S.signal = 0;
         hideCard();
         scrEl.style.display = 'none';
+    } else if (t.videos || t.scrambled) {
+        // Has content — skip straight to locked
+        S.mode = 'locked';
+        S.signal = 72 + Math.random() * 23;
+        S.targetSignal = S.signal;
+        restoreAudio();
     } else {
         S.mode = 'acquiring';
         S.targetSignal = 72 + Math.random() * 23;
