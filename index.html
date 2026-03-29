@@ -112,13 +112,6 @@ body {
     background: #000 !important;
     font-family: 'Courier New', Courier, monospace;
     color: #e0e0e0 !important;
-    animation: barker-scroll 20s ease-in-out infinite;
-}
-@keyframes barker-scroll {
-    0%   { padding-top: 90%; }
-    30%  { padding-top: 35%; }
-    70%  { padding-top: 35%; }
-    100% { padding-top: 90%; }
 }
 
 #ch-network, #ch-logo, #ch-program, #ch-extra {
@@ -668,7 +661,7 @@ const satellites = [
             { num:2,  freq:3740, pol:'V', name:'CBS West', scrambled:true, color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'60 MINUTES', type:'network', audio:'6.80', stereo:true, videos:[{id:'SaF__mZECrM',duration:2077}] },
             { num:3,  freq:3760, pol:'H', name:'Community Board', color:'#0a0a0a', accent:'#44aa44', textColor:'#0f0', program:'LOCAL INFORMATION', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'u9nOP4hKwJc',duration:177},{id:'60aZrE9XItU',duration:90}] },
             { num:4,  freq:3780, pol:'V', name:'Weather Data', color:'#0a0a0a', accent:'#44aaff', textColor:'#fff', program:'CURRENT CONDITIONS', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'T7CuNZ4lgVI',duration:315},{id:'3lcehyFGeyI',duration:196}] },
-            { num:5,  freq:3800, pol:'H', name:'Fox News Channel', color:'#0a0a28', accent:'#cc2222', textColor:'#fff', program:'FOX NEWS NOW', type:'news', audio:'6.80', stereo:true, tagline:'Fair and Balanced', videos:[{id:'5AirLGuD2WI',duration:10998},{id:'TL9JdCCP5PA',duration:2045}] },
+            { num:5,  freq:3800, pol:'H', name:'Fox News Channel', color:'#0a0a28', accent:'#cc2222', textColor:'#fff', program:'FOX NEWS NOW', type:'news', audio:'6.80', stereo:true, tagline:'Fair and Balanced', videos:[{id:'TL9JdCCP5PA',duration:2045}] },
             { num:6,  freq:3820, pol:'V', name:'Cable Program Guide', color:'#000808', accent:'#44dddd', textColor:'#0ff', program:'CHANNEL LISTINGS', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'7Hx9HaiCIAk',duration:3092}] },
             { num:7,  freq:3840, pol:'H', name:'Test — Audio ID', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'LEFT RIGHT TEST', type:'test', audio:'6.20', stereo:true, videos:[{id:'YCOabuKbJvo',duration:1801}] },
             { num:8,  freq:3860, pol:'V', name:null },
