@@ -1206,7 +1206,9 @@ window.onYouTubeIframeAPIReady = function() {
                 if (e.data === 0) {
                     setTimeout(() => { ytCurrentId = ''; }, 2000);
                 }
-                // Video playing — reveal over static; buffering — show static
+                // Video playing — reveal; buffering — hide
+                // Skip during movement and briefly after arrival
+                if (S.dishMoving || (performance.now() - lastArrival) < 1500) return;
                 if (e.data === 1) {
                     ytWrap.style.opacity = '1';
                 } else if (e.data === 3 || e.data === -1) {
@@ -1709,7 +1711,8 @@ function goSat(idx) {
     fadeAudio();
 
     S.satIdx = idx;
-    S.tpIdx = 0;
+    // Keep same TP, clamp if new sat has fewer transponders
+    S.tpIdx = Math.min(S.tpIdx, satellites[idx].transponders.length - 1);
     S.targetPos = satellites[idx].pos;
 
     if (Math.abs(S.dishPos - S.targetPos) > 0.2) {
@@ -1717,9 +1720,10 @@ function goSat(idx) {
         S.dishMoving = true;
         S.signal = 0;
         S.targetSignal = 0;
-        hideCard();
+        // Don't hideCard/ytHide — let sweep handle the transition
+        cardEl.style.display = 'none';
         scrEl.style.display = 'none';
-        // movEl removed
+        renderedKey = '';
     } else {
         tune();
     }
@@ -1859,6 +1863,14 @@ function loop(ts) {
             S.dishPos = S.targetPos;
             S.dishMoving = false;
             movEl.style.display = 'none';
+            lastArrival = performance.now();
+            // Keep whatever is playing — tune will load the right clip
+            // Force clear the canvas behind so no static shows
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, 640, 480);
+            ytWrap.style.opacity = '1';
+            // Restore volume
+            if (ytReady) try { ytPlayer.setVolume(volume); } catch(e) {}
             tune();
         }
         syncArc();
@@ -1881,8 +1893,62 @@ function loop(ts) {
     const t = tp();
 
     if (S.mode === 'moving') {
-        drawStatic();
-        ytWrap.style.opacity = '0'; ytStop();
+        // Check if dish is passing near any satellite
+        let nearestSat = null;
+        let nearestDist = Infinity;
+        for (let si = 0; si < satellites.length; si++) {
+            const dist = Math.abs(S.dishPos - satellites[si].pos);
+            if (dist < nearestDist) {
+                nearestDist = dist;
+                nearestSat = si;
+            }
+        }
+
+        if (nearestDist < 1.5 && nearestSat !== null) {
+            // Passing near a satellite — show its content through static
+            const proxSat = satellites[nearestSat];
+            // Use current TP if it's the departure/arrival sat, otherwise pick first with videos
+            let sweepTp = null;
+            const currentTp = proxSat.transponders[S.tpIdx];
+            if (currentTp && currentTp.videos && !currentTp.scrambled) {
+                sweepTp = S.tpIdx;
+            } else {
+                for (let ti = 0; ti < proxSat.transponders.length; ti++) {
+                    const t = proxSat.transponders[ti];
+                    if (t.videos && !t.scrambled) { sweepTp = ti; break; }
+                }
+            }
+            if (sweepTp !== null) {
+                const sweepVid = getChannelVideo(nearestSat, sweepTp);
+                if (sweepVid) {
+                    ytPlay(sweepVid.id, sweepVid.start);
+                    ytWrap.style.display = 'block';
+                    ytWrap.style.pointerEvents = 'none';
+                    ytWrap.classList.remove('vc-scrambled');
+                    // Opacity based on proximity: 1.0 at dead center, 0 at 1.5° away
+                    const clarity = Math.max(0, 1 - (nearestDist / 1.5));
+                    ytWrap.style.opacity = String(clarity * 0.7);
+                    // Audio fades with proximity
+                    if (ytReady) try { ytPlayer.unMute(); ytPlayer.setVolume(Math.round(clarity * 40)); } catch(e) {}
+                    // Static overlay — heavier when further from center
+                    drawStatic(1 - clarity * 0.8);
+                } else {
+                    drawStatic();
+                    ytWrap.style.opacity = '0';
+                    if (ytReady) try { ytPlayer.setVolume(0); } catch(e) {}
+                }
+            } else {
+                drawStatic();
+                ytWrap.style.opacity = '0';
+                if (ytReady) try { ytPlayer.setVolume(0); } catch(e) {}
+            }
+        } else {
+            // Not near any satellite — just static
+            drawStatic();
+            ytWrap.style.opacity = '0';
+            if (ytReady) try { ytPlayer.setVolume(0); } catch(e) {}
+        }
+        cardEl.style.display = 'none';
 
     } else if (S.mode === 'no_signal' || S.mode === 'retuning') {
         drawStatic();
@@ -2033,6 +2099,7 @@ function loop(ts) {
 
 // === TV POWER STATE ===
 let tvOn = false;
+let lastArrival = 0;
 let rxOn = false;
 
 function rxPowerToggle() {
