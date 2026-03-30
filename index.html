@@ -526,7 +526,7 @@ body {
     <div id="arc-display">
         <div class="arc-label">S A T E L L I T E &nbsp; A R C</div>
         <div id="arc-bar"></div>
-        <div class="arc-scale"><span>65&#176;W</span><span>85&#176;W</span><span>105&#176;W</span><span>125&#176;W</span><span>140&#176;W</span></div>
+        <div class="arc-scale"><span>65&#176;W</span><span>85&#176;W</span><span>105&#176;W</span><span>125&#176;W</span><span>141&#176;W</span></div>
     </div>
 </div>
 
@@ -672,7 +672,7 @@ const satellites = [
             { num:9,  freq:3880, pol:'H', name:'WPIX New York', color:'#0a0a1a', accent:'#4488cc', textColor:'#fff', program:'THE HONEYMOONERS', type:'entertainment', audio:'6.80', stereo:true, tagline:'WB 11 New York', videos:[{id:'08WE4ca1e-M',duration:1157,maxDur:150}] },
             { num:10,  freq:3900, pol:'V', name:'Satellite Test', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'TEST TRANSMISSION', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'JOFpnE09nnI',duration:794}] },
             { num:11, freq:3920, pol:'H', name:'CNN International', color:'#180808', accent:'#cc2222', textColor:'#fff', program:'WORLD REPORT', type:'news', audio:'6.80', stereo:true, tagline:'Occasional Video', videos:[{id:'Gg_XJ4xHCIQ',duration:294},{id:'aPfpZZsWs70',duration:6776,start:2000}] },
-                        { num:12,  freq:3940, pol:'V', name:'Lottery Channel', color:'#0a0a0a', accent:'#ccaa44', textColor:'#ff0', program:'LIVE DRAWINGS', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'gLBMCW1onls',start:56,end:1110},{id:'a6cum2X9YqM',duration:139}] },
+                        { num:12,  freq:3940, pol:'V', name:'Lottery Channel', color:'#0a0a0a', accent:'#ccaa44', textColor:'#ff0', program:'LIVE DRAWINGS', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'gLBMCW1onls',start:56,end:296},{id:'gLBMCW1onls',start:296,end:1112},{id:'a6cum2X9YqM',duration:139}] },
             { num:13,  freq:3960, pol:'H', name:'Satellite Feed', color:'#0a0a0a', accent:'#666', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'OCCASIONAL VIDEO', videos:[{id:'JOFpnE09nnI',duration:794}] },
                         { num:14,  freq:3980, pol:'V', name:'Financial News Wire', color:'#0a0a0a', accent:'#44dddd', textColor:'#0ff', program:'MARKET DATA', type:'news', audio:'6.20', stereo:false, videos:[{id:'tEbZswUEnsU',duration:640},{id:'FPUwrDBpUXg',duration:295}] },
             { num:15, freq:4000, pol:'H', name:'KTLA Los Angeles', color:'#141414', accent:'#cc8800', textColor:'#fff', program:'MARRIED... WITH CHILDREN', type:'entertainment', audio:'6.80', stereo:true, tagline:'The WB Los Angeles', videos:[{id:'nSIlomMNLa0',duration:864,maxDur:150}] },
@@ -685,6 +685,35 @@ const satellites = [
             { num:22,  freq:4140, pol:'V', name:'Local Forecast', color:'#0a0a0a', accent:'#44aaff', textColor:'#fff', program:'TRAVEL CITIES', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'3lcehyFGeyI',duration:196},{id:'E4q0fDY-F-E',duration:84},{id:'T7CuNZ4lgVI',duration:315}] },
             { num:23, freq:4160, pol:'H', name:'Home Team Sports', color:'#0a1a0a', accent:'#44cc44', textColor:'#fff', program:'WASHINGTON CAPITALS HOCKEY', type:'sports', audio:'6.80', stereo:true, tagline:'Washington DC', videos:[{id:'1HBgJojaOGQ',duration:1932,maxDur:150}] },
             { num:24, freq:4180, pol:'V', name:'RTP Internacional', color:'#0a0a28', accent:'#4466cc', textColor:'#fff', program:'TELES\u00c1O', type:'entertainment', audio:'6.80', stereo:false, tagline:'Portugal', videos:[{id:'1HBgJojaOGQ',duration:1932,maxDur:150}] },
+        ]
+    },
+    {
+        name: 'Telstar 4', short: 'T4', pos: 89.0,
+        transponders: [
+            { num:1,  freq:3720, pol:'H', name:null },
+            { num:2,  freq:3740, pol:'V', name:null },
+            { num:3,  freq:3760, pol:'H', name:'Network Feeds', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'OCCASIONAL VIDEO', videos:[{id:'SbPHqhlhyG4',duration:257}] },
+            { num:4,  freq:3780, pol:'V', name:null },
+            { num:5,  freq:3800, pol:'H', name:null },
+            { num:6,  freq:3820, pol:'V', name:'Sports Backhaul', color:'#0a1a0a', accent:'#44cc44', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:true, tagline:'SPORTS FEED', videos:[{id:'_j0KBm4x6ME',duration:5255}] },
+            { num:7,  freq:3840, pol:'H', name:null },
+            { num:8,  freq:3860, pol:'V', name:null },
+            { num:9,  freq:3880, pol:'H', name:null },
+            { num:10, freq:3900, pol:'V', name:null },
+            { num:11, freq:3920, pol:'H', name:null },
+            { num:12, freq:3940, pol:'V', name:null },
+            { num:13, freq:3960, pol:'H', name:null },
+            { num:14, freq:3980, pol:'V', name:null },
+            { num:15, freq:4000, pol:'H', name:null },
+            { num:16, freq:4020, pol:'V', name:null },
+            { num:17, freq:4040, pol:'H', name:null },
+            { num:18, freq:4060, pol:'V', name:null },
+            { num:19, freq:4080, pol:'H', name:null },
+            { num:20, freq:4100, pol:'V', name:null },
+            { num:21, freq:4120, pol:'H', name:null },
+            { num:22, freq:4140, pol:'V', name:null },
+            { num:23, freq:4160, pol:'H', name:null },
+            { num:24, freq:4180, pol:'V', name:null },
         ]
     },
     {
@@ -858,6 +887,46 @@ const satellites = [
         ]
     },
     {
+        name: 'Solidaridad 1', short: 'SD1', pos: 109.2,
+        transponders: [
+            { num:1,  freq:3720, pol:'H', name:'Canal 2 Televisa', color:'#1a0a0a', accent:'#cc4444', textColor:'#fff', program:'EL CANAL DE LAS ESTRELLAS', type:'entertainment', audio:'6.80', stereo:true, tagline:'Televisa', videos:[{id:'Vja_srr-ack',duration:3319}] },
+            { num:2,  freq:3740, pol:'V', name:'Canal 5 XHGC', color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'CARTOONS', type:'kids', audio:'6.80', stereo:true, tagline:'Televisa', videos:[{id:'ytb0w0RqjY0',duration:1927},{id:'Qv6Yie7hLdo',duration:770}] },
+            { num:3,  freq:3760, pol:'H', name:null },
+            { num:4,  freq:3780, pol:'V', name:'Canal 13 Azteca', color:'#0a1a0a', accent:'#44aa44', textColor:'#fff', program:'NOTICIAS', type:'news', audio:'6.80', stereo:true, videos:[{id:'wkt_gvcp_ZM',duration:987}] },
+            { num:5,  freq:3800, pol:'H', name:null },
+            { num:6,  freq:3820, pol:'V', name:'Gobierno Federal', color:'#0a0a1a', accent:'#888', textColor:'#fff', program:'RED FEDERAL', type:'educational', audio:'6.20', stereo:false, videos:[{id:'X5zvjGq6Rsg',duration:921}] },
+            { num:7,  freq:3840, pol:'H', name:null },
+            { num:8,  freq:3860, pol:'V', name:null },
+            { num:9,  freq:3880, pol:'H', name:'Televisa Regional', color:'#1a0a0a', accent:'#cc4444', textColor:'#fff', program:'PROGRAMACION REGIONAL', type:'entertainment', audio:'6.80', stereo:false, videos:[{id:'Qn3nTMhntOg',duration:62}] },
+            { num:10, freq:3900, pol:'V', name:null },
+            { num:11, freq:3920, pol:'H', name:null },
+            { num:12, freq:3940, pol:'V', name:'Red Educativa', color:'#0a0a1a', accent:'#6688cc', textColor:'#fff', program:'TELESECUNDARIA', type:'educational', audio:'6.20', stereo:false, videos:[{id:'X5zvjGq6Rsg',duration:921,start:300},{id:'2Da56flkNFY',duration:35}] },
+            { num:13, freq:3960, pol:'H', name:null },
+            { num:14, freq:3980, pol:'V', name:null },
+            { num:15, freq:4000, pol:'H', name:null },
+            { num:16, freq:4020, pol:'V', name:null },
+            { num:17, freq:4040, pol:'H', name:null },
+            { num:18, freq:4060, pol:'V', name:null },
+        ]
+    },
+    {
+        name: 'Morelos 2', short: 'M2', pos: 116.8,
+        transponders: [
+            { num:1,  freq:3720, pol:'H', name:'Televisa Feed', color:'#1a0a0a', accent:'#cc4444', textColor:'#fff', program:'TELEVISA NETWORK', type:'entertainment', audio:'6.80', stereo:true, videos:[{id:'Vja_srr-ack',duration:3319,start:1000}] },
+            { num:2,  freq:3740, pol:'V', name:null },
+            { num:3,  freq:3760, pol:'H', name:null },
+            { num:4,  freq:3780, pol:'V', name:'Canal 9 Televisa', color:'#1a0a0a', accent:'#cc8844', textColor:'#fff', program:'GALAVISIÓN', type:'entertainment', audio:'6.80', stereo:true, videos:[{id:'cRYjMch8edY',duration:2480}] },
+            { num:5,  freq:3800, pol:'H', name:null },
+            { num:6,  freq:3820, pol:'V', name:null },
+            { num:7,  freq:3840, pol:'H', name:'SCT Gobierno', color:'#0a0a1a', accent:'#888', textColor:'#fff', program:'GOBIERNO DE MEXICO', type:'educational', audio:'6.20', stereo:false, videos:[{id:'X5zvjGq6Rsg',duration:921,start:500}] },
+            { num:8,  freq:3860, pol:'V', name:null },
+            { num:9,  freq:3880, pol:'H', name:null },
+            { num:10, freq:3900, pol:'V', name:null },
+            { num:11, freq:3920, pol:'H', name:null },
+            { num:12, freq:3940, pol:'V', name:null },
+        ]
+    },
+    {
         name: 'Galaxy 5', short: 'G5', pos: 125.0,
         transponders: [
             { num:1,  freq:3720, pol:'H', name:'Disney Channel East', scrambled:true, color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'ADVENTURES IN WONDERLAND', type:'premium', audio:'6.80', stereo:true, videos:[{id:'X3HcL4-2QGE',duration:888},{id:'wniDCiLSgyk',duration:530}] },
@@ -979,7 +1048,7 @@ const satellites = [
             { num:1,  freq:3720, pol:'H', name:null },
             { num:2,  freq:3740, pol:'V', name:'KUSA Denver ABC', color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'WORLD NEWS TONIGHT', type:'network', audio:'6.80', stereo:true, tagline:'Denver 5', videos:[{id:'1HBgJojaOGQ',duration:1932,maxDur:150}] },
             { num:3,  freq:3760, pol:'H', name:'KRMA Denver PBS', color:'#141408', accent:'#44aa44', textColor:'#fff', program:'ROCKY MOUNTAIN PBS', type:'educational', audio:'6.80', stereo:true, videos:[{id:'W4RSwwMymj0',duration:3320,start:18}] },
-            { num:4,  freq:3780, pol:'V', name:'Lottery Results', color:'#0a0a0a', accent:'#ccaa44', textColor:'#ff0', program:'WINNING NUMBERS', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'gLBMCW1onls',start:56,end:1110},{id:'a6cum2X9YqM',duration:139}] },
+            { num:4,  freq:3780, pol:'V', name:'Lottery Results', color:'#0a0a0a', accent:'#ccaa44', textColor:'#ff0', program:'WINNING NUMBERS', type:'entertainment', audio:'6.20', stereo:false, videos:[{id:'gLBMCW1onls',start:296,end:1112},{id:'a6cum2X9YqM',duration:139}] },
             { num:5,  freq:3800, pol:'H', name:null },
             { num:6,  freq:3820, pol:'V', name:'KMGH Denver CBS', color:'#0a0a28', accent:'#4488ff', textColor:'#fff', program:'CBS 7 DENVER', type:'network', audio:'6.80', stereo:true, videos:[{id:'1tfJAJGR_iM',duration:2565,maxDur:150}] },
             { num:7,  freq:3840, pol:'H', name:null },
@@ -1002,6 +1071,35 @@ const satellites = [
             { num:24, freq:4180, pol:'V', name:'Sunshine Network', color:'#161608', accent:'#ccaa44', textColor:'#fff', program:'FLORIDA SPORTS TONIGHT', type:'sports', audio:'6.80', stereo:true, tagline:'Florida Regional Sports', videos:[{id:'1HBgJojaOGQ',duration:1932,maxDur:150}] },
         ]
     },
+    {
+        name: 'Aurora 1', short: 'A1', pos: 139.0,
+        transponders: [
+            { num:1,  freq:3720, pol:'H', name:'ARCS Alaska', color:'#0a0a1a', accent:'#44aacc', textColor:'#fff', program:'ALASKA RURAL TV', type:'educational', audio:'6.20', stereo:false, videos:[{id:'Z_ITOFglu2o',duration:3482}] },
+            { num:2,  freq:3740, pol:'V', name:null },
+            { num:3,  freq:3760, pol:'H', name:null },
+            { num:4,  freq:3780, pol:'V', name:'ARCS Feed 2', color:'#0a0a1a', accent:'#44aacc', textColor:'#fff', program:'ALASKA PROGRAMMING', type:'educational', audio:'6.20', stereo:false, videos:[{id:'HLdtxE3uQks',duration:3699}] },
+            { num:5,  freq:3800, pol:'H', name:null },
+            { num:6,  freq:3820, pol:'V', name:null },
+            { num:7,  freq:3840, pol:'H', name:'RATPAC', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'RURAL ALASKA TV', type:'educational', audio:'6.20', stereo:false, videos:[{id:'5U-CPNUN-kA',duration:1956}] },
+            { num:8,  freq:3860, pol:'V', name:null },
+            { num:9,  freq:3880, pol:'H', name:null },
+            { num:10, freq:3900, pol:'V', name:null },
+            { num:11, freq:3920, pol:'H', name:null },
+            { num:12, freq:3940, pol:'V', name:null },
+            { num:13, freq:3960, pol:'H', name:null },
+            { num:14, freq:3980, pol:'V', name:null },
+            { num:15, freq:4000, pol:'H', name:null },
+            { num:16, freq:4020, pol:'V', name:null },
+            { num:17, freq:4040, pol:'H', name:null },
+            { num:18, freq:4060, pol:'V', name:null },
+            { num:19, freq:4080, pol:'H', name:null },
+            { num:20, freq:4100, pol:'V', name:null },
+            { num:21, freq:4120, pol:'H', name:null },
+            { num:22, freq:4140, pol:'V', name:null },
+            { num:23, freq:4160, pol:'H', name:null },
+            { num:24, freq:4180, pol:'V', name:'Pacific Feeds', color:'#0a0a0a', accent:'#888', textColor:'#fff', program:'LIVE SATELLITE FEED', type:'wild_feed', audio:'6.20', stereo:false, tagline:'PACIFIC REGION', videos:[{id:'SbPHqhlhyG4',duration:257}] },
+        ]
+    },
 ];
 
 
@@ -1011,8 +1109,8 @@ const satellites = [
 // ================================================================
 
 const S = {
-    satIdx: 11,         // Galaxy 5
-    tpIdx: 4,           // CNN (TP05)
+    satIdx: 14,         // G5 Galaxy 5
+    tpIdx: 4,           // TP05 CNN
     dishPos: 125.0,
     targetPos: 125.0,
     dishMoving: false,
@@ -1539,7 +1637,7 @@ function initArc() {
     const bar = document.getElementById('arc-bar');
     bar.innerHTML = '<div id="arc-dish"></div>';
     satellites.forEach((s, i) => {
-        const pct = ((s.pos - 65) / 75) * 100;
+        const pct = ((s.pos - 65) / 76) * 100;
         const m = document.createElement('div');
         m.className = 'arc-sat' + (i === S.satIdx ? ' active' : '');
         m.id = 'arc-' + i;
@@ -1553,7 +1651,7 @@ function initArc() {
 }
 
 function syncArc() {
-    document.getElementById('arc-dish').style.left = ((S.dishPos - 65) / 75 * 100) + '%';
+    document.getElementById('arc-dish').style.left = ((S.dishPos - 65) / 76 * 100) + '%';
     satellites.forEach((_, i) => {
         const el = document.getElementById('arc-' + i);
         if (el) el.className = 'arc-sat' + (i === S.satIdx ? ' active' : '');
@@ -1939,6 +2037,27 @@ document.getElementById('btn-scan').onclick   = startScan;
 let volume = 100;
 let debugVisible = true;
 
+const ledColors = [
+    { color: '#00cc00', glow: 'rgba(0,204,0,0.35)', name: 'green' },
+    { color: '#ffaa00', glow: 'rgba(255,170,0,0.35)', name: 'amber' },
+    { color: '#ff3333', glow: 'rgba(255,51,51,0.35)', name: 'red' },
+    { color: '#00cccc', glow: 'rgba(0,204,204,0.35)', name: 'cyan' },
+];
+let ledColorIdx = 0;
+
+function cycleLedColor(dir) {
+    ledColorIdx = (ledColorIdx + dir + ledColors.length) % ledColors.length;
+    const lc = ledColors[ledColorIdx];
+    document.querySelectorAll('.led-value, .led-big').forEach(el => {
+        el.style.color = lc.color;
+        el.style.textShadow = '0 0 8px ' + lc.glow;
+    });
+    document.querySelectorAll('.led-label').forEach(el => {
+        el.style.color = lc.color.replace('cc','4a').replace('ff','5a').replace('33','1a');
+    });
+    showOSD('LED: ' + lc.name.toUpperCase(), 1000);
+}
+
 document.addEventListener('keydown', e => {
     switch (e.key) {
         case 'ArrowLeft':  e.preventDefault(); goSat(S.satIdx - 1); break;
@@ -1968,6 +2087,8 @@ document.addEventListener('keydown', e => {
             debugVisible = !debugVisible;
             document.getElementById('debug').style.display = debugVisible ? 'block' : 'none';
             break;
+        case ']': cycleLedColor(1); break;
+        case '[': cycleLedColor(-1); break;
     }
 });
 
