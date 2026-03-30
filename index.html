@@ -322,22 +322,51 @@ body {
     #receiver { width: calc(90vw + 44px); max-width: 98vw; }
 }
 
-#rx-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; padding: 0 2px; flex-wrap: wrap; gap: 4px; }
+#rx-top { display: flex; align-items: center; margin-bottom: 6px; padding: 0 2px; gap: 8px; }
 #rx-brand { font-size: 12px; letter-spacing: 3px; color: #888; font-weight: bold; }
-#rx-model { font-size: 10px; color: #555; letter-spacing: 1px; }
+#rx-model { font-size: 10px; color: #888; letter-spacing: 1px; }
+#rx-power-btn {
+    width: 28px; height: 28px; border-radius: 50%;
+    border: 2px solid #555; background: linear-gradient(180deg, #444, #2a2a2a);
+    color: #555; font-size: 14px; cursor: pointer; padding: 0; line-height: 24px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.08);
+    transition: all 0.2s;
+    align-self: flex-end;
+}
+#rx-power-btn:hover { border-color: #777; color: #888; }
+#rx-power-btn.on { color: #0f0; border-color: #0a0; box-shadow: 0 0 8px rgba(0,255,0,0.3), 0 2px 4px rgba(0,0,0,0.5); text-shadow: 0 0 6px rgba(0,255,0,0.5); }
 
-#rx-display {
+#rx-displays {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+.rx-display-panel {
     background: #081408;
     border: 2px solid #333;
     border-radius: 4px;
     padding: 8px 12px;
-    margin-bottom: 8px;
     box-shadow: inset 0 2px 10px rgba(0,0,0,0.9);
+}
+#rx-display-info {
+    flex: 1;
+}
+#rx-display-main {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    padding: 10px 24px;
+}
+#rx-display-main .led-big {
+    font-size: 32px;
+    text-shadow: 0 0 12px rgba(0,204,0,0.5);
 }
 
 .led-row { display: flex; align-items: center; gap: 6px; margin-bottom: 3px; height: 20px; flex-wrap: wrap; }
 .led-row:last-child { margin-bottom: 0; }
-.led-label { color: #1e4a1e; font-size: 9px; letter-spacing: 1px; }
+.led-label { color: #666; font-size: 9px; letter-spacing: 1px; }
 .led-value { color: #00cc00; font-size: 13px; text-shadow: 0 0 8px rgba(0,204,0,0.35); letter-spacing: 1px; font-family: 'DSEG14', monospace; }
 .led-big { font-size: 24px; text-shadow: 0 0 10px rgba(0,204,0,0.5); }
 
@@ -346,7 +375,8 @@ body {
 @keyframes led-pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
 
 /* Controls */
-#rx-controls { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 8px; flex-wrap: wrap; }
+#rx-bottom { display: flex; align-items: flex-end; margin: 0 0 8px; gap: 12px; }
+#rx-controls { display: flex; align-items: flex-start; gap: 14px; flex-wrap: wrap; justify-content: center; flex: 1; }
 .ctrl-group { display: flex; flex-direction: column; align-items: center; gap: 3px; }
 .ctrl-label { font-size: 8px; letter-spacing: 2px; color: #666; }
 .ctrl-buttons { display: flex; gap: 3px; }
@@ -356,7 +386,8 @@ body {
     color: #ccc;
     border: 1px solid #555;
     border-radius: 3px;
-    padding: 5px 13px;
+    padding: 0 13px;
+    height: 32px;
     font-family: monospace;
     font-size: 14px;
     cursor: pointer;
@@ -371,13 +402,13 @@ body {
     box-shadow: 0 1px 2px rgba(0,0,0,0.4), inset 0 2px 4px rgba(0,0,0,0.3);
     transform: translateY(1px);
 }
-.rx-btn.wide { padding: 5px 18px; letter-spacing: 2px; font-size: 11px; }
+.rx-btn.wide { padding: 0 18px; letter-spacing: 2px; font-size: 11px; }
 .rx-btn.active { background: #1a4a1a; color: #0f0; border-color: #0a0; box-shadow: 0 0 8px rgba(0,255,0,0.2); }
 
 /* Indicators */
-#indicators { display: flex; gap: 12px; margin-left: auto; align-items: center; padding-top: 6px; }
+#indicators { display: flex; gap: 14px; align-items: center; margin-left: auto; }
 .ind { display: flex; flex-direction: column; align-items: center; gap: 2px; }
-.ind span { font-size: 7px; letter-spacing: 1px; color: #555; }
+.ind span { font-size: 7px; letter-spacing: 1px; color: #888; }
 .ind-led {
     width: 9px; height: 9px; border-radius: 50%;
     background: #1a1a1a; border: 1px solid #333;
@@ -404,7 +435,7 @@ body {
 }
 .arc-sat-label {
     position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
-    font-size: 7px; color: #3a5a3a; white-space: nowrap; letter-spacing: 1px;
+    font-size: 7px; color: #6a8a6a; white-space: nowrap; letter-spacing: 1px;
 }
 .arc-sat.active { background: #00bb00; box-shadow: 0 0 6px rgba(0,187,0,0.4); }
 .arc-sat.active .arc-sat-label { color: #00ee00; font-weight: bold; }
@@ -414,9 +445,9 @@ body {
     border-radius: 5px; z-index: 2; box-shadow: 0 0 10px rgba(0,238,0,0.3);
     transition: left 0.06s linear;
 }
-.arc-scale { display: flex; justify-content: space-between; margin: 3px 8px 0; font-size: 8px; color: #333; }
+.arc-scale { display: flex; justify-content: space-between; margin: 3px 8px 0; font-size: 8px; color: #777; }
 
-#help { margin-top: 10px; font-size: 10px; color: #383838; letter-spacing: 1px; text-align: center; }
+#help { margin-top: 10px; font-size: 10px; color: #666; letter-spacing: 1px; text-align: center; }
 </style>
 </head>
 <body>
@@ -461,16 +492,22 @@ body {
 <div id="receiver">
     <div id="rx-top">
         <span id="rx-brand">GENERAL INSTRUMENT</span>
+        <span style="color:#666">&middot;</span>
         <span id="rx-model">2450R &middot; VIDEOCIPHER II+ RS</span>
+        <div id="indicators">
+            <div class="ind"><div class="ind-led" id="ind-lock"></div><span>LOCK</span></div>
+            <div class="ind"><div class="ind-led" id="ind-vc"></div><span>VC II</span></div>
+            <div class="ind"><div class="ind-led" id="ind-stereo"></div><span>STEREO</span></div>
+        </div>
     </div>
-    <div id="rx-display">
-        <div id="led-panel">
+    <div id="rx-displays">
+        <div id="rx-display-info" class="rx-display-panel">
             <div class="led-row" style="justify-content:center;gap:4px">
                 <span class="led-label">FREQ</span>
                 <span id="d-freq" class="led-value"></span>
-                <span class="led-label" style="margin-left:12px">AUD</span>
+                <span class="led-label" style="margin-left:10px">AUD</span>
                 <span id="d-aud" class="led-value"></span>
-                <span class="led-label" style="margin-left:12px">AZ</span>
+                <span class="led-label" style="margin-left:10px">AZ</span>
                 <span id="d-az" class="led-value"></span>
                 <span class="led-label" style="margin-left:4px">EL</span>
                 <span id="d-el" class="led-value"></span>
@@ -480,25 +517,31 @@ body {
                 <span id="d-signal-pct" class="led-value" style="min-width:30px"></span>
                 <span id="d-signal-bars" class="led-value" style="letter-spacing:2px"></span>
             </div>
-            <div style="display:flex;justify-content:center;gap:30px;margin-top:8px;padding-top:6px;border-top:1px solid #1a3a1a">
-                <div style="text-align:center">
-                    <div class="led-label">SAT</div>
-                    <div id="d-sat" class="led-value led-big"></div>
-                </div>
-                <div style="text-align:center">
-                    <div class="led-label">TP</div>
-                    <div id="d-tp" class="led-value led-big"></div>
-                </div>
-                <div style="text-align:center">
-                    <div class="led-label">POL</div>
-                    <div id="d-pol" class="led-value led-big"></div>
-                </div>
+        </div>
+        <div id="rx-display-main" class="rx-display-panel">
+            <div style="text-align:center">
+                <div class="led-label">SAT</div>
+                <div id="d-sat" class="led-value led-big"></div>
+            </div>
+            <div style="text-align:center">
+                <div class="led-label">TP</div>
+                <div id="d-tp" class="led-value led-big"></div>
+            </div>
+            <div style="text-align:center">
+                <div class="led-label">POL</div>
+                <div id="d-pol" class="led-value led-big"></div>
             </div>
         </div>
     </div>
-    <div id="rx-controls">
-        <div class="ctrl-group">
-            <div class="ctrl-label">SATELLITE</div>
+    <div id="arc-display">
+        <div class="arc-label">S A T E L L I T E &nbsp; A R C</div>
+        <div id="arc-bar"></div>
+        <div class="arc-scale"><span>65&#176;W</span><span>85&#176;W</span><span>105&#176;W</span><span>125&#176;W</span><span>141&#176;W</span></div>
+    </div>
+    <div id="rx-bottom">
+        <div id="rx-controls">
+            <div class="ctrl-group">
+                <div class="ctrl-label">SATELLITE</div>
             <div class="ctrl-buttons">
                 <button class="rx-btn" id="btn-sat-dn" title="Previous satellite (Left arrow)">&#9664;</button>
                 <button class="rx-btn" id="btn-sat-up" title="Next satellite (Right arrow)">&#9654;</button>
@@ -517,20 +560,12 @@ body {
                 <button class="rx-btn wide" id="btn-scan" title="Auto scan (S)">SCAN</button>
             </div>
         </div>
-        <div id="indicators">
-            <div class="ind"><div class="ind-led" id="ind-lock"></div><span>LOCK</span></div>
-            <div class="ind"><div class="ind-led" id="ind-vc"></div><span>VC II</span></div>
-            <div class="ind"><div class="ind-led" id="ind-stereo"></div><span>STEREO</span></div>
         </div>
-    </div>
-    <div id="arc-display">
-        <div class="arc-label">S A T E L L I T E &nbsp; A R C</div>
-        <div id="arc-bar"></div>
-        <div class="arc-scale"><span>65&#176;W</span><span>85&#176;W</span><span>105&#176;W</span><span>125&#176;W</span><span>141&#176;W</span></div>
+        <button id="rx-power-btn" onclick="rxPowerToggle()" title="Receiver Power">&#x23FB;</button>
     </div>
 </div>
 
-<div id="help">&larr;&rarr; SAT &nbsp; &uarr;&darr; TP &nbsp; S SCAN &nbsp; N SKIP &nbsp; +/- VOL &nbsp; M +1m &nbsp; H +1h &nbsp; D DEBUG</div>
+<div id="help">&larr;&rarr; SAT &nbsp; &uarr;&darr; TP &nbsp; S SCAN &nbsp; N SKIP &nbsp; +/- VOL &nbsp; [ ] LED &nbsp; M +1m &nbsp; H +1h &nbsp; D DEBUG</div>
 <div id="debug" style="margin-top:8px;font-size:10px;color:#333;text-align:center;font-family:monospace;letter-spacing:0.5px">
     <span id="dbg-elapsed"></span> &nbsp; <a id="dbg-clip" href="#" target="_blank" style="color:#555"></a>
 </div>
@@ -1597,6 +1632,7 @@ function hideCard() {
 // ================================================================
 
 function showOSD(text, ms) {
+    if (!tvOn || !rxOn) return;
     osdEl.textContent = text;
     osdEl.style.display = 'block';
     S.osdExpiry = performance.now() + (ms || 3000);
@@ -1804,6 +1840,15 @@ function loop(ts) {
         return;
     }
 
+    // --- TV on but receiver off: just static ---
+    if (!rxOn) {
+        drawStatic();
+        ytWrap.style.opacity = '0';
+        cardEl.style.display = 'none';
+        requestAnimationFrame(loop);
+        return;
+    }
+
     // --- Dish motor ---
     if (S.dishMoving) {
         const diff = S.targetPos - S.dishPos;
@@ -1988,6 +2033,39 @@ function loop(ts) {
 
 // === TV POWER STATE ===
 let tvOn = false;
+let rxOn = false;
+
+function rxPowerToggle() {
+    rxOn = !rxOn;
+    document.getElementById('rx-power-btn').classList.toggle('on', rxOn);
+    if (rxOn && tvOn) {
+        // Receiver just turned on while TV is on — tune in
+        S.mode = 'acquiring';
+        S.signal = 0;
+        S.targetSignal = 72 + Math.random() * 23;
+        hideCard();
+        showOSD(sat().short + ' \u2014 ' + sat().name + '\nTP ' + String(tp().num).padStart(2,'0') + ' \u2014 ' + tp().name, 4000);
+    }
+    if (!rxOn) {
+        // Receiver off — kill audio/video
+        fadeAudio();
+        ytWrap.style.opacity = '0';
+        cardEl.style.display = 'none';
+        osdEl.style.display = 'none';
+    }
+    // Toggle LED values visibility
+    document.querySelectorAll('.led-value, .led-big').forEach(el => {
+        el.style.visibility = rxOn ? 'visible' : 'hidden';
+    });
+    // Toggle arc bar ticks and labels
+    document.querySelectorAll('.arc-sat, .arc-sat-label, #arc-dish').forEach(el => {
+        el.style.visibility = rxOn ? 'visible' : 'hidden';
+    });
+    // Toggle indicator lights
+    document.querySelectorAll('.ind-led').forEach(el => {
+        if (!rxOn) el.className = 'ind-led';
+    });
+}
 
 function powerToggle() {
     tvOn = !tvOn;
@@ -2038,23 +2116,38 @@ let volume = 100;
 let debugVisible = true;
 
 const ledColors = [
-    { color: '#00cc00', glow: 'rgba(0,204,0,0.35)', name: 'green' },
-    { color: '#ffaa00', glow: 'rgba(255,170,0,0.35)', name: 'amber' },
-    { color: '#ff3333', glow: 'rgba(255,51,51,0.35)', name: 'red' },
-    { color: '#00cccc', glow: 'rgba(0,204,204,0.35)', name: 'cyan' },
+    { color: '#00cc00', glow: 'rgba(0,204,0,0.35)', bg: '#081408', dim: '#1e4a1e', arc: '#2a4a2a', arcActive: '#00bb00', arcGlow: 'rgba(0,187,0,0.4)', dish: '#009900', dishBorder: '#00ee00', dishGlow: 'rgba(0,238,0,0.3)', name: 'green' },
+    { color: '#ddcc00', glow: 'rgba(221,204,0,0.35)', bg: '#141408', dim: '#4a4a1e', arc: '#4a4a2a', arcActive: '#bbbb00', arcGlow: 'rgba(187,187,0,0.4)', dish: '#999900', dishBorder: '#dddd00', dishGlow: 'rgba(221,221,0,0.3)', name: 'amber' },
+    { color: '#ff3333', glow: 'rgba(255,51,51,0.35)', bg: '#140808', dim: '#4a1e1e', arc: '#4a2a2a', arcActive: '#bb0000', arcGlow: 'rgba(187,0,0,0.4)', dish: '#990000', dishBorder: '#ee0000', dishGlow: 'rgba(238,0,0,0.3)', name: 'red' },
+    { color: '#00cccc', glow: 'rgba(0,204,204,0.35)', bg: '#081414', dim: '#1e4a4a', arc: '#2a4a4a', arcActive: '#00bbbb', arcGlow: 'rgba(0,187,187,0.4)', dish: '#009999', dishBorder: '#00eeee', dishGlow: 'rgba(0,238,238,0.3)', name: 'cyan' },
 ];
 let ledColorIdx = 0;
 
 function cycleLedColor(dir) {
     ledColorIdx = (ledColorIdx + dir + ledColors.length) % ledColors.length;
     const lc = ledColors[ledColorIdx];
+    // LED text
     document.querySelectorAll('.led-value, .led-big').forEach(el => {
         el.style.color = lc.color;
         el.style.textShadow = '0 0 8px ' + lc.glow;
     });
-    document.querySelectorAll('.led-label').forEach(el => {
-        el.style.color = lc.color.replace('cc','4a').replace('ff','5a').replace('33','1a');
+    // Display backgrounds
+    document.querySelectorAll('.rx-display-panel').forEach(el => { el.style.background = lc.bg; });
+    // Arc bar satellites
+    document.querySelectorAll('.arc-sat').forEach(el => {
+        el.style.background = el.classList.contains('active') ? lc.arcActive : lc.arc;
+        el.style.boxShadow = el.classList.contains('active') ? '0 0 6px ' + lc.arcGlow : 'none';
     });
+    document.querySelectorAll('.arc-sat-label').forEach(el => {
+        el.style.color = el.parentElement.classList.contains('active') ? lc.color : lc.arc;
+    });
+    // Dish indicator
+    const dish = document.getElementById('arc-dish');
+    if (dish) {
+        dish.style.background = lc.dish;
+        dish.style.borderColor = lc.dishBorder;
+        dish.style.boxShadow = '0 0 10px ' + lc.dishGlow;
+    }
     showOSD('LED: ' + lc.name.toUpperCase(), 1000);
 }
 
@@ -2112,9 +2205,13 @@ S.signal = 0;
 S.targetSignal = 0;
 S.mode = 'locked';
 updateLED();
-// TV starts OFF — black screen, click power to turn on
+// Both start OFF
 ctx.fillStyle = '#000';
 ctx.fillRect(0, 0, 640, 480);
+// Hide receiver elements on init
+document.querySelectorAll('.led-value, .led-big').forEach(el => { el.style.visibility = 'hidden'; });
+document.querySelectorAll('.arc-sat, .arc-sat-label, #arc-dish').forEach(el => { el.style.visibility = 'hidden'; });
+document.querySelectorAll('.ind-led').forEach(el => { el.className = 'ind-led'; });
 requestAnimationFrame(loop);
 </script>
 </body>
