@@ -1,6 +1,50 @@
 //  CONTROLS
 // ================================================================
 
+// ================================================================
+//  ANALYTICS — channel dwell time tracking
+// ================================================================
+
+let dwellStart = 0;
+let dwellSat = '';
+let dwellTp = '';
+let dwellChannel = '';
+
+function trackChannelTune() {
+    // Send dwell time for previous channel
+    if (dwellStart && dwellChannel) {
+        const dwellSec = Math.round((Date.now() - dwellStart) / 1000);
+        if (dwellSec > 2 && typeof gtag === 'function') {
+            gtag('event', 'channel_dwell', {
+                satellite: dwellSat,
+                transponder: dwellTp,
+                channel_name: dwellChannel,
+                dwell_seconds: dwellSec
+            });
+        }
+    }
+    // Start tracking new channel
+    const s = sat();
+    const t = tp();
+    dwellStart = Date.now();
+    dwellSat = s.short;
+    dwellTp = String(t.num).padStart(2, '0');
+    dwellChannel = t.name || 'NO SIGNAL';
+
+    if (typeof gtag === 'function') {
+        gtag('event', 'channel_tune', {
+            satellite: dwellSat,
+            transponder: dwellTp,
+            channel_name: dwellChannel,
+            scrambled: !!t.scrambled
+        });
+    }
+}
+
+function trackEvent(name, params) {
+    if (typeof gtag === 'function') gtag('event', name, params);
+}
+
 function saveChannel() {
     try { localStorage.setItem('cband-channel', JSON.stringify({sat:S.satIdx, tp:S.tpIdx})); } catch(e) {}
 }
@@ -36,6 +80,7 @@ function goSat(idx) {
     showOSD(satellites[idx].short + ' \u2014 ' + satellites[idx].name + '\n' + satellites[idx].pos + ' DEG W', 3000);
     updateLED();
     saveChannel();
+    trackEvent('satellite_change', { satellite: satellites[idx].short, position: satellites[idx].pos });
 }
 
 function fadeAudio() {
@@ -66,6 +111,7 @@ function goTp(dir) {
     setTimeout(() => { if (S.mode === 'retuning') tune(); }, 300);
     updateLED();
     saveChannel();
+    trackChannelTune();
 }
 
 function tune() {
@@ -147,6 +193,7 @@ let rxOn = false;
 function rxPowerToggle() {
     rxOn = !rxOn;
     document.getElementById('rx-power-btn').classList.toggle('on', rxOn);
+    trackEvent('receiver_power', { state: rxOn ? 'on' : 'off' });
     if (rxOn && tvOn) {
         // Receiver just turned on while TV is on — tune in
         S.mode = 'acquiring';
@@ -180,6 +227,7 @@ function powerToggle() {
     tvOn = !tvOn;
     const btn = document.getElementById('power-btn');
     btn.classList.toggle('on', tvOn);
+    trackEvent('tv_power', { state: tvOn ? 'on' : 'off' });
 
     if (tvOn) {
         // Power ON — CRT warm-up then show content
@@ -324,3 +372,6 @@ document.querySelectorAll('.led-value, .led-big').forEach(el => { el.style.visib
 document.querySelectorAll('.arc-sat, .arc-sat-label, #arc-dish').forEach(el => { el.style.visibility = 'hidden'; });
 document.querySelectorAll('.ind-led').forEach(el => { el.className = 'ind-led'; });
 requestAnimationFrame(loop);
+
+// Flush dwell time on page unload
+window.addEventListener('beforeunload', () => { trackChannelTune(); });
