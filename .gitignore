@@ -1,2 +1,6 @@
 *.png
-.claude/
+*.csv
+*.json
+scratch.txt
+analyze_clips.py
+cband-guide.md
