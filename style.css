@@ -23,7 +23,8 @@ body {
 #title {
     font-size: 13px;
     letter-spacing: 6px;
-    color: #444;
+    color: #777;
+    font-weight: bold;
     margin: 8px 0;
     text-align: center;
 }
