@@ -1492,6 +1492,92 @@ function stopScrambleAudio() {
     scrAudioOn = false;
 }
 
+// ================================================================
+//  STATIC HISS + MOTOR HUM — built once, gated on/off
+// ================================================================
+
+let staticAudioBuilt = false;
+let staticGate = null;
+let motorGate = null;
+
+function buildStaticAudio() {
+    if (staticAudioBuilt) return;
+    if (!audioCtx) {
+        try { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch(e) { return; }
+    }
+
+    // --- Static hiss: white noise through bandpass ---
+    const bufSize = audioCtx.sampleRate * 2;
+    const noiseBuf = audioCtx.createBuffer(1, bufSize, audioCtx.sampleRate);
+    const nd = noiseBuf.getChannelData(0);
+    for (let i = 0; i < bufSize; i++) nd[i] = Math.random() * 2 - 1;
+
+    const hissNoise = audioCtx.createBufferSource();
+    hissNoise.buffer = noiseBuf;
+    hissNoise.loop = true;
+
+    const hissFilter = audioCtx.createBiquadFilter();
+    hissFilter.type = 'bandpass';
+    hissFilter.frequency.value = 2000;
+    hissFilter.Q.value = 0.5;
+
+    const hissMaster = audioCtx.createGain();
+    hissMaster.gain.value = 0.04;
+
+    staticGate = audioCtx.createGain();
+    staticGate.gain.value = 0;
+
+    hissNoise.connect(hissFilter);
+    hissFilter.connect(hissMaster);
+    hissMaster.connect(staticGate);
+    staticGate.connect(audioCtx.destination);
+    hissNoise.start();
+
+    // --- Motor hum: low oscillator + slight vibrato ---
+    const motorOsc = audioCtx.createOscillator();
+    motorOsc.type = 'sawtooth';
+    motorOsc.frequency.value = 55;
+
+    const motorOsc2 = audioCtx.createOscillator();
+    motorOsc2.type = 'sine';
+    motorOsc2.frequency.value = 110;
+
+    const motorFilter = audioCtx.createBiquadFilter();
+    motorFilter.type = 'lowpass';
+    motorFilter.frequency.value = 200;
+    motorFilter.Q.value = 1;
+
+    const motorMix = audioCtx.createGain();
+    motorMix.gain.value = 0.015;
+
+    motorGate = audioCtx.createGain();
+    motorGate.gain.value = 0;
+
+    motorOsc.connect(motorMix);
+    motorOsc2.connect(motorMix);
+    motorMix.connect(motorFilter);
+    motorFilter.connect(motorGate);
+    motorGate.connect(audioCtx.destination);
+    motorOsc.start();
+    motorOsc2.start();
+
+    staticAudioBuilt = true;
+}
+
+function setStaticHiss(on) {
+    if (!staticAudioBuilt) buildStaticAudio();
+    if (!staticGate) return;
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    staticGate.gain.setTargetAtTime(on ? 1 : 0, audioCtx.currentTime, 0.08);
+}
+
+function setMotorHum(on) {
+    if (!staticAudioBuilt) buildStaticAudio();
+    if (!motorGate) return;
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    motorGate.gain.setTargetAtTime(on ? 1 : 0, audioCtx.currentTime, 0.1);
+}
+
 // Small noise canvas for performant static
 const nCvs = document.createElement('canvas');
 nCvs.width = 160; nCvs.height = 120;
@@ -1704,12 +1790,15 @@ function saveChannel() {
     try { localStorage.setItem('cband-channel', JSON.stringify({sat:S.satIdx, tp:S.tpIdx})); } catch(e) {}
 }
 
+let departureSat = -1;
+
 function goSat(idx) {
     if (idx < 0) idx = satellites.length - 1;
     if (idx >= satellites.length) idx = 0;
     if (S.scanning) stopScan();
     fadeAudio();
 
+    departureSat = S.satIdx;
     S.satIdx = idx;
     // Keep same TP, clamp if new sat has fewer transponders
     S.tpIdx = Math.min(S.tpIdx, satellites[idx].transponders.length - 1);
@@ -1847,6 +1936,8 @@ function loop(ts) {
     // --- TV on but receiver off: just static ---
     if (!rxOn) {
         drawStatic();
+        setStaticHiss(true);
+        setMotorHum(false);
         ytWrap.style.opacity = '0';
         cardEl.style.display = 'none';
         requestAnimationFrame(loop);
@@ -1893,6 +1984,7 @@ function loop(ts) {
     const t = tp();
 
     if (S.mode === 'moving') {
+        setMotorHum(true);
         // Check if dish is passing near any satellite
         let nearestSat = null;
         let nearestDist = Infinity;
@@ -1907,15 +1999,24 @@ function loop(ts) {
         if (nearestDist < 1.5 && nearestSat !== null) {
             // Passing near a satellite — show its content through static
             const proxSat = satellites[nearestSat];
-            // Use current TP if it's the departure/arrival sat, otherwise pick first with videos
             let sweepTp = null;
-            const currentTp = proxSat.transponders[S.tpIdx];
-            if (currentTp && currentTp.videos && !currentTp.scrambled) {
-                sweepTp = S.tpIdx;
+
+            if (nearestSat === S.satIdx || nearestSat === departureSat) {
+                // Destination or departure — only show current TP's content (no fallback)
+                const currentTp = proxSat.transponders[S.tpIdx];
+                if (currentTp && currentTp.videos && !currentTp.scrambled) {
+                    sweepTp = S.tpIdx;
+                }
             } else {
-                for (let ti = 0; ti < proxSat.transponders.length; ti++) {
-                    const t = proxSat.transponders[ti];
-                    if (t.videos && !t.scrambled) { sweepTp = ti; break; }
+                // Passing satellite — use current TP or fall back to first with videos
+                const currentTp = proxSat.transponders[S.tpIdx];
+                if (currentTp && currentTp.videos && !currentTp.scrambled) {
+                    sweepTp = S.tpIdx;
+                } else {
+                    for (let ti = 0; ti < proxSat.transponders.length; ti++) {
+                        const t = proxSat.transponders[ti];
+                        if (t.videos && !t.scrambled) { sweepTp = ti; break; }
+                    }
                 }
             }
             if (sweepTp !== null) {
@@ -1930,6 +2031,8 @@ function loop(ts) {
                     ytWrap.style.opacity = String(clarity * 0.7);
                     // Audio fades with proximity
                     if (ytReady) try { ytPlayer.unMute(); ytPlayer.setVolume(Math.round(clarity * 40)); } catch(e) {}
+                    // Static hiss dips as signal comes in
+                    if (staticGate) staticGate.gain.setTargetAtTime(1 - clarity * 0.7, audioCtx.currentTime, 0.05);
                     // Static overlay — heavier when further from center
                     drawStatic(1 - clarity * 0.8);
                 } else {
@@ -1947,12 +2050,18 @@ function loop(ts) {
             drawStatic();
             ytWrap.style.opacity = '0';
             if (ytReady) try { ytPlayer.setVolume(0); } catch(e) {}
+            setStaticHiss(true);
         }
         cardEl.style.display = 'none';
 
     } else if (S.mode === 'no_signal' || S.mode === 'retuning') {
         drawStatic();
-        hideCard();
+        setStaticHiss(true);
+        setMotorHum(false);
+        ytWrap.style.opacity = '0';
+        ytStop();
+        cardEl.style.display = 'none';
+        renderedKey = '';
         scrEl.style.display = 'none';
 
     } else if (S.mode === 'acquiring') {
@@ -2009,6 +2118,8 @@ function loop(ts) {
         }
 
     } else if (S.mode === 'locked') {
+        setMotorHum(false);
+        setStaticHiss(false);
         // Check if this clear channel has a pooled video
         const lockVid = (!t.scrambled && t.name && t.type !== 'test') ? getChannelVideo(S.satIdx, S.tpIdx) : null;
         const lockScrVid = (t.scrambled && t.videos) ? getChannelVideo(S.satIdx, S.tpIdx) : null;
@@ -2038,7 +2149,8 @@ function loop(ts) {
             cardEl.style.display = 'none';
         } else if (t.scrambled) {
             drawStatic();
-            hideCard();
+            ytWrap.style.opacity = '0';
+            cardEl.style.display = 'none';
         } else if (lockVid) {
             // YouTube from pool — static shows while buffering
             ytPlay(lockVid.id, lockVid.start);
@@ -2162,6 +2274,8 @@ function powerToggle() {
             try { ytPlayer.mute(); } catch(e) {}
         }
         stopScrambleAudio();
+        setStaticHiss(false);
+        setMotorHum(false);
         ytWrap.style.opacity = '0';
         cardEl.style.display = 'none';
         renderedKey = '';
