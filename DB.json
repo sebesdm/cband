@@ -1,0 +1,239 @@
+{
+  "pbBvEp4xScc": {
+    "channels": [
+      "3ABN"
+    ],
+    "dataJs": "videos:[{id:'pbBvEp4xScc',start:0,end:3453}]",
+    "segments": [
+      {
+        "id": "pbBvEp4xScc",
+        "start": 0,
+        "end": 3452.7,
+        "description": "Artificial Intelligence and the Battle for the Mind"
+      }
+    ]
+  },
+  "9gqdqtv14mE": {
+    "channels": [
+      "A&E"
+    ],
+    "dataJs": "videos:[{id:'9gqdqtv14mE',start:0,end:2811}]",
+    "segments": [
+      {
+        "id": "9gqdqtv14mE",
+        "start": 0,
+        "end": 2810.6,
+        "description": "A&E Biography: Gene Roddenberry (1994)"
+      }
+    ]
+  },
+  "P4w5CwCAq20": {
+    "channels": [
+      "A&E"
+    ],
+    "dataJs": "videos:[{id:'P4w5CwCAq20',start:10,end:40},{id:'P4w5CwCAq20',start:41,end:70},{id:'P4w5CwCAq20',start:71,end:100},{id:'P4w5CwCAq20',start:101,end:131},{id:'P4w5CwCAq20',start:131,end:176},{id:'P4w5CwCAq20',start:176,end:206},{id:'P4w5CwCAq20',start:206,end:236},{id:'P4w5CwCAq20',start:236,end:266},{id:'P4w5CwCAq20',start:266,end:296},{id:'P4w5CwCAq20',start:296,end:326},{id:'P4w5CwCAq20',start:326,end:356},{id:'P4w5CwCAq20',start:356,end:366},{id:'P4w5CwCAq20',start:366,end:396},{id:'P4w5CwCAq20',start:396,end:426},{id:'P4w5CwCAq20',start:426,end:456},{id:'P4w5CwCAq20',start:456,end:466},{id:'P4w5CwCAq20',start:466,end:496},{id:'P4w5CwCAq20',start:496,end:526},{id:'P4w5CwCAq20',start:526,end:556},{id:'P4w5CwCAq20',start:556,end:586},{id:'P4w5CwCAq20',start:586,end:616},{id:'P4w5CwCAq20',start:616,end:646},{id:'P4w5CwCAq20',start:647,end:666},{id:'P4w5CwCAq20',start:666,end:676}]",
+    "segments": [
+      {
+        "id": "P4w5CwCAq20",
+        "start": 10,
+        "end": 40,
+        "description": "Commercial - Color of Night - Movie Promo"
+      },
+      {
+        "id": "P4w5CwCAq20",
+        "start": 40.5,
+        "end": 70,
+        "description": "Commercial - Alliance Capital"
+      },
+      {
+        "id": "P4w5CwCAq20",
+        "start": 70.5,
+        "end": 100,
+        "description": "Commercial - GMC Sonoma"
+      },
+      {
+        "id": "P4w5CwCAq20",
+        "start": 100.5,
+        "end": 130.5,
+        "description": "Commercial - Snapple"
+      },
+      {
+        "id": "P4w5CwCAq20",
+        "start": 131,
+        "end": 175.5,
+        "description": "Commercial - A&E Content"
+      },
+      {
+        "id": "P4w5CwCAq20",
+        "start": 176,
+        "end": 205.5,
+        "description": "Commercial - Mexico Vacation"
+      },
+      {
+        "id": "P4w5CwCAq20",
+        "start": 206,
+        "end": 235.5,
+        "description": "Commercial - Serta Mattress"
+      },
+      {
+        "id": "P4w5CwCAq20",
+        "start": 236,
+        "end": 265.5,
+        "description": "Commercial - GMC Sierra"
+      },
+      {
+        "id": "P4w5CwCAq20",
+        "start": 266,
+        "end": 295.5,
+        "description": "Commercial - Subway"
+      },
+      {
+        "id": "P4w5CwCAq20",
+        "start": 296,
+        "end": 325.5,
+        "description": "Commercial - A&E Content"
+      },
+      {
+        "id": "P4w5CwCAq20",
+        "start": 326,
+        "end": 355.5,
+        "description": "Commercial - History Channel Content"
+      },
+      {
+        "id": "P4w5CwCAq20",
+        "start": 356,
+        "end": 365.5,
+        "description": "Commercial - A&E Content"
+      },
+      {
+        "id": "P4w5CwCAq20",
+        "start": 366,
+        "end": 395.5,
+        "description": "Commercial - Prudential Securities"
+      },
+      {
+        "id": "P4w5CwCAq20",
+        "start": 396,
+        "end": 425.5,
+        "description": "Commercial - BMW 1995 5-Series"
+      },
+      {
+        "id": "P4w5CwCAq20",
+        "start": 426,
+        "end": 455.5,
+        "description": "Commercial - A&E + Anti-Drunk Driving"
+      },
+      {
+        "id": "P4w5CwCAq20",
+        "start": 456,
+        "end": 465.5,
+        "description": "Commercial - A&E Content"
+      },
+      {
+        "id": "P4w5CwCAq20",
+        "start": 466,
+        "end": 495.5,
+        "description": "Commercial - Beverly Hall Furniture Galleries"
+      },
+      {
+        "id": "P4w5CwCAq20",
+        "start": 496,
+        "end": 525.5,
+        "description": "Commercial - American Express Corporate Card"
+      },
+      {
+        "id": "P4w5CwCAq20",
+        "start": 526,
+        "end": 555.5,
+        "description": "Commercial - HBO Barbara Streisand Concert"
+      },
+      {
+        "id": "P4w5CwCAq20",
+        "start": 556,
+        "end": 585.5,
+        "description": "Commercial - Simmons Beautyrest"
+      },
+      {
+        "id": "P4w5CwCAq20",
+        "start": 586,
+        "end": 615.5,
+        "description": "Commercial - A&E Content"
+      },
+      {
+        "id": "P4w5CwCAq20",
+        "start": 616,
+        "end": 646,
+        "description": "Commercial - Nokia"
+      },
+      {
+        "id": "P4w5CwCAq20",
+        "start": 646.5,
+        "end": 665.5,
+        "description": "Commercial - A&E Content"
+      },
+      {
+        "id": "P4w5CwCAq20",
+        "start": 666,
+        "end": 676,
+        "description": "Commercial - A&E Content"
+      }
+    ]
+  },
+  "frQEgjJRgRg": {
+    "channels": [
+      "A&E"
+    ],
+    "dataJs": "videos:[{id:'frQEgjJRgRg',start:0,end:2644}]",
+    "segments": [
+      {
+        "id": "frQEgjJRgRg",
+        "start": 0,
+        "end": 2643.6,
+        "description": "Show - A&E Biography - Rommel"
+      }
+    ]
+  },
+  "w6qH2jBfyVo": {
+    "channels": [
+      "ABC East Feed"
+    ],
+    "dataJs": "videos:[{id:'w6qH2jBfyVo',start:0,end:1417}]",
+    "segments": [
+      {
+        "id": "w6qH2jBfyVo",
+        "start": 0,
+        "end": 1417,
+        "description": "ABC World News Tonight With Peter Jennings (March 10, 1994)"
+      }
+    ]
+  },
+  "EBuvOLjsF00": {
+    "channels": [
+      "ABC East Feed",
+      "ABC West"
+    ],
+    "dataJs": "videos:[{id:'EBuvOLjsF00',start:1,end:1737}]",
+    "segments": [
+      {
+        "id": "EBuvOLjsF00",
+        "start": 1,
+        "end": 1736.9,
+        "description": "ABC World News Tonight - 1994-09-11"
+      }
+    ]
+  },
+  "EerSHhjR0g0": {
+    "channels": [
+      "ABC East Feed"
+    ],
+    "dataJs": "videos:[{id:'EerSHhjR0g0',start:6,end:1716}]",
+    "segments": [
+      {
+        "id": "EerSHhjR0g0",
+        "start": 5.8,
+        "end": 1716.2,
+        "description": "World News Tonight (ABC) - 1994-12-23"
+      }
+    ]
+  }
+}
