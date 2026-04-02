@@ -57,7 +57,6 @@ body {
     position: relative;
     width: 640px;
     height: 480px;
-    max-width: 80vw;
     background: #000;
     border-radius: 12px;
     overflow: hidden;
@@ -76,9 +75,6 @@ body {
     100% { filter: brightness(1) saturate(1); }
 }
 
-@media (max-width: 700px) {
-    #screen-wrap { width: 90vw; height: calc(90vw * 0.75); }
-}
 
 #static-canvas { width: 100%; height: 100%; display: block; }
 
@@ -315,6 +311,50 @@ body {
 
 @media (max-width: 700px) {
     #receiver { width: calc(90vw + 44px); max-width: 98vw; }
+}
+
+@media (max-width: 700px) {
+    #tv-bezel { padding: 10px 12px 6px; border-radius: 12px; }
+    #screen-trim { padding: 3px; border-radius: 10px; }
+    #screen-wrap { width: 92vw; height: calc(92vw * 0.75); border-radius: 8px; }
+    #tv-bottom { margin-top: 4px; }
+    #tv-speaker { width: 40px; height: 16px; }
+    #tv-badge { font-size: 9px; letter-spacing: 5px; }
+    #power-btn { width: 20px; height: 20px; font-size: 10px; line-height: 16px; }
+
+    #receiver { width: 96vw; max-width: 96vw; padding: 6px 8px; }
+    #rx-top { flex-wrap: wrap; gap: 3px; }
+    #rx-brand { font-size: 8px; letter-spacing: 2px; }
+    #rx-model { display: none; }
+    #indicators { gap: 8px; }
+    .ind span { font-size: 6px; }
+    .ind-led { width: 7px; height: 7px; }
+
+    #rx-displays { flex-direction: column; gap: 4px; }
+    .rx-display-panel { padding: 6px 8px; }
+    #rx-display-main { padding: 6px 12px; gap: 16px; }
+    #rx-display-main .led-big { font-size: 20px; }
+    .led-value { font-size: 10px; }
+    .led-label { font-size: 7px; }
+    .led-row { gap: 2px; }
+
+    #rx-bottom { flex-wrap: wrap; justify-content: center; gap: 6px; margin: 4px 0; }
+    #rx-controls { gap: 8px; }
+    .rx-btn { padding: 0 8px; height: 26px; font-size: 11px; min-width: 26px; }
+    .rx-btn.wide { padding: 0 12px; font-size: 9px; }
+    .ctrl-label { font-size: 7px; letter-spacing: 1px; }
+    #rx-power-btn { width: 24px; height: 24px; font-size: 12px; line-height: 20px; }
+
+    #arc-display { padding-bottom: 6px; }
+    .arc-label { font-size: 6px; letter-spacing: 2px; margin-bottom: 8px; }
+    #arc-bar { height: 18px; margin: 10px 4px 0; }
+    #arc-dish { width: 8px; height: 16px; border-radius: 4px; }
+    .arc-sat { width: 2px; height: 10px; }
+    .arc-sat-label { font-size: 5px; top: -10px; }
+    .arc-scale { font-size: 6px; margin: 2px 4px 0; }
+
+    #help { font-size: 7px; letter-spacing: 0.5px; }
+    #title { font-size: 9px; letter-spacing: 3px; }
 }
 
 #rx-top { display: flex; align-items: center; margin-bottom: 6px; padding: 0 2px; gap: 8px; }
