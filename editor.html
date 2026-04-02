@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C-Band Clip Editor</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #1a1a1a; color: #ccc; font-family: 'Courier New', monospace; padding: 20px; display: flex; gap: 20px; }
+
+#sidebar {
+    width: 280px;
+    min-width: 280px;
+    max-height: 100vh;
+    overflow-y: auto;
+    position: sticky;
+    top: 20px;
+}
+#sidebar h2 { font-size: 11px; color: #666; letter-spacing: 2px; margin-bottom: 8px; }
+#sidebar input {
+    width: 100%; background: #222; border: 1px solid #444; color: #fff;
+    padding: 6px 8px; font-family: monospace; font-size: 12px; margin-bottom: 8px;
+    border-radius: 3px;
+}
+#sidebar input::placeholder { color: #555; }
+#clip-list { list-style: none; }
+#clip-list li {
+    padding: 5px 8px; font-size: 11px; cursor: pointer; border-bottom: 1px solid #222;
+    transition: background 0.1s;
+}
+#clip-list li:hover { background: #2a2a2a; }
+#clip-list li.active { background: #2a4a2a; color: #0f0; }
+.clip-id { color: #888; }
+.clip-channel { color: #aaa; display: block; font-size: 10px; margin-top: 1px; }
+.clip-status { font-size: 9px; padding: 1px 4px; border-radius: 2px; float: right; }
+.clip-status.done { background: #2a4a2a; color: #0f0; }
+.clip-status.pending { background: #4a4a2a; color: #cc0; }
+
+#main { flex: 1; min-width: 0; }
+
+h1 { font-size: 16px; color: #888; letter-spacing: 4px; margin-bottom: 16px; }
+
+#controls { display: flex; gap: 10px; align-items: center; margin-bottom: 16px; flex-wrap: wrap; }
+#vid-input { background: #222; border: 1px solid #444; color: #fff; padding: 8px 12px; font-family: monospace; font-size: 14px; width: 340px; border-radius: 4px; }
+#vid-input::placeholder { color: #555; }
+.btn { background: #333; border: 1px solid #555; color: #ccc; padding: 6px 14px; font-family: monospace; font-size: 13px; cursor: pointer; border-radius: 3px; }
+.btn:hover { background: #444; color: #fff; }
+.btn.active { background: #2a4a2a; color: #0f0; border-color: #0a0; }
+
+#player-wrap { margin-bottom: 16px; }
+
+#time-display { font-size: 28px; color: #0f0; font-family: monospace; margin-bottom: 12px; text-shadow: 0 0 8px rgba(0,255,0,0.3); }
+#time-display span { color: #666; font-size: 14px; }
+
+#scrub-help { color: #555; font-size: 11px; margin-bottom: 16px; letter-spacing: 1px; }
+
+#marker-controls { display: flex; gap: 8px; align-items: center; margin-bottom: 16px; flex-wrap: wrap; }
+#desc-input { background: #222; border: 1px solid #444; color: #fff; padding: 6px 10px; font-family: monospace; font-size: 13px; width: 300px; border-radius: 3px; }
+#desc-input::placeholder { color: #555; }
+
+#pending { color: #ffaa00; font-size: 12px; margin-bottom: 12px; min-height: 18px; }
+
+#segments { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+#segments th { text-align: left; color: #666; font-size: 11px; letter-spacing: 1px; padding: 6px 8px; border-bottom: 1px solid #333; }
+#segments td { padding: 6px 8px; border-bottom: 1px solid #222; font-size: 13px; }
+#segments tr:hover { background: #222; }
+#segments .time-link { color: #4a8; cursor: pointer; text-decoration: none; }
+#segments .time-link:hover { color: #6fc; }
+#segments .del-btn { color: #844; cursor: pointer; font-size: 11px; }
+#segments .del-btn:hover { color: #f66; }
+.type-content { color: #4a8; font-size: 10px; font-weight: bold; }
+.type-ad { color: #ca4; font-size: 10px; font-weight: bold; }
+#type-toggle.ad { background: #4a4a2a; color: #ff0; border-color: #aa0; }
+
+#timeline-wrap { margin-bottom: 8px; position: relative; }
+#timeline { width: 100%; height: 60px; background: #111; border: 1px solid #333; border-radius: 3px; cursor: crosshair; display: block; }
+#timeline-wrap:hover #timeline { border-color: #555; }
+
+#export-area { width: 100%; height: 200px; background: #111; border: 1px solid #333; color: #0f0; font-family: monospace; font-size: 12px; padding: 10px; margin-top: 8px; border-radius: 4px; }
+
+#status { color: #555; font-size: 11px; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<div id="sidebar">
+    <h2>C L I P S</h2>
+    <input id="clip-search" type="text" placeholder="Search clips..." oninput="filterClips()" />
+    <ul id="clip-list"></ul>
+</div>
+<div id="main">
+<h1>C - B A N D &nbsp; C L I P &nbsp; E D I T O R</h1>
+
+<div id="controls">
+    <input id="vid-input" type="text" placeholder="YouTube URL or video ID..." />
+    <button class="btn" onclick="loadVideo()">LOAD</button>
+    <button class="btn" onclick="importSegments()">IMPORT CLIP</button>
+    <button class="btn" onclick="document.getElementById('db-file-input').click()">IMPORT DB.JSON</button>
+    <input type="file" id="db-file-input" accept=".json" style="display:none" onchange="importDBFile(event)" />
+</div>
+
+<div id="player-wrap">
+    <div id="yt-player"></div>
+</div>
+
+<div id="timeline-wrap">
+    <canvas id="timeline" width="800" height="60"></canvas>
+</div>
+
+<div id="time-display">00:00:00.0 <span>/ 00:00:00</span></div>
+
+<div id="scrub-help">
+    ← → ±0.5s &nbsp;&nbsp; SHIFT ±5s &nbsp;&nbsp; CTRL+SHIFT ±15s &nbsp;&nbsp; SPACE play/pause &nbsp;&nbsp; [ IN &nbsp;&nbsp; ] OUT &nbsp;&nbsp; ENTER save
+</div>
+
+<div id="marker-controls">
+    <button class="btn" onclick="markIn()">[ MARK IN</button>
+    <button class="btn" onclick="markOut()">] MARK OUT</button>
+    <button class="btn" id="type-toggle" onclick="toggleSegType()" style="min-width:40px">C</button>
+    <input id="desc-input" type="text" placeholder="Description..." />
+    <button class="btn" onclick="saveSegment()">SAVE SEGMENT</button>
+</div>
+
+<div style="display:flex;align-items:center;gap:16px">
+    <div id="pending"></div>
+    <label style="font-size:12px;color:#666;cursor:pointer;margin-left:auto">
+        <input type="checkbox" id="audio-check" onchange="toggleAudioCheck()" style="cursor:pointer"> &#9835; AUDIO
+    </label>
+    <label style="font-size:12px;color:#666;cursor:pointer">
+        <input type="checkbox" id="complete-check" onchange="toggleComplete()" style="cursor:pointer"> &#10003; COMPLETE
+    </label>
+</div>
+
+<table id="segments">
+    <thead>
+        <tr><th>#</th><th>TYPE</th><th>IN</th><th>OUT</th><th>DUR</th><th>DESCRIPTION</th><th></th></tr>
+    </thead>
+    <tbody id="seg-body"></tbody>
+</table>
+
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+    <button class="btn" onclick="exportJSON()">EXPORT THIS CLIP</button>
+    <button class="btn" onclick="exportCSV()">CSV THIS CLIP</button>
+    <button class="btn" onclick="exportAllCompleted()">EXPORT ALL COMPLETED</button>
+    <button class="btn" onclick="copyExport()">COPY TO CLIPBOARD</button>
+</div>
+<textarea id="export-area" readonly></textarea>
+<div id="status"></div>
+</div>
+
+<script src="data.js"></script>
+<script>
+let player = null;
+let ready = false;
+let currentVideoId = '';
+let markInTime = null;
+let markOutTime = null;
+let segments = [];
+let allSegments = {};  // { videoId: [segments] } — persisted to localStorage
+let timeUpdateInterval = null;
+
+// Load all persisted work
+try {
+    allSegments = JSON.parse(localStorage.getItem('cband-editor-segments') || '{}');
+} catch(e) { allSegments = {}; }
+let completedClips = {};
+try {
+    completedClips = JSON.parse(localStorage.getItem('cband-editor-completed') || '{}');
+} catch(e) { completedClips = {}; }
+let audioCheckedClips = {};
+try {
+    audioCheckedClips = JSON.parse(localStorage.getItem('cband-editor-audiochecked') || '{}');
+} catch(e) { audioCheckedClips = {}; }
+
+function persistAll() {
+    allSegments[currentVideoId] = segments;
+    try { localStorage.setItem('cband-editor-segments', JSON.stringify(allSegments)); } catch(e) {}
+    autoSaveDB();
+}
+
+function autoSaveDB() {
+    // Build the full DB object with all completed/in-progress clips
+    const db = {};
+    Object.keys(allSegments).forEach(vidId => {
+        const segs = allSegments[vidId];
+        if (!segs || segs.length === 0) return;
+
+        let channels = [];
+        if (typeof satellites !== 'undefined') {
+            satellites.forEach(sat => {
+                sat.transponders.forEach(tp => {
+                    if (tp.videos) {
+                        tp.videos.forEach(v => {
+                            if (v.id === vidId && tp.name && !channels.includes(tp.name)) {
+                                channels.push(tp.name);
+                            }
+                        });
+                    }
+                });
+            });
+        }
+
+        db[vidId] = {
+            channels: channels,
+            complete: !!completedClips[vidId],
+            audioChecked: !!audioCheckedClips[vidId],
+            dataJs: 'videos:[' + segs.map(s =>
+                `{id:'${s.id}',start:${Math.round(s.start)},end:${Math.round(s.end)}}`
+            ).join(',') + ']',
+            segments: segs
+        };
+    });
+
+    // Download as DB.json
+    const blob = new Blob([JSON.stringify(db, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'DB.json';
+    a.click();
+    URL.revokeObjectURL(a.href);
+}
+
+function toggleComplete() {
+    completedClips[currentVideoId] = document.getElementById('complete-check').checked;
+    try { localStorage.setItem('cband-editor-completed', JSON.stringify(completedClips)); } catch(e) {}
+    renderClipList();
+}
+
+function toggleAudioCheck() {
+    audioCheckedClips[currentVideoId] = document.getElementById('audio-check').checked;
+    try { localStorage.setItem('cband-editor-audiochecked', JSON.stringify(audioCheckedClips)); } catch(e) {}
+    renderClipList();
+}
+
+function updateCompleteCheckbox() {
+    document.getElementById('complete-check').checked = !!completedClips[currentVideoId];
+    document.getElementById('audio-check').checked = !!audioCheckedClips[currentVideoId];
+}
+
+// Load YouTube API
+const tag = document.createElement('script');
+tag.src = 'https://www.youtube.com/iframe_api';
+document.head.appendChild(tag);
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('yt-player', {
+        width: 800, height: 450,
+        playerVars: { controls: 1, modestbranding: 1, rel: 0 },
+        events: {
+            onReady: () => {
+                ready = true;
+                status('Player ready');
+                // Update time display
+                // Size timeline canvas to match player width
+                tlCanvas.width = document.getElementById('player-wrap').offsetWidth;
+                timeUpdateInterval = setInterval(updateTimeDisplay, 100);
+            }
+        }
+    });
+}
+
+function loadVideo() {
+    const input = document.getElementById('vid-input').value.trim();
+    let videoId = input;
+    // Parse YouTube URLs
+    const match = input.match(/(?:v=|\/embed\/|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+    if (match) videoId = match[1];
+    if (videoId.length === 11) {
+        currentVideoId = videoId;
+        player.loadVideoById(videoId);
+        segments = allSegments[videoId] || [];
+        markInTime = null;
+        markOutTime = null;
+        renderSegments();
+        updatePending();
+        localStorage.setItem('cband-editor-last', videoId);
+        updateCompleteCheckbox();
+        status('Loaded: ' + videoId);
+    } else {
+        status('Invalid video ID');
+    }
+}
+
+function getTime() {
+    if (!ready || !player.getCurrentTime) return 0;
+    return player.getCurrentTime();
+}
+
+function seekTo(t) {
+    if (!ready) return;
+    player.seekTo(Math.max(0, t), true);
+}
+
+function scrub(delta) {
+    seekTo(getTime() + delta);
+}
+
+function togglePlay() {
+    if (!ready) return;
+    const state = player.getPlayerState();
+    if (state === 1) player.pauseVideo();
+    else player.playVideo();
+}
+
+function formatTime(s) {
+    const h = Math.floor(s / 3600);
+    const m = Math.floor((s % 3600) / 60);
+    const sec = Math.floor(s % 60);
+    const ms = Math.floor((s % 1) * 10);
+    return String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0') + ':' + String(sec).padStart(2,'0') + '.' + ms;
+}
+
+function formatTimeShort(s) {
+    const m = Math.floor(s / 60);
+    const sec = Math.floor(s % 60);
+    return String(m) + ':' + String(sec).padStart(2,'0');
+}
+
+function updateTimeDisplay() {
+    if (!ready) return;
+    const t = getTime();
+    const dur = player.getDuration ? player.getDuration() : 0;
+    document.getElementById('time-display').innerHTML =
+        formatTime(t) + ' <span>/ ' + formatTimeShort(dur) + '</span>';
+    drawTimeline(t, dur);
+}
+
+// ================================================================
+//  VISUAL TIMELINE
+// ================================================================
+
+const tlCanvas = document.getElementById('timeline');
+const tlCtx = tlCanvas.getContext('2d');
+let tlDragging = false;
+let tlHoverX = -1;
+let draggingMarker = null; // 'in' or 'out' or null
+
+function timeToX(t, dur) {
+    if (dur <= 0) return 0;
+    return (t / dur) * tlCanvas.width;
+}
+
+function xToTime(x, dur) {
+    return Math.max(0, Math.min(dur, (x / tlCanvas.width) * dur));
+}
+
+function drawTimeline(currentTime, duration) {
+    const w = tlCanvas.width;
+    const h = tlCanvas.height;
+    const ctx = tlCtx;
+
+    // Background
+    ctx.fillStyle = '#111';
+    ctx.fillRect(0, 0, w, h);
+
+    if (duration <= 0) return;
+
+    // Saved segments — colored blocks
+    segments.forEach((seg, i) => {
+        const x1 = timeToX(seg.start, duration);
+        const x2 = timeToX(seg.end, duration);
+        const sType = seg.type || null;
+        ctx.fillStyle = sType === 'ad' ? 'rgba(170, 140, 0, 0.3)' : sType === 'content' ? 'rgba(0, 170, 100, 0.35)' : 'rgba(100, 100, 100, 0.25)';
+        ctx.fillRect(x1, 0, x2 - x1, h);
+        ctx.strokeStyle = sType === 'ad' ? 'rgba(170, 140, 0, 0.5)' : sType === 'content' ? 'rgba(0, 170, 100, 0.6)' : 'rgba(100, 100, 100, 0.4)';
+        ctx.strokeRect(x1, 0, x2 - x1, h);
+        // Segment number
+        if (x2 - x1 > 20) {
+            ctx.fillStyle = 'rgba(0, 200, 120, 0.7)';
+            ctx.font = '9px monospace';
+            ctx.fillText(String(i + 1), x1 + 3, 10);
+        }
+    });
+
+    // Time ticks
+    const tickInterval = duration > 3600 ? 600 : duration > 600 ? 60 : 10;
+    ctx.fillStyle = '#333';
+    ctx.font = '8px monospace';
+    for (let t = 0; t <= duration; t += tickInterval) {
+        const x = timeToX(t, duration);
+        ctx.fillRect(x, h - 8, 1, 8);
+        if (t % (tickInterval * 3) === 0 || tickInterval >= 60) {
+            ctx.fillStyle = '#555';
+            ctx.fillText(formatTimeShort(t), x + 2, h - 1);
+            ctx.fillStyle = '#333';
+        }
+    }
+
+    // Pending IN marker
+    if (markInTime !== null) {
+        const x = timeToX(markInTime, duration);
+        ctx.fillStyle = '#0f0';
+        ctx.fillRect(x - 1, 0, 2, h);
+        // Flag
+        ctx.fillStyle = '#0a0';
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x + 10, 6);
+        ctx.lineTo(x, 12);
+        ctx.fill();
+        ctx.fillStyle = '#0f0';
+        ctx.font = 'bold 9px monospace';
+        ctx.fillText('IN', x + 2, 22);
+    }
+
+    // Pending OUT marker
+    if (markOutTime !== null) {
+        const x = timeToX(markOutTime, duration);
+        ctx.fillStyle = '#f44';
+        ctx.fillRect(x - 1, 0, 2, h);
+        // Flag
+        ctx.fillStyle = '#a00';
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x - 10, 6);
+        ctx.lineTo(x, 12);
+        ctx.fill();
+        ctx.fillStyle = '#f44';
+        ctx.font = 'bold 9px monospace';
+        ctx.fillText('OUT', x - 22, 22);
+    }
+
+    // Pending region highlight
+    if (markInTime !== null && markOutTime !== null) {
+        const x1 = timeToX(markInTime, duration);
+        const x2 = timeToX(markOutTime, duration);
+        ctx.fillStyle = 'rgba(255, 255, 0, 0.1)';
+        ctx.fillRect(x1, 0, x2 - x1, h);
+    }
+
+    // Hover time indicator
+    if (tlHoverX >= 0) {
+        const ht = xToTime(tlHoverX, duration);
+        ctx.fillStyle = 'rgba(255,255,255,0.3)';
+        ctx.fillRect(tlHoverX, 0, 1, h);
+        ctx.fillStyle = '#aaa';
+        ctx.font = '10px monospace';
+        const label = formatTime(ht);
+        const lx = tlHoverX + 5 > w - 70 ? tlHoverX - 75 : tlHoverX + 5;
+        ctx.fillText(label, lx, h / 2);
+    }
+
+    // Playhead
+    const px = timeToX(currentTime, duration);
+    ctx.fillStyle = '#fff';
+    ctx.fillRect(px - 1, 0, 2, h);
+    // Playhead triangle
+    ctx.beginPath();
+    ctx.moveTo(px - 5, 0);
+    ctx.lineTo(px + 5, 0);
+    ctx.lineTo(px, 7);
+    ctx.fill();
+
+    // Elapsed since IN marker — shown near playhead
+    if (markInTime !== null && markOutTime === null && currentTime >= markInTime) {
+        const elapsed = currentTime - markInTime;
+        const elStr = elapsed.toFixed(1) + 's';
+        const lx = px + 8;
+        ctx.fillStyle = '#ff0';
+        ctx.font = 'bold 12px monospace';
+        ctx.fillText('+' + elStr, lx > w - 50 ? px - 55 : lx, 28);
+    }
+}
+
+// Timeline mouse interaction
+tlCanvas.addEventListener('mousemove', (e) => {
+    const rect = tlCanvas.getBoundingClientRect();
+    const scaleX = tlCanvas.width / rect.width;
+    tlHoverX = (e.clientX - rect.left) * scaleX;
+
+    if (tlDragging && ready) {
+        const dur = player.getDuration() || 0;
+        const t = xToTime(tlHoverX, dur);
+        if (draggingMarker === 'in') {
+            markInTime = Math.round(t * 10) / 10;
+            updatePending();
+        } else if (draggingMarker === 'out') {
+            markOutTime = Math.round(t * 10) / 10;
+            updatePending();
+        } else {
+            seekTo(t);
+        }
+    }
+});
+
+tlCanvas.addEventListener('mousedown', (e) => {
+    const rect = tlCanvas.getBoundingClientRect();
+    const scaleX = tlCanvas.width / rect.width;
+    const mx = (e.clientX - rect.left) * scaleX;
+    const dur = player.getDuration() || 0;
+    if (dur <= 0) return;
+
+    // Check if clicking near an existing marker to drag it
+    if (markInTime !== null) {
+        const inX = timeToX(markInTime, dur);
+        if (Math.abs(mx - inX) < 8) {
+            draggingMarker = 'in';
+            tlDragging = true;
+            return;
+        }
+    }
+    if (markOutTime !== null) {
+        const outX = timeToX(markOutTime, dur);
+        if (Math.abs(mx - outX) < 8) {
+            draggingMarker = 'out';
+            tlDragging = true;
+            return;
+        }
+    }
+
+    // Otherwise seek
+    draggingMarker = null;
+    tlDragging = true;
+    const t = xToTime(mx, dur);
+    seekTo(t);
+});
+
+tlCanvas.addEventListener('mouseup', () => {
+    tlDragging = false;
+    draggingMarker = null;
+});
+
+tlCanvas.addEventListener('mouseleave', () => {
+    tlHoverX = -1;
+    tlDragging = false;
+    draggingMarker = null;
+});
+
+// Double-click to drop IN (left half) or OUT (right half)
+tlCanvas.addEventListener('dblclick', (e) => {
+    const rect = tlCanvas.getBoundingClientRect();
+    const scaleX = tlCanvas.width / rect.width;
+    const mx = (e.clientX - rect.left) * scaleX;
+    const dur = player.getDuration() || 0;
+    const t = Math.round(xToTime(mx, dur) * 10) / 10;
+
+    if (markInTime === null || (markInTime !== null && markOutTime !== null)) {
+        // Start fresh — set IN
+        markInTime = t;
+        markOutTime = null;
+        status('IN marked at ' + formatTime(t));
+    } else {
+        // IN is set, set OUT
+        markOutTime = t;
+        if (markOutTime < markInTime) {
+            // Swap if out is before in
+            const tmp = markInTime;
+            markInTime = markOutTime;
+            markOutTime = tmp;
+        }
+        status('OUT marked at ' + formatTime(t));
+    }
+    updatePending();
+});
+
+let currentSegType = 'content'; // 'content' or 'ad'
+
+function toggleSegType() {
+    currentSegType = currentSegType === 'content' ? 'ad' : 'content';
+    const btn = document.getElementById('type-toggle');
+    btn.textContent = currentSegType === 'content' ? 'C' : 'AD';
+    btn.className = currentSegType === 'ad' ? 'btn ad' : 'btn';
+}
+
+function markIn() {
+    markInTime = Math.round(getTime() * 10) / 10;
+    updatePending();
+    status('IN marked at ' + formatTime(markInTime));
+}
+
+function markOut() {
+    markOutTime = Math.round(getTime() * 10) / 10;
+    updatePending();
+    status('OUT marked at ' + formatTime(markOutTime));
+}
+
+function updatePending() {
+    let text = '';
+    if (markInTime !== null) text += 'IN: ' + formatTime(markInTime);
+    if (markOutTime !== null) text += '  OUT: ' + formatTime(markOutTime);
+    if (markInTime !== null && markOutTime !== null) {
+        const dur = markOutTime - markInTime;
+        text += '  (' + formatTimeShort(dur) + ')';
+    }
+    document.getElementById('pending').textContent = text;
+}
+
+function saveSegment() {
+    if (markInTime === null || markOutTime === null) {
+        status('Need both IN and OUT marks');
+        return;
+    }
+    if (markOutTime <= markInTime) {
+        status('OUT must be after IN');
+        return;
+    }
+    const desc = document.getElementById('desc-input').value.trim() || 'Untitled';
+    segments.push({
+        id: currentVideoId,
+        start: markInTime,
+        end: markOutTime,
+        type: currentSegType,
+        description: desc
+    });
+    document.getElementById('desc-input').value = '';
+    markInTime = null;
+    markOutTime = null;
+    updatePending();
+    renderSegments();
+    persistAll();
+    status('Segment saved: ' + desc);
+}
+
+function cycleSegType(idx) {
+    const current = segments[idx].type || null;
+    if (current === null) segments[idx].type = 'content';
+    else if (current === 'content') segments[idx].type = 'ad';
+    else segments[idx].type = null;
+    persistAll();
+    renderSegments();
+}
+
+function deleteSegment(idx) {
+    segments.splice(idx, 1);
+    persistAll();
+    renderSegments();
+}
+
+function renderSegments() {
+    const tbody = document.getElementById('seg-body');
+    tbody.innerHTML = '';
+    segments.forEach((seg, i) => {
+        const dur = seg.end - seg.start;
+        const segType = seg.type || null;
+        let typeLabel;
+        if (segType === 'ad') typeLabel = '<span class="type-ad" style="cursor:pointer">AD</span>';
+        else if (segType === 'content') typeLabel = '<span class="type-content" style="cursor:pointer">C</span>';
+        else typeLabel = '<span style="color:#555;cursor:pointer">—</span>';
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${i + 1}</td>
+            <td onclick="cycleSegType(${i})">${typeLabel}</td>
+            <td><a class="time-link" onclick="seekTo(${seg.start})">${formatTime(seg.start)}</a></td>
+            <td><a class="time-link" onclick="seekTo(${seg.end})">${formatTime(seg.end)}</a></td>
+            <td>${formatTimeShort(dur)}</td>
+            <td>${seg.description}</td>
+            <td><span class="del-btn" onclick="deleteSegment(${i})">✕</span></td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
+
+function exportJSON() {
+    const content = segments.filter(s => s.type === 'content');
+    const ads = segments.filter(s => s.type === 'ad');
+    const untyped = segments.filter(s => !s.type);
+    const contentJs = content.map(s => `{id:'${s.id}',start:${Math.round(s.start)},end:${Math.round(s.end)}}`);
+    const adJs = ads.map(s => `{ id:'${s.id}', start:${Math.round(s.start)}, end:${Math.round(s.end)} },  // ${s.description}`);
+    const output = {
+        videoId: currentVideoId,
+        segments: segments,
+        contentDataJs: 'videos:[' + contentJs.join(',') + ']',
+        commercialEntries: adJs.join('\n'),
+        summary: `${content.length} content + ${ads.length} ads` + (untyped.length ? ` + ${untyped.length} untyped` : '')
+    };
+    document.getElementById('export-area').value = JSON.stringify(output, null, 2);
+}
+
+function exportCSV() {
+    let csv = 'Video ID,Start,End,Duration,Description,YouTube Link\n';
+    segments.forEach(s => {
+        const dur = Math.round(s.end - s.start);
+        const link = `https://www.youtube.com/watch?v=${s.id}&t=${Math.round(s.start)}s`;
+        csv += `${s.id},${s.start},${s.end},${dur},"${s.description}",${link}\n`;
+    });
+    document.getElementById('export-area').value = csv;
+}
+
+function copyExport() {
+    const area = document.getElementById('export-area');
+    navigator.clipboard.writeText(area.value);
+    status('Copied to clipboard');
+}
+
+function exportAllCompleted() {
+    const output = {};
+    let completeCount = 0;
+    let partialCount = 0;
+    let segCount = 0;
+
+    // Export everything that has segments, not just completed
+    Object.keys(allSegments).forEach(vidId => {
+        const segs = allSegments[vidId];
+        if (!segs || segs.length === 0) return;
+
+        let channels = [];
+        if (typeof satellites !== 'undefined') {
+            satellites.forEach(sat => {
+                sat.transponders.forEach(tp => {
+                    if (tp.videos) {
+                        tp.videos.forEach(v => {
+                            if (v.id === vidId && tp.name && !channels.includes(tp.name)) {
+                                channels.push(tp.name);
+                            }
+                        });
+                    }
+                });
+            });
+        }
+
+        const isComplete = !!completedClips[vidId];
+        const isAudioChecked = !!audioCheckedClips[vidId];
+
+        output[vidId] = {
+            channels: channels,
+            complete: isComplete,
+            audioChecked: isAudioChecked,
+            dataJs: 'videos:[' + segs.map(s =>
+                `{id:'${s.id}',start:${Math.round(s.start)},end:${Math.round(s.end)}}`
+            ).join(',') + ']',
+            segments: segs
+        };
+        if (isComplete) completeCount++;
+        else partialCount++;
+        segCount += segs.length;
+    });
+
+    document.getElementById('export-area').value = JSON.stringify(output, null, 2);
+    status(`Exported ${completeCount} complete + ${partialCount} in-progress clips, ${segCount} total segments`);
+}
+
+function importSegments() {
+    const json = prompt('Paste JSON:');
+    if (!json) return;
+    try {
+        const data = JSON.parse(json);
+        if (data.segments) {
+            segments = data.segments;
+            if (data.videoId && data.videoId !== currentVideoId) {
+                document.getElementById('vid-input').value = data.videoId;
+                loadVideo();
+            }
+            renderSegments();
+            status('Imported ' + segments.length + ' segments');
+        }
+    } catch(e) {
+        status('Invalid JSON');
+    }
+}
+
+function importDBFile(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        try {
+            const db = JSON.parse(e.target.result);
+            let clipCount = 0;
+            let segCount = 0;
+            Object.keys(db).forEach(vidId => {
+                const entry = db[vidId];
+                if (entry.segments && entry.segments.length > 0) {
+                    allSegments[vidId] = entry.segments;
+                    segCount += entry.segments.length;
+                    clipCount++;
+                }
+                if (entry.complete) completedClips[vidId] = true;
+                if (entry.audioChecked) audioCheckedClips[vidId] = true;
+            });
+            // Persist to localStorage
+            try {
+                localStorage.setItem('cband-editor-segments', JSON.stringify(allSegments));
+                localStorage.setItem('cband-editor-completed', JSON.stringify(completedClips));
+                localStorage.setItem('cband-editor-audiochecked', JSON.stringify(audioCheckedClips));
+            } catch(ex) {}
+            // Reload current clip segments if applicable
+            if (currentVideoId && allSegments[currentVideoId]) {
+                segments = allSegments[currentVideoId];
+                renderSegments();
+            }
+            updateCompleteCheckbox();
+            renderClipList();
+            status('Imported ' + clipCount + ' clips, ' + segCount + ' segments');
+        } catch(ex) {
+            status('Invalid DB.json: ' + ex.message);
+        }
+    };
+    reader.readAsText(file);
+    event.target.value = '';  // reset so same file can be re-imported
+}
+
+function status(msg) {
+    document.getElementById('status').textContent = msg;
+}
+
+// Keyboard shortcuts
+document.addEventListener('keydown', e => {
+    // Don't capture when typing in inputs
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+        if (e.key === 'Enter' && e.target.id === 'desc-input') {
+            saveSegment();
+            e.preventDefault();
+        }
+        return;
+    }
+
+    switch(e.key) {
+        case 'ArrowLeft':
+            e.preventDefault();
+            scrub(e.ctrlKey && e.shiftKey ? -15 : e.shiftKey ? -5 : -0.5);
+            break;
+        case 'ArrowRight':
+            e.preventDefault();
+            scrub(e.ctrlKey && e.shiftKey ? 15 : e.shiftKey ? 5 : 0.5);
+            break;
+        case ' ':
+            e.preventDefault();
+            togglePlay();
+            break;
+        case '[':
+            markIn();
+            break;
+        case ']':
+            markOut();
+            break;
+        case 'Enter':
+            saveSegment();
+            break;
+    }
+});
+
+// ================================================================
+//  SIDEBAR — build clip list from data.js satellites
+// ================================================================
+
+let allClips = [];
+
+function buildClipList() {
+    const clipMap = {};
+    if (typeof satellites === 'undefined') return;
+
+    satellites.forEach(sat => {
+        sat.transponders.forEach(tp => {
+            if (!tp.videos) return;
+            tp.videos.forEach(v => {
+                const id = v.id;
+                if (!clipMap[id]) {
+                    clipMap[id] = { id: id, channels: [], sats: [] };
+                }
+                if (tp.name && !clipMap[id].channels.includes(tp.name)) {
+                    clipMap[id].channels.push(tp.name);
+                }
+                if (!clipMap[id].sats.includes(sat.short)) {
+                    clipMap[id].sats.push(sat.short);
+                }
+            });
+        });
+    });
+
+    allClips = Object.values(clipMap).sort((a, b) => a.channels[0]?.localeCompare(b.channels[0]) || 0);
+    renderClipList();
+}
+
+function renderClipList() {
+    const filter = (document.getElementById('clip-search').value || '').toLowerCase();
+    const list = document.getElementById('clip-list');
+    list.innerHTML = '';
+
+    allClips.forEach(clip => {
+        const channels = clip.channels.join(', ');
+        const searchText = (clip.id + ' ' + channels + ' ' + clip.sats.join(' ')).toLowerCase();
+        if (filter && !searchText.includes(filter)) return;
+
+        const li = document.createElement('li');
+        li.className = clip.id === currentVideoId ? 'active' : '';
+        const segCount = (allSegments[clip.id] || []).length;
+        const isDone = !!completedClips[clip.id];
+        const isAudio = !!audioCheckedClips[clip.id];
+        let badge = '';
+        if (isDone && isAudio) badge = '<span class="clip-status done">✓♫</span>';
+        else if (isDone) badge = '<span class="clip-status done">✓</span>';
+        else if (isAudio) badge = '<span class="clip-status done">♫</span>';
+        else if (segCount > 0) badge = `<span class="clip-status pending">${segCount}</span>`;
+        li.innerHTML = `${badge}<span class="clip-id">${clip.id}</span> <span class="clip-channel">${clip.sats.join('/')} — ${channels}</span>`;
+        li.onclick = () => {
+            document.getElementById('vid-input').value = clip.id;
+            loadVideo();
+            // Highlight
+            document.querySelectorAll('#clip-list li').forEach(l => l.className = '');
+            li.className = 'active';
+        };
+        list.appendChild(li);
+    });
+
+    document.querySelector('#sidebar h2').textContent = 'C L I P S  (' + list.children.length + ')';
+}
+
+function filterClips() { renderClipList(); }
+
+// Build on load
+buildClipList();
+
+// Restore last clip
+const lastClip = localStorage.getItem('cband-editor-last');
+if (lastClip) {
+    document.getElementById('vid-input').value = lastClip;
+    // Wait for player to be ready before loading
+    const waitForPlayer = setInterval(() => {
+        if (ready) {
+            clearInterval(waitForPlayer);
+            loadVideo();
+        }
+    }, 200);
+}
+
+// Show count of clips with segments in sidebar
+function updateSidebarCounts() {
+    document.querySelectorAll('#clip-list li').forEach(li => {
+        const id = li.querySelector('.clip-id')?.textContent;
+        if (id && allSegments[id] && allSegments[id].length > 0) {
+            if (!li.querySelector('.clip-status')) {
+                const badge = document.createElement('span');
+                badge.className = 'clip-status done';
+                badge.textContent = allSegments[id].length;
+                li.appendChild(badge);
+            }
+        }
+    });
+}
+setTimeout(updateSidebarCounts, 500);
+</script>
+</body>
+</html>

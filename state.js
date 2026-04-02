@@ -97,7 +97,7 @@ function getChannelVideo(satIdx, tpIdx) {
             if (pos < contentDur) {
                 // Playing content — clamp to avoid overshooting actual video length
                 const seekTo = (vids[i].start || 0) + Math.min(pos, contentDur - 5);
-                return { id: vids[i].id, start: Math.max(0, seekTo) };
+                return { id: vids[i].id, start: Math.max(0, seekTo), vol: vids[i].vol };
             }
             pos -= contentDur;
             if (useBreaks) {
@@ -127,11 +127,15 @@ function getChannelVideo(satIdx, tpIdx) {
     return { id: vid.id, start: base + elapsed };
 }
 
-function ytPlay(videoId, startTime) {
+function ytPlay(videoId, startTime, clipVol) {
     if (!ytReady || !videoId) return;
     if (ytCurrentId === videoId) return;
     ytCurrentId = videoId;
     ytPlayer.loadVideoById({ videoId: videoId, startSeconds: startTime || 0 });
+    // Apply per-clip volume if set
+    if (clipVol !== undefined) {
+        try { ytPlayer.setVolume(Math.round(clipVol * volume / 100)); } catch(e) {}
+    }
 }
 
 function ytStop() {

@@ -3,13 +3,16 @@
     "channels": [
       "3ABN"
     ],
+    "complete": true,
+    "audioChecked": false,
     "dataJs": "videos:[{id:'pbBvEp4xScc',start:0,end:3453}]",
     "segments": [
       {
         "id": "pbBvEp4xScc",
         "start": 0,
         "end": 3452.7,
-        "description": "Artificial Intelligence and the Battle for the Mind"
+        "description": "Artificial Intelligence and the Battle for the Mind",
+        "type": "content"
       }
     ]
   },
@@ -17,20 +20,23 @@
     "channels": [
       "A&E"
     ],
+    "complete": true,
+    "audioChecked": false,
     "dataJs": "videos:[{id:'9gqdqtv14mE',start:0,end:2811}]",
     "segments": [
       {
         "id": "9gqdqtv14mE",
         "start": 0,
         "end": 2810.6,
-        "description": "A&E Biography: Gene Roddenberry (1994)"
+        "description": "A&E Biography: Gene Roddenberry (1994)",
+        "type": "content"
       }
     ]
   },
   "P4w5CwCAq20": {
-    "channels": [
-      "A&E"
-    ],
+    "channels": [],
+    "complete": false,
+    "audioChecked": false,
     "dataJs": "videos:[{id:'P4w5CwCAq20',start:10,end:40},{id:'P4w5CwCAq20',start:41,end:70},{id:'P4w5CwCAq20',start:71,end:100},{id:'P4w5CwCAq20',start:101,end:131},{id:'P4w5CwCAq20',start:131,end:176},{id:'P4w5CwCAq20',start:176,end:206},{id:'P4w5CwCAq20',start:206,end:236},{id:'P4w5CwCAq20',start:236,end:266},{id:'P4w5CwCAq20',start:266,end:296},{id:'P4w5CwCAq20',start:296,end:326},{id:'P4w5CwCAq20',start:326,end:356},{id:'P4w5CwCAq20',start:356,end:366},{id:'P4w5CwCAq20',start:366,end:396},{id:'P4w5CwCAq20',start:396,end:426},{id:'P4w5CwCAq20',start:426,end:456},{id:'P4w5CwCAq20',start:456,end:466},{id:'P4w5CwCAq20',start:466,end:496},{id:'P4w5CwCAq20',start:496,end:526},{id:'P4w5CwCAq20',start:526,end:556},{id:'P4w5CwCAq20',start:556,end:586},{id:'P4w5CwCAq20',start:586,end:616},{id:'P4w5CwCAq20',start:616,end:646},{id:'P4w5CwCAq20',start:647,end:666},{id:'P4w5CwCAq20',start:666,end:676}]",
     "segments": [
       {
@@ -183,56 +189,1342 @@
     "channels": [
       "A&E"
     ],
+    "complete": true,
+    "audioChecked": false,
     "dataJs": "videos:[{id:'frQEgjJRgRg',start:0,end:2644}]",
     "segments": [
       {
         "id": "frQEgjJRgRg",
         "start": 0,
         "end": 2643.6,
-        "description": "Show - A&E Biography - Rommel"
+        "description": "Show - A&E Biography - Rommel",
+        "type": "content"
       }
     ]
   },
   "w6qH2jBfyVo": {
     "channels": [
-      "ABC East Feed"
+      "ABC East Feed",
+      "ABC Feeds",
+      "ABC LA-NY Feed"
     ],
-    "dataJs": "videos:[{id:'w6qH2jBfyVo',start:0,end:1417}]",
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'w6qH2jBfyVo',start:0,end:1102},{id:'w6qH2jBfyVo',start:1104,end:1134},{id:'w6qH2jBfyVo',start:1136,end:1164},{id:'w6qH2jBfyVo',start:1165,end:1195},{id:'w6qH2jBfyVo',start:1195,end:1417}]",
     "segments": [
       {
         "id": "w6qH2jBfyVo",
         "start": 0,
-        "end": 1417,
-        "description": "ABC World News Tonight With Peter Jennings (March 10, 1994)"
+        "end": 1102.2,
+        "description": "ABC World News Tonight",
+        "type": "content"
+      },
+      {
+        "id": "w6qH2jBfyVo",
+        "start": 1103.5,
+        "end": 1134,
+        "description": "Commercial - Royal Caribbean",
+        "type": "ad"
+      },
+      {
+        "id": "w6qH2jBfyVo",
+        "start": 1135.7,
+        "end": 1164.1,
+        "description": "Commercial - Aquafresh Sensitive",
+        "type": "ad"
+      },
+      {
+        "id": "w6qH2jBfyVo",
+        "start": 1164.6,
+        "end": 1194.9,
+        "description": "Commercial - Serenity Pads",
+        "type": "ad"
+      },
+      {
+        "id": "w6qH2jBfyVo",
+        "start": 1195.4,
+        "end": 1416.7,
+        "description": "ABC World News Tonight",
+        "type": "content"
       }
     ]
   },
   "EBuvOLjsF00": {
     "channels": [
       "ABC East Feed",
-      "ABC West"
+      "ABC Feeds",
+      "ABC West",
+      "ABC LA-NY Feed"
     ],
-    "dataJs": "videos:[{id:'EBuvOLjsF00',start:1,end:1737}]",
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'EBuvOLjsF00',start:1,end:307},{id:'EBuvOLjsF00',start:307,end:337},{id:'EBuvOLjsF00',start:337,end:368},{id:'EBuvOLjsF00',start:368,end:605},{id:'EBuvOLjsF00',start:605,end:636},{id:'EBuvOLjsF00',start:637,end:666},{id:'EBuvOLjsF00',start:666,end:697},{id:'EBuvOLjsF00',start:697,end:727},{id:'EBuvOLjsF00',start:728,end:993},{id:'EBuvOLjsF00',start:993,end:1023},{id:'EBuvOLjsF00',start:1023,end:1054},{id:'EBuvOLjsF00',start:1054,end:1084},{id:'EBuvOLjsF00',start:1084,end:1114},{id:'EBuvOLjsF00',start:1114,end:1370},{id:'EBuvOLjsF00',start:1370,end:1401},{id:'EBuvOLjsF00',start:1401,end:1431},{id:'EBuvOLjsF00',start:1431,end:1736}]",
     "segments": [
       {
         "id": "EBuvOLjsF00",
         "start": 1,
-        "end": 1736.9,
-        "description": "ABC World News Tonight - 1994-09-11"
+        "end": 306.8,
+        "description": "ABC World News Tonight",
+        "type": "content"
+      },
+      {
+        "id": "EBuvOLjsF00",
+        "start": 306.8,
+        "end": 337.3,
+        "description": "Commercial - Oldsmobile",
+        "type": "ad"
+      },
+      {
+        "id": "EBuvOLjsF00",
+        "start": 337.3,
+        "end": 368.1,
+        "description": "Commercial - Aquafresh Sensitive",
+        "type": "ad"
+      },
+      {
+        "id": "EBuvOLjsF00",
+        "start": 368.1,
+        "end": 604.6,
+        "description": "ABC World News Tonight",
+        "type": "content"
+      },
+      {
+        "id": "EBuvOLjsF00",
+        "start": 605.1,
+        "end": 636,
+        "description": "Commercial - York Peppermint Pattie",
+        "type": "ad"
+      },
+      {
+        "id": "EBuvOLjsF00",
+        "start": 636.5,
+        "end": 666.3,
+        "description": "Commercial - Just for Men",
+        "type": "content"
+      },
+      {
+        "id": "EBuvOLjsF00",
+        "start": 666.3,
+        "end": 696.7,
+        "description": "Commercial - Chemical Manufacturers Association",
+        "type": "content"
+      },
+      {
+        "id": "EBuvOLjsF00",
+        "start": 697.2,
+        "end": 727.1,
+        "description": "Commercial - Advil",
+        "type": "content"
+      },
+      {
+        "id": "EBuvOLjsF00",
+        "start": 727.6,
+        "end": 992.8,
+        "description": "ABC World News Tonight",
+        "type": "ad"
+      },
+      {
+        "id": "EBuvOLjsF00",
+        "start": 992.8,
+        "end": 1023.2,
+        "description": "Commercial - Cotton",
+        "type": "content"
+      },
+      {
+        "id": "EBuvOLjsF00",
+        "start": 1023.2,
+        "end": 1053.6,
+        "description": "Commercial - Dimetapp",
+        "type": "content"
+      },
+      {
+        "id": "EBuvOLjsF00",
+        "start": 1053.6,
+        "end": 1083.8,
+        "description": "Commercial - Delta",
+        "type": "content"
+      },
+      {
+        "id": "EBuvOLjsF00",
+        "start": 1083.8,
+        "end": 1114.2,
+        "description": "Commercial - AT&T",
+        "type": "content"
+      },
+      {
+        "id": "EBuvOLjsF00",
+        "start": 1114.2,
+        "end": 1369.8,
+        "description": "ABC World News Tonight",
+        "type": "ad"
+      },
+      {
+        "id": "EBuvOLjsF00",
+        "start": 1370.3,
+        "end": 1400.6,
+        "description": "Commercial - Promise Margerine",
+        "type": "content"
+      },
+      {
+        "id": "EBuvOLjsF00",
+        "start": 1400.7,
+        "end": 1431,
+        "description": "Commercial - Publisher's Clearing House",
+        "type": "content"
+      },
+      {
+        "id": "EBuvOLjsF00",
+        "start": 1431,
+        "end": 1736.2,
+        "description": "ABC World News Tonight",
+        "type": "ad"
       }
     ]
   },
   "EerSHhjR0g0": {
     "channels": [
-      "ABC East Feed"
+      "ABC East Feed",
+      "ABC Feeds",
+      "ABC LA-NY Feed"
     ],
-    "dataJs": "videos:[{id:'EerSHhjR0g0',start:6,end:1716}]",
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'EerSHhjR0g0',start:6,end:325},{id:'EerSHhjR0g0',start:325,end:355},{id:'EerSHhjR0g0',start:355,end:385},{id:'EerSHhjR0g0',start:385,end:664},{id:'EerSHhjR0g0',start:664,end:679},{id:'EerSHhjR0g0',start:680,end:709},{id:'EerSHhjR0g0',start:710,end:739},{id:'EerSHhjR0g0',start:740,end:769},{id:'EerSHhjR0g0',start:770,end:785},{id:'EerSHhjR0g0',start:785,end:805},{id:'EerSHhjR0g0',start:805,end:972},{id:'EerSHhjR0g0',start:972,end:1002},{id:'EerSHhjR0g0',start:1002,end:1017},{id:'EerSHhjR0g0',start:1017,end:1047},{id:'EerSHhjR0g0',start:1047,end:1062},{id:'EerSHhjR0g0',start:1063,end:1093},{id:'EerSHhjR0g0',start:1093,end:1261},{id:'EerSHhjR0g0',start:1261,end:1277},{id:'EerSHhjR0g0',start:1277,end:1292},{id:'EerSHhjR0g0',start:1292,end:1322},{id:'EerSHhjR0g0',start:1323,end:1337},{id:'EerSHhjR0g0',start:1337,end:1352},{id:'EerSHhjR0g0',start:1352,end:1367},{id:'EerSHhjR0g0',start:1368,end:1717}]",
     "segments": [
       {
         "id": "EerSHhjR0g0",
-        "start": 5.8,
-        "end": 1716.2,
-        "description": "World News Tonight (ABC) - 1994-12-23"
+        "start": 6,
+        "end": 324.6,
+        "type": "content",
+        "description": "ABC World News Tonight"
+      },
+      {
+        "id": "EerSHhjR0g0",
+        "start": 324.8,
+        "end": 354.7,
+        "type": "ad",
+        "description": "Arthritis Foundation"
+      },
+      {
+        "id": "EerSHhjR0g0",
+        "start": 354.7,
+        "end": 384.7,
+        "type": "ad",
+        "description": "American Family Sweepstakes"
+      },
+      {
+        "id": "EerSHhjR0g0",
+        "start": 384.7,
+        "end": 664.3,
+        "type": "content",
+        "description": "ABC World News Tonight"
+      },
+      {
+        "id": "EerSHhjR0g0",
+        "start": 664.3,
+        "end": 679.4,
+        "type": "ad",
+        "description": "Nytol"
+      },
+      {
+        "id": "EerSHhjR0g0",
+        "start": 679.9,
+        "end": 709.4,
+        "type": "ad",
+        "description": "USPS"
+      },
+      {
+        "id": "EerSHhjR0g0",
+        "start": 709.9,
+        "end": 739.4,
+        "type": "ad",
+        "description": "Interplak Toothbrush"
+      },
+      {
+        "id": "EerSHhjR0g0",
+        "start": 739.9,
+        "end": 769.3,
+        "type": "ad",
+        "description": "Sprint"
+      },
+      {
+        "id": "EerSHhjR0g0",
+        "start": 769.8,
+        "end": 784.7,
+        "type": "ad",
+        "description": "Fibercon"
+      },
+      {
+        "id": "EerSHhjR0g0",
+        "start": 785.2,
+        "end": 804.7,
+        "type": "ad",
+        "description": "ABC 20/20"
+      },
+      {
+        "id": "EerSHhjR0g0",
+        "start": 805,
+        "end": 971.7,
+        "type": "content",
+        "description": "ABC World News Tonight"
+      },
+      {
+        "id": "EerSHhjR0g0",
+        "start": 971.7,
+        "end": 1002.1,
+        "type": "ad",
+        "description": "Advil"
+      },
+      {
+        "id": "EerSHhjR0g0",
+        "start": 1002.2,
+        "end": 1017.2,
+        "type": "ad",
+        "description": "Norelco"
+      },
+      {
+        "id": "EerSHhjR0g0",
+        "start": 1017.2,
+        "end": 1047.2,
+        "type": "ad",
+        "description": "Budwieser"
+      },
+      {
+        "id": "EerSHhjR0g0",
+        "start": 1047.2,
+        "end": 1062,
+        "type": "ad",
+        "description": "Mylanta"
+      },
+      {
+        "id": "EerSHhjR0g0",
+        "start": 1062.5,
+        "end": 1092.5,
+        "type": "ad",
+        "description": "Publishers Clearing House"
+      },
+      {
+        "id": "EerSHhjR0g0",
+        "start": 1093,
+        "end": 1261.3,
+        "type": "content",
+        "description": "ABC World News Tonight"
+      },
+      {
+        "id": "EerSHhjR0g0",
+        "start": 1261.3,
+        "end": 1276.7,
+        "type": "ad",
+        "description": "Glaxo - Heartburn"
+      },
+      {
+        "id": "EerSHhjR0g0",
+        "start": 1277.2,
+        "end": 1291.8,
+        "type": "ad",
+        "description": "Remington"
+      },
+      {
+        "id": "EerSHhjR0g0",
+        "start": 1292.3,
+        "end": 1322.3,
+        "type": "ad",
+        "description": "Maxwell House"
+      },
+      {
+        "id": "EerSHhjR0g0",
+        "start": 1322.8,
+        "end": 1337.3,
+        "type": "ad",
+        "description": "Elizabeth Arden Perfume"
+      },
+      {
+        "id": "EerSHhjR0g0",
+        "start": 1337.3,
+        "end": 1352.3,
+        "type": "ad",
+        "description": "Listerine"
+      },
+      {
+        "id": "EerSHhjR0g0",
+        "start": 1352.3,
+        "end": 1367.3,
+        "type": "ad",
+        "description": "Channel 2 News"
+      },
+      {
+        "id": "EerSHhjR0g0",
+        "start": 1368.3,
+        "end": 1716.7,
+        "type": "content",
+        "description": "ABC World News Tonight"
+      }
+    ]
+  },
+  "eOP0CmrNT2A": {
+    "channels": [
+      "Action PPV",
+      "Hot Choice PPV"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'eOP0CmrNT2A',start:2,end:842},{id:'eOP0CmrNT2A',start:855,end:1490}]",
+    "segments": [
+      {
+        "id": "eOP0CmrNT2A",
+        "start": 1.8,
+        "end": 842.3,
+        "type": "content",
+        "description": "Action Pay Per View Promos"
+      },
+      {
+        "id": "eOP0CmrNT2A",
+        "start": 855.1,
+        "end": 1490.4,
+        "type": "content",
+        "description": "Action Pay Per View Promos"
+      }
+    ]
+  },
+  "fdhtsuGBuAI": {
+    "channels": [
+      "Action PPV"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'fdhtsuGBuAI',start:0,end:141}]",
+    "segments": [
+      {
+        "id": "fdhtsuGBuAI",
+        "start": 0,
+        "end": 140.9,
+        "type": "content",
+        "description": "Pay Per View Promo"
+      }
+    ]
+  },
+  "55DP2kimCIY": {
+    "channels": [
+      "AgSat",
+      "Ag Day / PhoneVoter"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'55DP2kimCIY',start:2,end:373},{id:'55DP2kimCIY',start:434,end:468},{id:'55DP2kimCIY',start:530,end:710},{id:'55DP2kimCIY',start:773,end:805},{id:'55DP2kimCIY',start:879,end:1071},{id:'55DP2kimCIY',start:1102,end:1138},{id:'55DP2kimCIY',start:1195,end:1396},{id:'55DP2kimCIY',start:1458,end:1490},{id:'55DP2kimCIY',start:1552,end:1587},{id:'55DP2kimCIY',start:373,end:403},{id:'55DP2kimCIY',start:403,end:433},{id:'55DP2kimCIY',start:468,end:498},{id:'55DP2kimCIY',start:499,end:529},{id:'55DP2kimCIY',start:711,end:741},{id:'55DP2kimCIY',start:741,end:771},{id:'55DP2kimCIY',start:805,end:835},{id:'55DP2kimCIY',start:835,end:868},{id:'55DP2kimCIY',start:1135,end:1165},{id:'55DP2kimCIY',start:1165,end:1195},{id:'55DP2kimCIY',start:1427,end:1458},{id:'55DP2kimCIY',start:1491,end:1521},{id:'55DP2kimCIY',start:1521,end:1551}]",
+    "segments": [
+      {
+        "id": "55DP2kimCIY",
+        "start": 1.9,
+        "end": 373.1,
+        "type": "content",
+        "description": "AgDay - March 12th 1993"
+      },
+      {
+        "id": "55DP2kimCIY",
+        "start": 434.2,
+        "end": 468,
+        "type": "content",
+        "description": "AgDay - March 12th 1993"
+      },
+      {
+        "id": "55DP2kimCIY",
+        "start": 530.1,
+        "end": 709.6,
+        "type": "content",
+        "description": "AgDay - March 12th 1993"
+      },
+      {
+        "id": "55DP2kimCIY",
+        "start": 772.5,
+        "end": 804.5,
+        "type": "content",
+        "description": "AgDay - March 12th 1993"
+      },
+      {
+        "id": "55DP2kimCIY",
+        "start": 878.7,
+        "end": 1071.4,
+        "type": "content",
+        "description": "AgDay - March 12th 1993"
+      },
+      {
+        "id": "55DP2kimCIY",
+        "start": 1102.4,
+        "end": 1138.1,
+        "type": "content",
+        "description": "AgDay - March 12th 1993"
+      },
+      {
+        "id": "55DP2kimCIY",
+        "start": 1195.4,
+        "end": 1395.6,
+        "type": "content",
+        "description": "AgDay - March 12th 1993"
+      },
+      {
+        "id": "55DP2kimCIY",
+        "start": 1457.6,
+        "end": 1489.6,
+        "type": "content",
+        "description": "AgDay - March 12th 1993"
+      },
+      {
+        "id": "55DP2kimCIY",
+        "start": 1551.6,
+        "end": 1587.3,
+        "type": "content",
+        "description": "AgDay - March 12th 1993"
+      },
+      {
+        "id": "55DP2kimCIY",
+        "start": 373.1,
+        "end": 403.2,
+        "type": "ad",
+        "description": "Carnival Cruise / Abbot Travel"
+      },
+      {
+        "id": "55DP2kimCIY",
+        "start": 403.2,
+        "end": 433.2,
+        "type": "ad",
+        "description": "A Current Affair"
+      },
+      {
+        "id": "55DP2kimCIY",
+        "start": 468.4,
+        "end": 498.4,
+        "type": "ad",
+        "description": "Big A Auto Parts"
+      },
+      {
+        "id": "55DP2kimCIY",
+        "start": 498.9,
+        "end": 528.9,
+        "type": "ad",
+        "description": "Chevy Truck"
+      },
+      {
+        "id": "55DP2kimCIY",
+        "start": 710.9,
+        "end": 740.9,
+        "type": "ad",
+        "description": "DuPont Extrazine"
+      },
+      {
+        "id": "55DP2kimCIY",
+        "start": 740.9,
+        "end": 771.3,
+        "type": "ad",
+        "description": "Folgers"
+      },
+      {
+        "id": "55DP2kimCIY",
+        "start": 805,
+        "end": 835,
+        "type": "ad",
+        "description": "Rapid City Iowa Boys Basketball Championship"
+      },
+      {
+        "id": "55DP2kimCIY",
+        "start": 835,
+        "end": 867.5,
+        "type": "ad",
+        "description": "Entertainment Tonight"
+      },
+      {
+        "id": "55DP2kimCIY",
+        "start": 1134.5,
+        "end": 1164.5,
+        "type": "ad",
+        "description": "DuPont"
+      },
+      {
+        "id": "55DP2kimCIY",
+        "start": 1164.5,
+        "end": 1195,
+        "type": "ad",
+        "description": "Bower Trading"
+      },
+      {
+        "id": "55DP2kimCIY",
+        "start": 1426.9,
+        "end": 1457.9,
+        "type": "ad",
+        "description": "Champion Car Center"
+      },
+      {
+        "id": "55DP2kimCIY",
+        "start": 1490.9,
+        "end": 1520.9,
+        "type": "ad",
+        "description": "Armstrong"
+      },
+      {
+        "id": "55DP2kimCIY",
+        "start": 1521.4,
+        "end": 1551.4,
+        "type": "ad",
+        "description": "Kent"
+      }
+    ]
+  },
+  "MCxmwieh43Y": {
+    "channels": [
+      "AMC",
+      "Bravo"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'MCxmwieh43Y',start:1,end:65},{id:'MCxmwieh43Y',start:65,end:148},{id:'MCxmwieh43Y',start:148,end:628},{id:'MCxmwieh43Y',start:628,end:663},{id:'MCxmwieh43Y',start:663,end:758}]",
+    "segments": [
+      {
+        "id": "MCxmwieh43Y",
+        "start": 1.2,
+        "end": 65.1,
+        "type": "ad",
+        "description": "AMC Promo Content"
+      },
+      {
+        "id": "MCxmwieh43Y",
+        "start": 65.2,
+        "end": 147.6,
+        "type": "ad",
+        "description": "AMC Ad Content"
+      },
+      {
+        "id": "MCxmwieh43Y",
+        "start": 148.2,
+        "end": 628.2,
+        "type": "content",
+        "description": "AMC - The Making of a Movie"
+      },
+      {
+        "id": "MCxmwieh43Y",
+        "start": 628.2,
+        "end": 663.1,
+        "type": "ad",
+        "description": "AMC Film Preservation"
+      },
+      {
+        "id": "MCxmwieh43Y",
+        "start": 663.1,
+        "end": 758.1,
+        "type": "ad",
+        "description": "AMC Ad Content"
+      }
+    ]
+  },
+  "j5jn7fu_zos": {
+    "channels": [
+      "AMC"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'j5jn7fu_zos',start:0,end:828}]",
+    "segments": [
+      {
+        "id": "j5jn7fu_zos",
+        "start": 0,
+        "end": 827.6,
+        "type": "content",
+        "description": "AMC Content"
+      }
+    ]
+  },
+  "DmZG5CVbYfs": {
+    "channels": [
+      "AMC",
+      "Bravo"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'DmZG5CVbYfs',start:0,end:626}]",
+    "segments": [
+      {
+        "id": "DmZG5CVbYfs",
+        "start": 0.4,
+        "end": 626,
+        "type": "content",
+        "description": "AMC Content"
+      }
+    ]
+  },
+  "NfP7qBPrsFc": {
+    "channels": [
+      "Antenne 2 French"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'NfP7qBPrsFc',start:4,end:129}]",
+    "segments": [
+      {
+        "id": "NfP7qBPrsFc",
+        "start": 4.1,
+        "end": 128.6,
+        "type": "content",
+        "description": "France 2 Content"
+      }
+    ]
+  },
+  "aQpaB9jmNCE": {
+    "channels": [
+      "Arab Network"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'aQpaB9jmNCE',start:0,end:3538}]",
+    "segments": [
+      {
+        "id": "aQpaB9jmNCE",
+        "start": 0,
+        "end": 3537.7,
+        "type": "content",
+        "description": "Arab Network Content"
+      }
+    ]
+  },
+  "Z_ITOFglu2o": {
+    "channels": [
+      "ARCS Alaska"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'Z_ITOFglu2o',start:0,end:3480}]",
+    "segments": [
+      {
+        "id": "Z_ITOFglu2o",
+        "start": 0,
+        "end": 3480.3,
+        "type": "content",
+        "description": "PBS Nature Documentary - Alyeska: The Great Land"
+      }
+    ]
+  },
+  "HLdtxE3uQks": {
+    "channels": [
+      "ARCS Feed 2"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'HLdtxE3uQks',start:0,end:3698}]",
+    "segments": [
+      {
+        "id": "HLdtxE3uQks",
+        "start": 0,
+        "end": 3698.3,
+        "type": "content",
+        "description": "The Great Parks of Alaska"
+      }
+    ]
+  },
+  "F6xkQCgkxd0": {
+    "channels": [
+      "BET"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'F6xkQCgkxd0',start:0,end:4618}]",
+    "segments": [
+      {
+        "id": "F6xkQCgkxd0",
+        "start": 0,
+        "end": 4618.4,
+        "type": "content",
+        "description": "BET Content"
+      }
+    ]
+  },
+  "TkjtnteqL64": {
+    "channels": [
+      "C-SPAN / NASA Worldnet",
+      "C-SPAN"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'TkjtnteqL64',start:0,end:10293}]",
+    "segments": [
+      {
+        "id": "TkjtnteqL64",
+        "start": 0,
+        "end": 10293,
+        "type": "content",
+        "description": "C-Span 3 Content"
+      }
+    ]
+  },
+  "LbPF6ptGLnI": {
+    "channels": [
+      "C-SPAN 2"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'LbPF6ptGLnI',start:0,end:25886}]",
+    "segments": [
+      {
+        "id": "LbPF6ptGLnI",
+        "start": 0,
+        "end": 25886.4,
+        "type": "content",
+        "description": "C-Span 2 Content"
+      }
+    ]
+  },
+  "XOizHA_IvuY": {
+    "channels": [
+      "Cable Listings",
+      "Community Bulletin Board",
+      "Community Access",
+      "Classified Ads",
+      "Satellite Market USA"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'XOizHA_IvuY',start:0,end:962}]",
+    "segments": [
+      {
+        "id": "XOizHA_IvuY",
+        "start": 0,
+        "end": 962.2,
+        "type": "content",
+        "description": "Community Ads Satellite Feed (Content)"
+      }
+    ]
+  },
+  "7Hx9HaiCIAk": {
+    "channels": [
+      "Cable Program Guide"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'7Hx9HaiCIAk',start:11,end:3083}]",
+    "segments": [
+      {
+        "id": "7Hx9HaiCIAk",
+        "start": 10.8,
+        "end": 3083,
+        "type": "content",
+        "description": "United Cable Electronic Program Guide"
+      }
+    ]
+  },
+  "wkt_gvcp_ZM": {
+    "channels": [
+      "Canal 13 Azteca"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'wkt_gvcp_ZM',start:18,end:986}]",
+    "segments": [
+      {
+        "id": "wkt_gvcp_ZM",
+        "start": 17.6,
+        "end": 986.3,
+        "type": "content",
+        "description": "Mexico Content"
+      }
+    ]
+  },
+  "Vja_srr-ack": {
+    "channels": [
+      "Canal 2 Televisa",
+      "Televisa Feed"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'Vja_srr-ack',start:0,end:3294}]",
+    "segments": [
+      {
+        "id": "Vja_srr-ack",
+        "start": 0,
+        "end": 3293.9,
+        "type": "content",
+        "description": "Mexico Content"
+      }
+    ]
+  },
+  "ytb0w0RqjY0": {
+    "channels": [
+      "Canal 5 XHGC"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'ytb0w0RqjY0',start:8,end:1926}]",
+    "segments": [
+      {
+        "id": "ytb0w0RqjY0",
+        "start": 8.2,
+        "end": 1926.1,
+        "type": "content",
+        "description": "Mexico Content"
+      }
+    ]
+  },
+  "Qv6Yie7hLdo": {
+    "channels": [
+      "Canal 5 XHGC"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'Qv6Yie7hLdo',start:1,end:768}]",
+    "segments": [
+      {
+        "id": "Qv6Yie7hLdo",
+        "start": 0.5,
+        "end": 768,
+        "type": "content",
+        "description": "Mexico Content"
+      }
+    ]
+  },
+  "ES7ctnbjNuA": {
+    "channels": [
+      "Cartoon Network"
+    ],
+    "complete": false,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'ES7ctnbjNuA',start:0,end:9},{id:'ES7ctnbjNuA',start:9,end:39},{id:'ES7ctnbjNuA',start:40,end:54},{id:'ES7ctnbjNuA',start:55,end:70},{id:'ES7ctnbjNuA',start:71,end:100}]",
+    "segments": [
+      {
+        "id": "ES7ctnbjNuA",
+        "start": 0,
+        "end": 9.3,
+        "type": "ad",
+        "description": "Cartoon Network - Afternoon Adventures"
+      },
+      {
+        "id": "ES7ctnbjNuA",
+        "start": 9.3,
+        "end": 39.2,
+        "type": "ad",
+        "description": "Golden Grahams"
+      },
+      {
+        "id": "ES7ctnbjNuA",
+        "start": 39.7,
+        "end": 54.2,
+        "type": "ad",
+        "description": "Twister"
+      },
+      {
+        "id": "ES7ctnbjNuA",
+        "start": 54.7,
+        "end": 70.2,
+        "type": "ad",
+        "description": "Secret Deodorant"
+      },
+      {
+        "id": "ES7ctnbjNuA",
+        "start": 70.7,
+        "end": 100.2,
+        "type": "ad",
+        "description": "Carrot Top's AM Mayhem"
+      }
+    ]
+  },
+  "MgPeIQJAAoM": {
+    "channels": [
+      "Casino Game Channel"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'MgPeIQJAAoM',start:1,end:459}]",
+    "segments": [
+      {
+        "id": "MgPeIQJAAoM",
+        "start": 0.7,
+        "end": 458.7,
+        "type": "content",
+        "description": "Casino Game Channel"
+      }
+    ]
+  },
+  "qvfvnz_cAfU": {
+    "channels": [
+      "CBC North West"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'qvfvnz_cAfU',start:0,end:73}]",
+    "segments": [
+      {
+        "id": "qvfvnz_cAfU",
+        "start": 0,
+        "end": 72.6,
+        "type": "content",
+        "description": "CBC Content"
+      }
+    ]
+  },
+  "cVzNZyLjGWk": {
+    "channels": [
+      "CBC Feeds",
+      "CBC / BBC News",
+      "CBC North West",
+      "CBC North East"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'cVzNZyLjGWk',start:0,end:336}]",
+    "segments": [
+      {
+        "id": "cVzNZyLjGWk",
+        "start": 0,
+        "end": 335.8,
+        "type": "content",
+        "description": "CBC Content"
+      }
+    ]
+  },
+  "NgPMeDgDJOs": {
+    "channels": [
+      "CBC Feeds",
+      "CBC / VISNews"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'NgPMeDgDJOs',start:0,end:397}]",
+    "segments": [
+      {
+        "id": "NgPMeDgDJOs",
+        "start": 0,
+        "end": 397.3,
+        "type": "content",
+        "description": "CBC Content"
+      }
+    ]
+  },
+  "P4g3h9U4PoQ": {
+    "channels": [
+      "CBC / BBC News"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'P4g3h9U4PoQ',start:0,end:34}]",
+    "segments": [
+      {
+        "id": "P4g3h9U4PoQ",
+        "start": 0,
+        "end": 34,
+        "type": "content",
+        "description": "CBC Content"
+      }
+    ]
+  },
+  "kE5_4vBscRs": {
+    "channels": [
+      "CBS Feeds / Skyvision",
+      "CBS Feeds",
+      "CBS West",
+      "CBS East Feed"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'kE5_4vBscRs',start:2,end:481},{id:'kE5_4vBscRs',start:482,end:512},{id:'kE5_4vBscRs',start:512,end:527},{id:'kE5_4vBscRs',start:527,end:542},{id:'kE5_4vBscRs',start:543,end:711},{id:'kE5_4vBscRs',start:712,end:743},{id:'kE5_4vBscRs',start:743,end:773},{id:'kE5_4vBscRs',start:773,end:788},{id:'kE5_4vBscRs',start:788,end:803},{id:'kE5_4vBscRs',start:803,end:813},{id:'kE5_4vBscRs',start:814,end:1019},{id:'kE5_4vBscRs',start:1020,end:1050},{id:'kE5_4vBscRs',start:1050,end:1065},{id:'kE5_4vBscRs',start:1065,end:1080},{id:'kE5_4vBscRs',start:1080,end:1110},{id:'kE5_4vBscRs',start:1110,end:1121},{id:'kE5_4vBscRs',start:1121,end:1338},{id:'kE5_4vBscRs',start:1338,end:1353},{id:'kE5_4vBscRs',start:1353,end:1368},{id:'kE5_4vBscRs',start:1369,end:1398},{id:'kE5_4vBscRs',start:1398,end:1428},{id:'kE5_4vBscRs',start:1428,end:1458},{id:'kE5_4vBscRs',start:1460,end:1737}]",
+    "segments": [
+      {
+        "id": "kE5_4vBscRs",
+        "start": 2.1,
+        "end": 481.3,
+        "type": "content",
+        "description": "CBS Evening News"
+      },
+      {
+        "id": "kE5_4vBscRs",
+        "start": 481.8,
+        "end": 511.8,
+        "type": "ad",
+        "description": "Scalpicin"
+      },
+      {
+        "id": "kE5_4vBscRs",
+        "start": 511.8,
+        "end": 526.8,
+        "type": "ad",
+        "description": "Robitussin"
+      },
+      {
+        "id": "kE5_4vBscRs",
+        "start": 527.3,
+        "end": 542.3,
+        "type": "ad",
+        "description": "Enterprise Rent a Car"
+      },
+      {
+        "id": "kE5_4vBscRs",
+        "start": 542.8,
+        "end": 711.2,
+        "type": "content",
+        "description": "CBS Evening News"
+      },
+      {
+        "id": "kE5_4vBscRs",
+        "start": 711.7,
+        "end": 742.7,
+        "type": "ad",
+        "description": "Phazyme"
+      },
+      {
+        "id": "kE5_4vBscRs",
+        "start": 743.2,
+        "end": 772.7,
+        "type": "ad",
+        "description": "Tavist"
+      },
+      {
+        "id": "kE5_4vBscRs",
+        "start": 773.2,
+        "end": 787.7,
+        "type": "ad",
+        "description": "Bengay"
+      },
+      {
+        "id": "kE5_4vBscRs",
+        "start": 788.2,
+        "end": 802.7,
+        "type": "ad",
+        "description": "Listerine"
+      },
+      {
+        "id": "kE5_4vBscRs",
+        "start": 803.2,
+        "end": 813.2,
+        "type": "ad",
+        "description": "CBS Eye to Eye"
+      },
+      {
+        "id": "kE5_4vBscRs",
+        "start": 813.7,
+        "end": 1019.1,
+        "type": "content",
+        "description": "CBS Evening News"
+      },
+      {
+        "id": "kE5_4vBscRs",
+        "start": 1019.6,
+        "end": 1049.6,
+        "type": "ad",
+        "description": "Presto Chip Shot"
+      },
+      {
+        "id": "kE5_4vBscRs",
+        "start": 1050.1,
+        "end": 1064.6,
+        "type": "ad",
+        "description": "Total Cereal"
+      },
+      {
+        "id": "kE5_4vBscRs",
+        "start": 1065.1,
+        "end": 1079.6,
+        "type": "ad",
+        "description": "Robitussin"
+      },
+      {
+        "id": "kE5_4vBscRs",
+        "start": 1080.1,
+        "end": 1109.6,
+        "type": "ad",
+        "description": "Dow Chemicals"
+      },
+      {
+        "id": "kE5_4vBscRs",
+        "start": 1110.1,
+        "end": 1120.6,
+        "type": "ad",
+        "description": "CBS This Morning"
+      },
+      {
+        "id": "kE5_4vBscRs",
+        "start": 1120.6,
+        "end": 1337.9,
+        "type": "content",
+        "description": "CBS Evening News"
+      },
+      {
+        "id": "kE5_4vBscRs",
+        "start": 1338.4,
+        "end": 1352.9,
+        "type": "ad",
+        "description": "Serenity Pads"
+      },
+      {
+        "id": "kE5_4vBscRs",
+        "start": 1353.4,
+        "end": 1368.4,
+        "type": "ad",
+        "description": "Mylanta"
+      },
+      {
+        "id": "kE5_4vBscRs",
+        "start": 1368.9,
+        "end": 1397.9,
+        "type": "ad",
+        "description": "Farmers Insurance Group"
+      },
+      {
+        "id": "kE5_4vBscRs",
+        "start": 1398.4,
+        "end": 1427.9,
+        "type": "ad",
+        "description": "Oldsmobile"
+      },
+      {
+        "id": "kE5_4vBscRs",
+        "start": 1428.4,
+        "end": 1458.4,
+        "type": "ad",
+        "description": "Protegra"
+      },
+      {
+        "id": "kE5_4vBscRs",
+        "start": 1460.4,
+        "end": 1736.9,
+        "type": "content",
+        "description": "CBS Evening News"
+      }
+    ]
+  },
+  "LAazz7mIrEE": {
+    "channels": [
+      "CBS Feeds / Skyvision",
+      "CBS Feeds",
+      "CBS East Feed",
+      "CBS News Feeds"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'LAazz7mIrEE',start:0,end:439},{id:'LAazz7mIrEE',start:500,end:709},{id:'LAazz7mIrEE',start:811,end:961},{id:'LAazz7mIrEE',start:1062,end:1289},{id:'LAazz7mIrEE',start:1411,end:1695}]",
+    "segments": [
+      {
+        "id": "LAazz7mIrEE",
+        "start": 0,
+        "end": 438.8,
+        "type": "content",
+        "description": "CBS Evening News"
+      },
+      {
+        "id": "LAazz7mIrEE",
+        "start": 500.1,
+        "end": 709.4,
+        "type": "content",
+        "description": "CBS Evening News"
+      },
+      {
+        "id": "LAazz7mIrEE",
+        "start": 811.4,
+        "end": 961,
+        "type": "content",
+        "description": "CBS Evening News"
+      },
+      {
+        "id": "LAazz7mIrEE",
+        "start": 1062.4,
+        "end": 1289.4,
+        "type": "content",
+        "description": "CBS Evening News"
+      },
+      {
+        "id": "LAazz7mIrEE",
+        "start": 1410.9,
+        "end": 1695,
+        "type": "content",
+        "description": "CBS Evening News"
+      }
+    ]
+  },
+  "SaF__mZECrM": {
+    "channels": [
+      "CBS West",
+      "CBS East"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'SaF__mZECrM',start:5,end:634},{id:'SaF__mZECrM',start:695,end:881},{id:'SaF__mZECrM',start:881,end:911},{id:'SaF__mZECrM',start:912,end:1246},{id:'SaF__mZECrM',start:1367,end:1502},{id:'SaF__mZECrM',start:1563,end:1766},{id:'SaF__mZECrM',start:1887,end:2076}]",
+    "segments": [
+      {
+        "id": "SaF__mZECrM",
+        "start": 4.9,
+        "end": 633.5,
+        "type": "content",
+        "description": "CBS WSPA Channel 7 News"
+      },
+      {
+        "id": "SaF__mZECrM",
+        "start": 694.7,
+        "end": 881.4,
+        "type": "content",
+        "description": "CBS WSPA Channel 7 News"
+      },
+      {
+        "id": "SaF__mZECrM",
+        "start": 881.4,
+        "end": 911.4,
+        "type": "ad",
+        "description": "Brevard TV and Satellite"
+      },
+      {
+        "id": "SaF__mZECrM",
+        "start": 911.9,
+        "end": 1246.1,
+        "type": "content",
+        "description": "CBS WSPA Channel 7 News"
+      },
+      {
+        "id": "SaF__mZECrM",
+        "start": 1366.5,
+        "end": 1501.6,
+        "type": "content",
+        "description": "CBS WSPA Channel 7 News"
+      },
+      {
+        "id": "SaF__mZECrM",
+        "start": 1562.9,
+        "end": 1766.2,
+        "type": "content",
+        "description": "CBS WSPA Channel 7 News"
+      },
+      {
+        "id": "SaF__mZECrM",
+        "start": 1887.1,
+        "end": 2076.2,
+        "type": "content",
+        "description": "CBS WSPA Channel 7 News"
+      }
+    ]
+  },
+  "GxyxPWX1LcY": {
+    "channels": [
+      "Cinemax West",
+      "Cinemax East"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'GxyxPWX1LcY',start:0,end:35}]",
+    "segments": [
+      {
+        "id": "GxyxPWX1LcY",
+        "start": 0,
+        "end": 35.3,
+        "type": "content",
+        "description": "Cinemax AD (Content)"
+      }
+    ]
+  },
+  "MQgRg53Xk-o": {
+    "channels": [
+      "Cinemax West",
+      "Cinemax East"
+    ],
+    "complete": true,
+    "audioChecked": false,
+    "dataJs": "videos:[{id:'MQgRg53Xk-o',start:0,end:170}]",
+    "segments": [
+      {
+        "id": "MQgRg53Xk-o",
+        "start": 0,
+        "end": 169.5,
+        "type": "content",
+        "description": "Cinemax AD (Content)"
       }
     ]
   }
